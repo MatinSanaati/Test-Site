@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت نام / ورود | تریدرکس</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            line-height: 1.8;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* هدر */
+        header {
+            background: rgba(10, 10, 35, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4cc9f0;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #f72585;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 15px;
+            border-radius: 30px;
+        }
+
+        nav ul li a:hover {
+            color: #4cc9f0;
+            background: rgba(76, 201, 240, 0.1);
+        }
+
+        /* breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #4cc9f0;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: #aaa;
+        }
+
+        /* بخش اصلی فرم‌ها */
+        .auth-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 0;
+        }
+
+        .auth-card {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auth-header h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #4cc9f0;
+        }
+
+        .auth-header p {
+            color: #aaa;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #4cc9f0;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #4cc9f0;
+            box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
+        }
+
+        .form-control::placeholder {
+            color: #777;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+            cursor: pointer;
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+        }
+
+        .remember input {
+            margin-left: 8px;
+        }
+
+        .forgot-password {
+            color: #4cc9f0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .forgot-password:hover {
+            color: #f72585;
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(247, 37, 133, 0.4);
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .auth-footer p {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .auth-switch {
+            color: #4cc9f0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .auth-switch:hover {
+            color: #f72585;
+            text-decoration: underline;
+        }
+
+        .social-login {
+            margin-top: 25px;
+        }
+
+        .social-login p {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .social-login p::before,
+        .social-login p::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-login p::before {
+            right: 0;
+        }
+
+        .social-login p::after {
+            left: 0;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px);
+        }
+
+        .google {
+            background: linear-gradient(135deg, #dd4b39, #c23321);
+        }
+
+        .telegram {
+            background: linear-gradient(135deg, #0088cc, #00aced);
+        }
+
+        .twitter {
+            background: linear-gradient(135deg, #1da1f2, #00acee);
+        }
+
+        /* فرم فراموشی رمز */
+        .forgot-password-form {
+            display: none;
+        }
+
+        .back-to-login {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #4cc9f0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .back-to-login:hover {
+            color: #f72585;
+            text-decoration: underline;
+        }
+
+        /* فوتر */
+        footer {
+            background: #0a0a1a;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0 0;
+            margin-top: auto;
+        }
+
+        .footer-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(76, 201, 240, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(247, 37, 133, 0.05) 0%, transparent 20%);
+            z-index: 1;
+        }
+
+        .footer-top {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-top h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #4cc9f0;
+        }
+
+        .social-networks {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-network {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-network::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #4cc9f0, #f72585, #4361ee, #3a0ca3);
+            z-index: -1;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-network:hover::before {
+            opacity: 1;
+        }
+
+        .social-network:hover {
+            transform: translateY(-10px) scale(1.15);
+            box-shadow: 0 15px 30px rgba(76, 201, 240, 0.4);
+        }
+
+        .social-network.telegram {
+            background: linear-gradient(135deg, #0088cc, #00aced);
+        }
+
+        .social-network.instagram {
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        }
+
+        .social-network.twitter {
+            background: linear-gradient(135deg, #1da1f2, #00acee);
+        }
+
+        .social-network.linkedin {
+            background: linear-gradient(135deg, #0077b5, #00a0dc);
+        }
+
+        .social-network.youtube {
+            background: linear-gradient(135deg, #ff0000, #cc181e);
+        }
+
+        .footer-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 60px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-column {
+            padding: 20px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #4cc9f0;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            border-radius: 2px;
+        }
+
+        .footer-column p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-right: 25px;
+        }
+
+        .footer-links li a::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4cc9f0;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links li a:hover {
+            color: #4cc9f0;
+            transform: translateX(-5px);
+        }
+
+        .footer-links li a:hover::before {
+            opacity: 1;
+            transform: scale(1.3);
+        }
+
+        .footer-contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item-footer {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-item-footer i {
+            font-size: 1.2rem;
+            color: #f72585;
+            margin-left: 15px;
+            margin-top: 5px;
+            min-width: 20px;
+        }
+
+        .contact-item-footer .contact-text-footer h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #4cc9f0;
+        }
+
+        .contact-item-footer .contact-text-footer p,
+        .contact-item-footer .contact-text-footer a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .contact-item-footer .contact-text-footer a:hover {
+            color: #4cc9f0;
+        }
+
+        .newsletter-section {
+            background: rgba(30, 30, 60, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .newsletter-section h5 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #4cc9f0;
+        }
+
+        .newsletter-section p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form input:focus {
+            border-color: #4cc9f0;
+            box-shadow: 0 0 0 2px rgba(76, 201, 240, 0.2);
+        }
+
+        .newsletter-form input::placeholder {
+            color: #777;
+        }
+
+        .newsletter-form button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .newsletter-form button:hover {
+            background: linear-gradient(90deg, #4361ee, #f72585);
+            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.3);
+        }
+
+        .footer-bottom {
+            position: relative;
+            z-index: 2;
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .footer-bottom-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 1px;
+            background: #4cc9f0;
+            transition: width 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #4cc9f0;
+        }
+
+        .footer-bottom-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-decor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .footer-decor::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(76, 201, 240, 0.1) 0%, transparent 70%);
+            animation: pulse 4s infinite;
+        }
+
+        .footer-decor::after {
+            content: '';
+            position: absolute;
+            bottom: 30%;
+            right: 15%;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(247, 37, 133, 0.1) 0%, transparent 70%);
+            animation: pulse 6s infinite reverse;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+        }
+
+        /* واکنش‌گرایی */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                position: relative;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .auth-card {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+
+            .auth-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .remember-forgot {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .social-buttons {
+                flex-wrap: wrap;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+                padding: 0 15px;
+            }
+
+            .auth-card {
+                padding: 25px 15px;
+            }
+
+            .auth-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: 30px;
+                width: 100%;
+            }
+
+            .footer-decor::before,
+            .footer-decor::after {
+                display: none;
+            }
+
+            .footer-top h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- هدر -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">تریدر<span>کس</span></a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="خدمات.html">خدمات</a></li>
+                    <li><a href="درباره ما.html">درباره ما</a></li>
+                    <li><a href="تماس با ما.html">تماس با ما</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">خانه</a> <span>/</span> <span id="breadcrumb-text">ورود</span>
+        </div>
+    </div>
+
+    <!-- بخش اصلی فرم‌ها -->
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- فرم ورود -->
+            <div id="loginForm" class="auth-form">
+                <div class="auth-header">
+                    <h2>ورود به حساب کاربری</h2>
+                    <p>برای ادامه وارد حساب کاربری خود شوید</p>
+                </div>
+                <form id="loginFormSubmit">
+                    <div class="form-group">
+                        <label for="loginEmail">ایمیل</label>
+                        <input type="email" id="loginEmail" class="form-control" placeholder="ایمیل خود را وارد کنید"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">رمز عبور</label>
+                        <div class="password-container">
+                            <input type="password" id="loginPassword" class="form-control"
+                                placeholder="رمز عبور خود را وارد کنید" required>
+                            <span class="toggle-password" id="toggleLoginPassword">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="remember-forgot">
+                        <div class="remember">
+                            <input type="checkbox" id="rememberMe">
+                            <label for="rememberMe">مرا به خاطر بسپار</label>
+                        </div>
+                        <a href="#" class="forgot-password" id="showForgotPassword">رمز عبور را فراموش کردم</a>
+                    </div>
+                    <button type="submit" class="submit-btn">ورود</button>
+                </form>
+                <div class="auth-footer">
+                    <p>حساب کاربری ندارید؟</p>
+                    <a href="#" class="auth-switch" id="showSignup">ثبت نام کنید</a>
+                </div>
+                <div class="social-login">
+                    <p>یا ورود با</p>
+                    <div class="social-buttons">
+                        <a href="#" class="social-btn google" title="ورود با گوگل"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social-btn telegram" title="ورود با تلگرام"><i
+                                class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-btn twitter" title="ورود با توییتر"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- فرم ثبت نام -->
+            <div id="signupForm" class="auth-form" style="display: none;">
+                <div class="auth-header">
+                    <h2>ثبت نام حساب کاربری</h2>
+                    <p>حساب کاربری جدید ایجاد کنید</p>
+                </div>
+                <form id="signupFormSubmit">
+                    <div class="form-group">
+                        <label for="signupName">نام و نام خانوادگی</label>
+                        <input type="text" id="signupName" class="form-control" placeholder="نام خود را وارد کنید"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">ایمیل</label>
+                        <input type="email" id="signupEmail" class="form-control" placeholder="ایمیل خود را وارد کنید"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">رمز عبور</label>
+                        <div class="password-container">
+                            <input type="password" id="signupPassword" class="form-control"
+                                placeholder="رمز عبور خود را وارد کنید" required>
+                            <span class="toggle-password" id="toggleSignupPassword">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">تکرار رمز عبور</label>
+                        <div class="password-container">
+                            <input type="password" id="signupConfirmPassword" class="form-control"
+                                placeholder="رمز عبور خود را مجدداً وارد کنید" required>
+                            <span class="toggle-password" id="toggleSignupConfirmPassword">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" required>
+                            <a href="#" style="color: #4cc9f0;">شرایط و قوانین</a> را می‌پذیرم
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">ثبت نام</button>
+                </form>
+                <div class="auth-footer">
+                    <p>قبلاً حساب کاربری دارید؟</p>
+                    <a href="#" class="auth-switch" id="showLogin">وارد شوید</a>
+                </div>
+                <div class="social-login">
+                    <p>یا ثبت نام با</p>
+                    <div class="social-buttons">
+                        <a href="#" class="social-btn google" title="ثبت نام با گوگل"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social-btn telegram" title="ثبت نام با تلگرام"><i
+                                class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-btn twitter" title="ثبت نام با توییتر"><i
+                                class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- فرم فراموشی رمز -->
+            <div id="forgotPasswordForm" class="auth-form" style="display: none;">
+                <div class="auth-header">
+                    <h2>فراموشی رمز عبور</h2>
+                    <p>ایمیل خود را وارد کنید تا لینک بازیابی برای شما ارسال شود</p>
+                </div>
+                <form id="forgotPasswordFormSubmit">
+                    <div class="form-group">
+                        <label for="forgotEmail">ایمیل</label>
+                        <input type="email" id="forgotEmail" class="form-control" placeholder="ایمیل خود را وارد کنید"
+                            required>
+                    </div>
+                    <button type="submit" class="submit-btn">ارسال لینک بازیابی</button>
+                </form>
+                <a href="#" class="back-to-login" id="backToLogin">بازگشت به صفحه ورود</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="footer-bg"></div>
+        <div class="footer-decor"></div>
+
+        <div class="footer-top">
+            <h3>با ما در شبکه‌های اجتماعی همراه باشید</h3>
+            <div class="social-networks">
+                <a href="#" class="social-network telegram" title="تلگرام">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="#" class="social-network instagram" title="اینستاگرام">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-network twitter" title="توییتر">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-network linkedin" title="لینکدین">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-network youtube" title="یوتیوب">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>درباره تریدرکس</h4>
+                <p>ما یک پلتفرم پیشرو در زمینه ترید و سرمایه‌گذاری هستیم که با استفاده از فناوری‌های نوین و تحلیل‌های
+                    پیشرفته، فرصت‌های سرمایه‌گذاری هوشمندانه را برای شما فراهم می‌کنیم.</p>
+                <div class="newsletter-section">
+                    <h5>در خبرنامه ما عضو شوید</h5>
+                    <p>آخرین اخبار و تحلیل‌های بازار را دریافت کنید</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="ایمیل شما" required>
+                        <button type="submit">عضویت</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>خدمات</h4>
+                <ul class="footer-links">
+                    <li><a href="#">ترید ارزهای دیجیتال</a></li>
+                    <li><a href="#">سرمایه‌گذاری هوشمند</a></li>
+                    <li><a href="#">تحلیل بازار</a></li>
+                    <li><a href="#">مدیریت پورتفولیو</a></li>
+                    <li><a href="#">آموزش ترید</a></li>
+                    <li><a href="#">مشاوره تخصصی</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>راهنما و پشتیبانی</h4>
+                <ul class="footer-links">
+                    <li><a href="#">راهنمای شروع</a></li>
+                    <li><a href="#">سوالات متداول</a></li>
+                    <li><a href="#">مرکز آموزش</a></li>
+                    <li><a href="#">قوانین و مقررات</a></li>
+                    <li><a href="#">حریم خصوصی</a></li>
+                    <li><a href="#">گزارش مشکل</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>تماس با ما</h4>
+                <div class="footer-contact">
+                    <div class="contact-item-footer">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-text-footer">
+                            <h5>آدرس</h5>
+                            <p>تهران، خیابان ولیعصر، پلاک 1234</p>
+                        </div>
+                    </div>
+                    <div class="contact-item-footer">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="contact-text-footer">
+                            <h5>تلفن</h5>
+                            <p><a href="tel:+982112345678">021-12345678</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item-footer">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-text-footer">
+                            <h5>ایمیل</h5>
+                            <p><a href="mailto:info@traderx.com">info@traderx.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item-footer">
+                        <i class="fas fa-headset"></i>
+                        <div class="contact-text-footer">
+                            <h5>پشتیبانی</h5>
+                            <p>24/7 آماده پاسخگویی</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 1402 تریدرکس. تمامی حقوق محفوظ است.</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#">حریم خصوصی</a>
+                        <a href="#">شرایط استفاده</a>
+                        <a href="#">سیاست کوکی‌ها</a>
+                        <a href="#">نقشه سایت</a>
+                        <a href="#">بلاگ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // منوی موبایل
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+        const navUl = nav.querySelector('ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+            menuToggle.innerHTML = navUl.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // بستن منو با کلیک روی لینک
+        navUl.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navUl.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // بستن منو با تغییر اندازه صفحه
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navUl.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // افکت انیمیشن برای شبکه‌های اجتماعی
+        const socialNetworks = document.querySelectorAll('.social-network');
+        socialNetworks.forEach((network, index) => {
+            network.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // اعتبارسنجی فرم خبرنامه
+        const newsletterForms = document.querySelectorAll('.newsletter-form');
+        newsletterForms.forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const email = emailInput.value;
+
+                if (email && email.includes('@')) {
+                    alert('با موفقیت در خبرنامه عضو شدید!');
+                    emailInput.value = '';
+                } else {
+                    alert('لطفاً یک ایمیل معتبر وارد کنید.');
+                }
+            });
+        });
+
+        // تغییر بین فرم‌ها
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+        const showSignup = document.getElementById('showSignup');
+        const showLogin = document.getElementById('showLogin');
+        const showForgotPassword = document.getElementById('showForgotPassword');
+        const backToLogin = document.getElementById('backToLogin');
+        const breadcrumbText = document.getElementById('breadcrumb-text');
+
+        showSignup.addEventListener('click', function (e) {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+            forgotPasswordForm.style.display = 'none';
+            breadcrumbText.textContent = 'ثبت نام';
+        });
+
+        showLogin.addEventListener('click', function (e) {
+            e.preventDefault();
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+            forgotPasswordForm.style.display = 'none';
+            breadcrumbText.textContent = 'ورود';
+        });
+
+        showForgotPassword.addEventListener('click', function (e) {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'none';
+            forgotPasswordForm.style.display = 'block';
+            breadcrumbText.textContent = 'فراموشی رمز';
+        });
+
+        backToLogin.addEventListener('click', function (e) {
+            e.preventDefault();
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+            forgotPasswordForm.style.display = 'none';
+            breadcrumbText.textContent = 'ورود';
+        });
+
+        // نمایش/پنهان کردن رمز عبور
+        const toggleLoginPassword = document.getElementById('toggleLoginPassword');
+        const loginPassword = document.getElementById('loginPassword');
+
+        toggleLoginPassword.addEventListener('click', function () {
+            const type = loginPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            loginPassword.setAttribute('type', type);
+            this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+        });
+
+        const toggleSignupPassword = document.getElementById('toggleSignupPassword');
+        const signupPassword = document.getElementById('signupPassword');
+
+        toggleSignupPassword.addEventListener('click', function () {
+            const type = signupPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            signupPassword.setAttribute('type', type);
+            this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+        });
+
+        const toggleSignupConfirmPassword = document.getElementById('toggleSignupConfirmPassword');
+        const signupConfirmPassword = document.getElementById('signupConfirmPassword');
+
+        toggleSignupConfirmPassword.addEventListener('click', function () {
+            const type = signupConfirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            signupConfirmPassword.setAttribute('type', type);
+            this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+        });
+
+        // اعتبارسنجی فرم‌ها
+        document.getElementById('loginFormSubmit').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            if (email && password) {
+                if (email.includes('@')) {
+                    alert('ورود موفقیت‌آمیز بود!');
+                    // در حالت واقعی، اینجا باید به پنل کاربری هدایت شود
+                } else {
+                    alert('لطفاً یک ایمیل معتبر وارد کنید.');
+                }
+            } else {
+                alert('لطفاً تمام فیلدهای اجباری را پر کنید.');
+            }
+        });
+
+        document.getElementById('signupFormSubmit').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('signupConfirmPassword').value;
+
+            if (name && email && password && confirmPassword) {
+                if (email.includes('@')) {
+                    if (password === confirmPassword) {
+                        alert('ثبت نام موفقیت‌آمیز بود!');
+                        // در حالت واقعی، اینجا باید به پنل کاربری هدایت شود
+                    } else {
+                        alert('رمز عبور و تکرار آن یکسان نیستند.');
+                    }
+                } else {
+                    alert('لطفاً یک ایمیل معتبر وارد کنید.');
+                }
+            } else {
+                alert('لطفاً تمام فیلدهای اجباری را پر کنید.');
+            }
+        });
+
+        document.getElementById('forgotPasswordFormSubmit').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('forgotEmail').value;
+
+            if (email) {
+                if (email.includes('@')) {
+                    alert('لینک بازیابی رمز عبور به ایمیل شما ارسال شد.');
+                    // در حالت واقعی، اینجا باید ایمیل ارسال شود
+                } else {
+                    alert('لطفاً یک ایمیل معتبر وارد کنید.');
+                }
+            } else {
+                alert('لطفاً ایمیل خود را وارد کنید.');
+            }
+        });
+    </script>
+</body>
+
+</html>
