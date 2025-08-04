@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دانلود اپلیکیشن | تریدرکس</title>
+    <title>اپلیکیشن تحت وب | تریدرکس</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -119,8 +119,8 @@
             box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
         }
 
-        /* بخش هیرو دانلود اپلیکیشن */
-        .download-hero {
+        /* بخش هیرو اپلیکیشن تحت وب */
+        .webapp-hero {
             padding: 100px 0;
             text-align: center;
             background: url('image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjAuNSIgZmlsbD0iIzRjYzlmMCIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=') center/cover;
@@ -128,7 +128,7 @@
             overflow: hidden;
         }
 
-        .download-hero::before {
+        .webapp-hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -140,7 +140,7 @@
             z-index: -1;
         }
 
-        .download-hero h1 {
+        .webapp-hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             background: linear-gradient(90deg, #4cc9f0, #f72585);
@@ -149,17 +149,127 @@
             background-clip: text;
         }
 
-        .download-hero p {
+        .webapp-hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
             color: #ccc;
         }
 
-        /* بخش ویژگی‌های اپلیکیشن */
-        .app-features {
+        /* بخش معرفی اپلیکیشن */
+        .webapp-intro {
             padding: 80px 0;
             background: rgba(15, 15, 45, 0.7);
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-text {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .intro-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #4cc9f0;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .intro-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            border-radius: 2px;
+        }
+
+        .intro-text p {
+            color: #ccc;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .intro-image {
+            height: 400px;
+            background: linear-gradient(45deg, #4361ee, #4cc9f0);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(247, 37, 133, 0.2) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(76, 201, 240, 0.2) 0%, transparent 30%);
+            z-index: 1;
+        }
+
+        .intro-image i {
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            color: #4cc9f0;
+            margin-left: 15px;
+            margin-top: 5px;
+            min-width: 20px;
+        }
+
+        .feature-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #4cc9f0;
+        }
+
+        .feature-text p {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* بخش ویژگی‌های اپلیکیشن */
+        .webapp-features {
+            padding: 80px 0;
+            background: rgba(20, 20, 50, 0.7);
         }
 
         .section-title {
@@ -187,7 +297,7 @@
             font-size: 1.1rem;
         }
 
-        .features-grid {
+        .features-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
@@ -198,7 +308,7 @@
             border-radius: 15px;
             padding: 40px 30px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -209,8 +319,8 @@
             background: rgba(40, 40, 80, 0.7);
         }
 
-        .feature-icon {
-            font-size: 3rem;
+        .feature-icon-large {
+            font-size: 3.5rem;
             margin-bottom: 25px;
             background: linear-gradient(90deg, #4cc9f0, #f72585);
             -webkit-background-clip: text;
@@ -229,75 +339,36 @@
             line-height: 1.8;
         }
 
-        /* بخش دانلود اپلیکیشن */
-        .download-app {
-            padding: 100px 0;
+        /* بخش دسترسی به اپلیکیشن */
+        .webapp-access {
+            padding: 80px 0;
             background: linear-gradient(135deg, #0f0c29, #302b63);
-            text-align: center;
         }
 
-        .app-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 60px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .app-preview {
-            flex: 1;
-            min-width: 300px;
-            position: relative;
-        }
-
-        .app-screenshots {
+        .access-content {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            perspective: 1000px;
-        }
-
-        .app-screen {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(45deg, #4361ee, #4cc9f0);
-            height: 300px;
-            display: flex;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
             align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            color: rgba(255, 255, 255, 0.2);
-            transform: rotateY(10deg);
-            transition: all 0.5s ease;
         }
 
-        .app-screen:nth-child(2n) {
-            transform: rotateY(-10deg);
+        .access-text {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .app-screen:hover {
-            transform: rotateY(0deg) scale(1.05);
-            z-index: 10;
-        }
-
-        .app-download-options {
-            flex: 1;
-            min-width: 300px;
-            text-align: right;
-        }
-
-        .app-download-options h2 {
+        .access-text h2 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #4cc9f0;
             position: relative;
             padding-bottom: 15px;
         }
 
-        .app-download-options h2::after {
+        .access-text h2::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -308,214 +379,187 @@
             border-radius: 2px;
         }
 
-        .app-download-options p {
+        .access-text p {
             color: #ccc;
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-            line-height: 1.8;
+            line-height: 1.9;
+            margin-bottom: 25px;
         }
 
-        .download-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-bottom: 40px;
+        .access-steps {
+            list-style: none;
+            margin-bottom: 30px;
         }
 
-        .download-btn {
-            display: flex;
-            align-items: center;
-            padding: 15px 25px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            max-width: 300px;
-            margin-right: auto;
-        }
-
-        .download-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn-icon {
-            font-size: 2rem;
-            margin-left: 15px;
-        }
-
-        .btn-text {
-            flex: 1;
-        }
-
-        .btn-text small {
-            display: block;
-            font-size: 0.8rem;
-            margin-top: 5px;
+        .access-steps li {
+            margin-bottom: 20px;
+            padding-right: 30px;
+            position: relative;
             color: #aaa;
         }
 
-        .android-btn {
-            background: linear-gradient(90deg, #3ddc84, #0d9d58);
-            color: white;
-        }
-
-        .ios-btn {
-            background: linear-gradient(90deg, #000000, #333333);
-            color: white;
-        }
-
-        .windows-btn {
-            background: linear-gradient(90deg, #0078d7, #005a9e);
-            color: white;
-        }
-
-        .qr-code {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .qr-code h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #4cc9f0;
-        }
-
-        .qr-code-img {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(45deg, #4361ee, #4cc9f0);
-            border-radius: 15px;
-            margin: 0 auto 20px;
+        .access-steps li::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .access-steps li.step-1::before {
+            content: '1';
+        }
+
+        .access-steps li.step-2::before {
+            content: '2';
+        }
+
+        .access-steps li.step-3::before {
+            content: '3';
+        }
+
+        .access-steps li.step-4::before {
+            content: '4';
+        }
+
+        .access-image {
+            height: 400px;
+            background: linear-gradient(45deg, #f72585, #4361ee);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
             color: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        .qr-code p {
-            color: #ccc;
-            font-size: 0.9rem;
+        .access-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(76, 201, 240, 0.2) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(247, 37, 133, 0.2) 0%, transparent 30%);
+            z-index: 1;
         }
 
-        /* بخش ویژگی‌های پیشرفته */
-        .advanced-features {
+        .access-image i {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* بخش دستگاه‌های پشتیبانی شده */
+        .supported-devices {
             padding: 80px 0;
-            background: rgba(20, 20, 50, 0.7);
+            background: rgba(15, 15, 45, 0.7);
         }
 
-        .advanced-features-grid {
+        .devices-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
 
-        .advanced-feature {
+        .device-card {
             background: rgba(30, 30, 60, 0.6);
             border-radius: 15px;
-            padding: 30px;
+            padding: 40px 30px;
+            text-align: center;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .advanced-feature:hover {
+        .device-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             background: rgba(40, 40, 80, 0.7);
         }
 
-        .advanced-icon {
-            font-size: 2.5rem;
+        .device-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: #4cc9f0;
+        }
+
+        .device-card h3 {
+            font-size: 1.8rem;
             margin-bottom: 20px;
             color: #4cc9f0;
         }
 
-        .advanced-feature h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #4cc9f0;
-        }
-
-        .advanced-feature p {
+        .device-card p {
             color: #ccc;
-            line-height: 1.7;
+            line-height: 1.8;
+            margin-bottom: 25px;
         }
 
-        /* بخش نظرات کاربران */
-        .user-reviews {
+        .device-browsers {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .browser-icon {
+            font-size: 2rem;
+            color: #4cc9f0;
+            transition: all 0.3s ease;
+        }
+
+        .browser-icon:hover {
+            transform: scale(1.2);
+            color: #f72585;
+        }
+
+        /* بخش آمار اپلیکیشن */
+        .webapp-stats {
             padding: 80px 0;
-            background: linear-gradient(135deg, #0f0c29, #302b63);
+            background: rgba(20, 20, 50, 0.7);
+            text-align: center;
         }
 
-        .reviews-grid {
+        .stats-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
         }
 
-        .review-card {
-            background: rgba(30, 30, 60, 0.6);
-            border-radius: 15px;
+        .stat-item {
             padding: 30px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .review-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            background: rgba(40, 40, 80, 0.7);
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .review-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .review-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #4361ee, #4cc9f0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.2);
-            margin-left: 15px;
-        }
-
-        .review-info h4 {
+        .stat-label {
             font-size: 1.2rem;
-            margin-bottom: 5px;
-            color: #4cc9f0;
-        }
-
-        .review-info .position {
-            color: #f72585;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .review-content {
             color: #ccc;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
         }
 
-        .review-rating {
-            display: flex;
-            gap: 5px;
-            color: #ffd166;
-        }
-
-        /* بخش CTA دانلود */
-        .download-cta {
+        /* بخش CTA اپلیکیشن */
+        .webapp-cta {
             padding: 100px 0;
             text-align: center;
             background: rgba(15, 15, 45, 0.7);
@@ -523,7 +567,7 @@
             overflow: hidden;
         }
 
-        .download-cta::before {
+        .webapp-cta::before {
             content: '';
             position: absolute;
             top: 0;
@@ -984,11 +1028,11 @@
 
         /* واکنش‌گرایی */
         @media (max-width: 992px) {
-            .download-hero h1 {
+            .webapp-hero h1 {
                 font-size: 2.5rem;
             }
 
-            .download-hero p {
+            .webapp-hero p {
                 font-size: 1.1rem;
             }
 
@@ -1034,23 +1078,24 @@
                 margin-top: 20px;
             }
 
-            .download-hero {
+            .webapp-hero {
                 padding: 80px 0;
             }
 
-            .download-hero h1 {
+            .webapp-hero h1 {
                 font-size: 2.2rem;
             }
 
-            .download-hero p {
+            .webapp-hero p {
                 font-size: 1rem;
             }
 
-            .app-features,
-            .download-app,
-            .advanced-features,
-            .user-reviews,
-            .download-cta {
+            .webapp-intro,
+            .webapp-features,
+            .webapp-access,
+            .supported-devices,
+            .webapp-stats,
+            .webapp-cta {
                 padding: 60px 0;
             }
 
@@ -1058,60 +1103,56 @@
                 font-size: 2rem;
             }
 
-            .features-grid,
-            .advanced-features-grid,
-            .reviews-grid {
+            .intro-content,
+            .access-content,
+            .features-container,
+            .devices-grid,
+            .stats-container {
                 grid-template-columns: 1fr;
-                gap: 25px;
+                gap: 30px;
             }
 
+            .intro-text,
+            .access-text,
             .feature-card,
-            .advanced-feature,
-            .review-card {
+            .device-card {
                 padding: 30px 20px;
             }
 
+            .intro-text h2,
+            .access-text h2,
             .feature-card h3,
-            .advanced-feature h3,
-            .review-info h4 {
-                font-size: 1.5rem;
+            .device-card h3 {
+                font-size: 1.8rem;
             }
 
-            .app-container {
-                flex-direction: column;
-                gap: 40px;
+            .intro-text p,
+            .access-text p,
+            .feature-card p,
+            .device-card p {
+                font-size: 0.95rem;
             }
 
-            .app-preview,
-            .app-download-options {
-                min-width: 100%;
+            .intro-image,
+            .access-image {
+                height: 300px;
+                font-size: 4rem;
             }
 
-            .app-screenshots {
-                grid-template-columns: 1fr;
+            .feature-icon-large {
+                font-size: 3rem;
             }
 
-            .app-screen {
-                height: 250px;
-                transform: rotateY(0deg);
+            .device-icon {
+                font-size: 3rem;
             }
 
-            .app-screen:nth-child(2n) {
-                transform: rotateY(0deg);
+            .stat-number {
+                font-size: 2.5rem;
             }
 
-            .app-screen:hover {
-                transform: scale(1.05);
-            }
-
-            .download-buttons {
-                align-items: center;
-            }
-
-            .download-btn {
-                margin-right: 0;
-                max-width: 100%;
-                width: 100%;
+            .stat-label {
+                font-size: 1.1rem;
             }
 
             .cta-buttons {
@@ -1134,6 +1175,18 @@
                 gap: 30px;
             }
 
+            .footer-column {
+                padding: 20px 15px;
+            }
+
+            .footer-column h4 {
+                font-size: 1.3rem;
+            }
+
+            .footer-column p {
+                font-size: 0.9rem;
+            }
+
             .footer-bottom-content {
                 flex-direction: column;
                 text-align: center;
@@ -1150,23 +1203,24 @@
                 padding: 0 15px;
             }
 
-            .download-hero {
+            .webapp-hero {
                 padding: 60px 0;
             }
 
-            .download-hero h1 {
+            .webapp-hero h1 {
                 font-size: 2rem;
             }
 
-            .download-hero p {
+            .webapp-hero p {
                 font-size: 0.9rem;
             }
 
-            .app-features,
-            .download-app,
-            .advanced-features,
-            .user-reviews,
-            .download-cta {
+            .webapp-intro,
+            .webapp-features,
+            .webapp-access,
+            .supported-devices,
+            .webapp-stats,
+            .webapp-cta {
                 padding: 50px 0;
             }
 
@@ -1174,72 +1228,56 @@
                 font-size: 1.8rem;
             }
 
-            .features-grid,
-            .advanced-features-grid,
-            .reviews-grid {
-                gap: 20px;
+            .intro-content,
+            .access-content,
+            .features-container,
+            .devices-grid,
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
             }
 
+            .intro-text,
+            .access-text,
             .feature-card,
-            .advanced-feature,
-            .review-card {
+            .device-card {
                 padding: 25px 15px;
             }
 
+            .intro-text h2,
+            .access-text h2,
             .feature-card h3,
-            .advanced-feature h3,
-            .review-info h4 {
-                font-size: 1.3rem;
-            }
-
-            .feature-card p,
-            .advanced-feature p,
-            .review-content {
-                font-size: 0.9rem;
-            }
-
-            .app-screenshots {
-                gap: 15px;
-            }
-
-            .app-screen {
-                height: 200px;
-            }
-
-            .app-download-options h2 {
-                font-size: 1.8rem;
-            }
-
-            .app-download-options p {
-                font-size: 1rem;
-            }
-
-            .download-btn {
-                padding: 12px 20px;
-                font-size: 0.9rem;
-            }
-
-            .btn-icon {
+            .device-card h3 {
                 font-size: 1.5rem;
-                margin-left: 10px;
             }
 
-            .btn-text small {
-                font-size: 0.7rem;
+            .intro-text p,
+            .access-text p,
+            .feature-card p,
+            .device-card p {
+                font-size: 0.9rem;
             }
 
-            .qr-code h3 {
-                font-size: 1.3rem;
-            }
-
-            .qr-code-img {
-                width: 120px;
-                height: 120px;
+            .intro-image,
+            .access-image {
+                height: 250px;
                 font-size: 3rem;
             }
 
-            .qr-code p {
-                font-size: 0.8rem;
+            .feature-icon-large {
+                font-size: 2.5rem;
+            }
+
+            .device-icon {
+                font-size: 2.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 1rem;
             }
 
             .cta-content h2 {
@@ -1256,41 +1294,6 @@
                 font-size: 0.9rem;
             }
 
-            .footer-decor::before,
-            .footer-decor::after {
-                display: none;
-            }
-
-            .footer-top h3 {
-                font-size: 1.5rem;
-            }
-
-            .footer-column {
-                padding: 15px;
-            }
-
-            .footer-column h4 {
-                font-size: 1.3rem;
-            }
-
-            .footer-column p,
-            .footer-column .footer-links li a {
-                font-size: 0.9rem;
-            }
-
-            .newsletter-section {
-                padding: 20px;
-                margin-top: 15px;
-            }
-
-            .newsletter-section h5 {
-                font-size: 1.1rem;
-            }
-
-            .newsletter-section p {
-                font-size: 0.8rem;
-            }
-
             .newsletter-form {
                 flex-direction: column;
                 gap: 10px;
@@ -1302,9 +1305,113 @@
                 width: 100%;
             }
 
+            .footer-decor::before,
+            .footer-decor::after {
+                display: none;
+            }
+
+            .footer-top h3 {
+                font-size: 1.5rem;
+            }
+
+            .social-networks {
+                gap: 10px;
+            }
+
+            .social-network {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .footer-column {
+                padding: 15px 10px;
+            }
+
+            .footer-column h4 {
+                font-size: 1.2rem;
+            }
+
+            .footer-column p {
+                font-size: 0.85rem;
+            }
+
+            .footer-links li {
+                margin-bottom: 12px;
+            }
+
+            .footer-links li a {
+                font-size: 0.85rem;
+                padding-right: 20px;
+            }
+
+            .footer-links li a::before {
+                width: 6px;
+                height: 6px;
+            }
+
+            .footer-contact {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .contact-item-footer {
+                margin-bottom: 15px;
+            }
+
+            .contact-item-footer i {
+                font-size: 1rem;
+                margin-left: 10px;
+            }
+
+            .contact-item-footer .contact-text-footer h5 {
+                font-size: 1rem;
+            }
+
+            .contact-item-footer .contact-text-footer p,
+            .contact-item-footer .contact-text-footer a {
+                font-size: 0.85rem;
+            }
+
+            .newsletter-section {
+                padding: 20px 15px;
+                margin-top: 15px;
+            }
+
+            .newsletter-section h5 {
+                font-size: 1.1rem;
+            }
+
+            .newsletter-section p {
+                font-size: 0.85rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: 30px;
+                width: 100%;
+                padding: 12px 15px;
+                font-size: 0.85rem;
+            }
+
             .footer-bottom-content {
                 flex-direction: column;
                 text-align: center;
+                gap: 15px;
+            }
+
+            .copyright {
+                font-size: 0.85rem;
             }
 
             .footer-bottom-links {
@@ -1312,12 +1419,8 @@
                 gap: 15px;
             }
 
-            .copyright {
-                font-size: 0.8rem;
-            }
-
             .footer-bottom-links a {
-                font-size: 0.8rem;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -1347,268 +1450,292 @@
         </div>
     </header>
 
-    <!-- بخش هیرو دانلود اپلیکیشن -->
-    <section class="download-hero">
+    <!-- بخش هیرو اپلیکیشن تحت وب -->
+    <section class="webapp-hero">
         <div class="container">
-            <h1>دانلود اپلیکیشن تریدرکس</h1>
-            <p>اپلیکیشن تریدرکس را دانلود کنید و همیشه و همه‌جا به بازارهای مالی دسترسی داشته باشید</p>
+            <h1>اپلیکیشن تحت وب</h1>
+            <p>تجربه ترید حرفه‌ای ارزهای دیجیتال با اپلیکیشن تحت وب پیشرفته ما در هر زمان و مکان</p>
+        </div>
+    </section>
+
+    <!-- بخش معرفی اپلیکیشن -->
+    <section class="webapp-intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>اپلیکیشن تحت وب تریدرکس</h2>
+                    <p>اپلیکیشن تحت وب ما به شما امکان می‌دهد بدون نیاز به نصب، از تمام امکانات پلتفرم ما به‌صورت آنلاین
+                        استفاده کنید. این اپلیکیشن با آخرین فناوری‌های وب ساخته شده و تجربه کاربری بی‌نظیری ارائه
+                        می‌دهد.</p>
+                    <p>با دسترسی به تحلیل‌های تکنیکال و بنیادی، نمودارهای پیشرفته، ابزارهای مدیریت ریسک و خدمات پشتیبانی
+                        24/7، می‌توانید ترید حرفه‌ای انجام دهید.</p>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>سرعت بالا</h3>
+                                <p>اجرای معاملات در کسری از ثانیه با حداقل تاخیر</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>امنیت بالا</h3>
+                                <p>رمزنگاری پیشرفته و احراز هویت چندمرحله‌ای</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>دسترسی همه‌جا</h3>
+                                <p>دسترسی از هر دستگاه و مرورگری با پشتیبانی از PWA</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>به‌روزرسانی خودکار</h3>
+                                <p>به‌روزرسانی خودکار بدون نیاز به نصب مجدد</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- بخش ویژگی‌های اپلیکیشن -->
-    <section class="app-features">
+    <section class="webapp-features">
         <div class="container">
-            <h2 class="section-title">ویژگی‌های اپلیکیشن</h2>
-            <p class="section-subtitle">تجربه ترید حرفه‌ای با اپلیکیشن پیشرفته تریدرکس</p>
-            <div class="features-grid">
+            <h2 class="section-title">ویژگی‌های اپلیکیشن تحت وب</h2>
+            <p class="section-subtitle">امکانات پیشرفته و منحصر به فرد اپلیکیشن تحت وب ما برای تجربه ترید حرفه‌ای</p>
+            <div class="features-container">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>دسترسی همه‌جا</h3>
-                    <p>اپلیکیشن ما برای تمام دستگاه‌های موبایل و تبلت طراحی شده تا همیشه و همه‌جا به بازارهای مالی
-                        دسترسی داشته باشید.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>سرعت بالا</h3>
-                    <p>سرورهای اختصاصی و شبکه توزیع محتوا برای ارائه خدمات با حداقل تاخیر و حداکثر کارایی.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>امنیت بالا</h3>
-                    <p>استفاده از رمزنگاری پیشرفته و سیستم‌های احراز هویت چندمرحله‌ای برای حفاظت از دارایی‌های شما.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                    <div class="feature-icon-large">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>تحلیل تکنیکال</h3>
-                    <p>ابزارهای تحلیل تکنیکال پیشرفته و نمودارهای تعاملی برای تصمیم‌گیری‌های بهتر.</p>
+                    <p>تحلیل‌های تکنیکال پیشرفته با اندیکاتورهای حرفه‌ای و نمودارهای قابل تنظیم برای تصمیم‌گیری بهتر</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <h3>هشدارهای هوشمند</h3>
-                    <p>دریافت هشدارهای هوشمند درباره تغییرات قیمت، فرصت‌های خرید و فروش و شرایط خاص بازار.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
+                    <div class="feature-icon-large">
+                        <i class="fas fa-brain"></i>
                     </div>
                     <h3>هوش مصنوعی</h3>
-                    <p>استفاده از الگوریتم‌های پیشرفته برای تحلیل بازار و ارائه پیشنهادات هوشمند.</p>
+                    <p>استفاده از الگوریتم‌های هوش مصنوعی برای تحلیل بازار و ارائه پیشنهادات هوشمند</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- بخش دانلود اپلیکیشن -->
-    <section class="download-app">
-        <div class="container">
-            <div class="app-container">
-                <div class="app-preview">
-                    <div class="app-screenshots">
-                        <div class="app-screen">
-                            <i class="fas fa-home"></i>
-                        </div>
-                        <div class="app-screen">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="app-screen">
-                            <i class="fas fa-wallet"></i>
-                        </div>
-                        <div class="app-screen">
-                            <i class="fas fa-exchange-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="app-download-options">
-                    <h2>دانلود اپلیکیشن</h2>
-                    <p>اپلیکیشن تریدرکس را برای دستگاه خود دانلود کنید و تجربه ترید حرفه‌ای را در کف دست‌تان داشته
-                        باشید.</p>
-                    <div class="download-buttons">
-                        <a href="#" class="download-btn android-btn">
-                            <div class="btn-icon">
-                                <i class="fab fa-android"></i>
-                            </div>
-                            <div class="btn-text">
-                                <div>دانلود از گوگل پلی</div>
-                                <small>نسخه اندروید</small>
-                            </div>
-                        </a>
-                        <a href="#" class="download-btn ios-btn">
-                            <div class="btn-icon">
-                                <i class="fab fa-apple"></i>
-                            </div>
-                            <div class="btn-text">
-                                <div>دانلود از اپ استور</div>
-                                <small>نسخه iOS</small>
-                            </div>
-                        </a>
-                        <a href="#" class="download-btn windows-btn">
-                            <div class="btn-icon">
-                                <i class="fab fa-windows"></i>
-                            </div>
-                            <div class="btn-text">
-                                <div>دانلود برای ویندوز</div>
-                                <small>نسخه دسکتاپ</small>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="qr-code">
-                        <h3>یا با اسکن QR کد دانلود کنید</h3>
-                        <div class="qr-code-img">
-                            <i class="fas fa-qrcode"></i>
-                        </div>
-                        <p>QR کد را با دوربین گوشی خود اسکن کنید</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- بخش ویژگی‌های پیشرفته -->
-    <section class="advanced-features">
-        <div class="container">
-            <h2 class="section-title">ویژگی‌های پیشرفته</h2>
-            <p class="section-subtitle">امکانات حرفه‌ای اپلیکیشن تریدرکس برای کاربران حرفه‌ای</p>
-            <div class="advanced-features-grid">
-                <div class="advanced-feature">
-                    <div class="advanced-icon">
-                        <i class="fas fa-exchange-alt"></i>
-                    </div>
-                    <h3>ترید فوری</h3>
-                    <p>اجرا سریع معاملات با حداقل تاخیر و حداکثر کارایی در هر شرایطی</p>
-                </div>
-                <div class="advanced-feature">
-                    <div class="advanced-icon">
+                <div class="feature-card">
+                    <div class="feature-icon-large">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h3>روبات ترید</h3>
-                    <p>ایجاد روبات‌های ترید خودکار با استراتژی‌های قابل تنظیم</p>
+                    <h3>ترید خودکار</h3>
+                    <p>امکان تنظیم استراتژی‌های ترید خودکار با ابزارهای پیشرفته و الگوریتم‌های هوشمند</p>
                 </div>
-                <div class="advanced-feature">
-                    <div class="advanced-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>تحلیل پیشرفته</h3>
-                    <p>ابزارهای تحلیل تکنیکال و بنیادی پیشرفته برای تصمیم‌گیری‌های بهتر</p>
-                </div>
-                <div class="advanced-feature">
-                    <div class="advanced-icon">
+                <div class="feature-card">
+                    <div class="feature-icon-large">
                         <i class="fas fa-wallet"></i>
                     </div>
                     <h3>مدیریت پورتفولیو</h3>
-                    <p>مدیریت یکپارچه پورتفولیو و دارایی‌های شما در یک نگاه</p>
+                    <p>مدیریت پورتفولیو با ابزارهای پیشرفته و گزارش‌های جامع عملکرد سرمایه‌گذاری</p>
                 </div>
-                <div class="advanced-feature">
-                    <div class="advanced-icon">
+                <div class="feature-card">
+                    <div class="feature-icon-large">
                         <i class="fas fa-bell"></i>
                     </div>
-                    <h3>هشدارهای شخصی</h3>
-                    <p>ایجاد هشدارهای شخصی‌سازی شده بر اساس شرایط خاص شما</p>
+                    <h3>هشدارهای هوشمند</h3>
+                    <p>دریافت هشدارهای هوشمند درباره تغییرات قیمت، فرصت‌های خرید و فروش و شرایط خاص بازار</p>
                 </div>
-                <div class="advanced-feature">
-                    <div class="advanced-icon">
+                <div class="feature-card">
+                    <div class="feature-icon-large">
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3>پشتیبانی 24/7</h3>
-                    <p>دسترسی به پشتیبانی تخصصی در هر زمان و مکان</p>
+                    <p>پشتیبانی 24 ساعته در هفته با تیم متخصصان برای رفع مشکلات و پاسخگویی به سوالات</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش نظرات کاربران -->
-    <section class="user-reviews">
+    <!-- بخش دسترسی به اپلیکیشن -->
+    <section class="webapp-access">
         <div class="container">
-            <h2 class="section-title">نظرات کاربران</h2>
-            <p class="section-subtitle">تجربه‌های واقعی کاربران از اپلیکیشن تریدرکس</p>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="review-info">
-                            <h4>علی محمدی</h4>
-                            <div class="position">کاربر حرفه‌ای</div>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>"اپلیکیشن تریدرکس واقعاً شگفت‌انگیز است! سرعت بالا و تحلیل‌های پیشرفته آن به من کمک کرد تا
-                            سود خود را در 3 ماه گذشته 200% افزایش دهم."</p>
-                    </div>
-                    <div class="review-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
+            <div class="access-content">
+                <div class="access-image">
+                    <i class="fas fa-window-maximize"></i>
                 </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="review-info">
-                            <h4>سارا رضایی</h4>
-                            <div class="position">کاربر متوسط</div>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>"به عنوان کسی که تازه وارد دنیای ترید شدم، اپلیکیشن تریدرکس واقعاً به من کمک کرد تا شروع کنم.
-                            رابط کاربری ساده و آموزش‌های جامع آن عالی هستند."</p>
-                    </div>
-                    <div class="review-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="review-info">
-                            <h4>مهدی کریمی</h4>
-                            <div class="position">کاربر جدید</div>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>"اپلیکیشن تریدرکس بهترین تجربه ترید را برای من فراهم کرد. هشدارهای هوشمند و تحلیل‌های پیشرفته
-                            آن واقعاً در تصمیم‌گیری‌هایم کمک کردند."</p>
-                    </div>
-                    <div class="review-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
+                <div class="access-text">
+                    <h2>دسترسی به اپلیکیشن تحت وب</h2>
+                    <p>دسترسی به اپلیکیشن تحت وب ما بسیار ساده و آسان است. فقط کافی است مرورگر خود را باز کنید و به آدرس
+                        زیر مراجعه کنید:</p>
+                    <p><strong>app.traderx.com</strong></p>
+                    <p>اپلیکیشن ما با تمام مرورگرهای مدرن سازگار است و نیازی به نصب ندارد. همچنین می‌توانید آن را به
+                        صورت PWA نصب کنید.</p>
+
+                    <ul class="access-steps">
+                        <li class="step-1">مرورگر خود را باز کنید و به آدرس app.traderx.com مراجعه کنید</li>
+                        <li class="step-2">وارد حساب کاربری خود شوید یا ثبت نام کنید</li>
+                        <li class="step-3">اپلیکیشن را به صورت PWA نصب کنید (اختیاری)</li>
+                        <li class="step-4">شروع به ترید حرفه‌ای کنید</li>
+                    </ul>
+
+                    <div class="platform-actions">
+                        <a href="لاگین.html" class="primary-btn">دسترسی به اپلیکیشن</a>
+                        <a href="#" class="secondary-btn">راهنمای نصب PWA</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش CTA دانلود -->
-    <section class="download-cta">
+    <!-- بخش دستگاه‌های پشتیبانی شده -->
+    <section class="supported-devices">
+        <div class="container">
+            <h2 class="section-title">دستگاه‌های پشتیبانی شده</h2>
+            <p class="section-subtitle">اپلیکیشن تحت وب ما با تمام دستگاه‌ها و مرورگرهای مدرن سازگار است</p>
+            <div class="devices-grid">
+                <div class="device-card">
+                    <div class="device-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>کامپیوتر شخصی</h3>
+                    <p>اپلیکیشن ما با تمام سیستم‌عامل‌ها شامل Windows, macOS و Linux سازگار است</p>
+                    <div class="device-browsers">
+                        <div class="browser-icon" title="Chrome">
+                            <i class="fab fa-chrome"></i>
+                        </div>
+                        <div class="browser-icon" title="Firefox">
+                            <i class="fab fa-firefox"></i>
+                        </div>
+                        <div class="browser-icon" title="Safari">
+                            <i class="fab fa-safari"></i>
+                        </div>
+                        <div class="browser-icon" title="Edge">
+                            <i class="fab fa-edge"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>لپ‌تاپ</h3>
+                    <p>تجربه ترید حرفه‌ای با لپ‌تاپ‌های مدرن با صفحه‌نمایش بزرگ و کیبورد راحت</p>
+                    <div class="device-browsers">
+                        <div class="browser-icon" title="Chrome">
+                            <i class="fab fa-chrome"></i>
+                        </div>
+                        <div class="browser-icon" title="Firefox">
+                            <i class="fab fa-firefox"></i>
+                        </div>
+                        <div class="browser-icon" title="Safari">
+                            <i class="fab fa-safari"></i>
+                        </div>
+                        <div class="browser-icon" title="Edge">
+                            <i class="fab fa-edge"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">
+                        <i class="fas fa-tablet-alt"></i>
+                    </div>
+                    <h3>تبلت</h3>
+                    <p>تجربه بهینه‌شده برای تبلت‌های مدرن با صفحه‌نمایش لمسی و پشتیبانی از PWA</p>
+                    <div class="device-browsers">
+                        <div class="browser-icon" title="Chrome">
+                            <i class="fab fa-chrome"></i>
+                        </div>
+                        <div class="browser-icon" title="Firefox">
+                            <i class="fab fa-firefox"></i>
+                        </div>
+                        <div class="browser-icon" title="Safari">
+                            <i class="fab fa-safari"></i>
+                        </div>
+                        <div class="browser-icon" title="Edge">
+                            <i class="fab fa-edge"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>موبایل</h3>
+                    <p>تجربه بهینه‌شده برای موبایل‌های هوشمند با صفحه‌نمایش لمسی و پشتیبانی از PWA</p>
+                    <div class="device-browsers">
+                        <div class="browser-icon" title="Chrome">
+                            <i class="fab fa-chrome"></i>
+                        </div>
+                        <div class="browser-icon" title="Firefox">
+                            <i class="fab fa-firefox"></i>
+                        </div>
+                        <div class="browser-icon" title="Safari">
+                            <i class="fab fa-safari"></i>
+                        </div>
+                        <div class="browser-icon" title="Samsung Internet">
+                            <i class="fab fa-internet-explorer"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش آمار اپلیکیشن -->
+    <section class="webapp-stats">
+        <div class="container">
+            <h2 class="section-title">آمار اپلیکیشن تحت وب</h2>
+            <p class="section-subtitle">آمارهای موفقیت اپلیکیشن تحت وب ما در سراسر جهان</p>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">1,200,000+</div>
+                    <div class="stat-label">کاربر فعال</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">جفت ارز</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">آپتایم</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$3.2B+</div>
+                    <div class="stat-label">حجم معاملات</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">پشتیبانی</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">کشور</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش CTA اپلیکیشن -->
+    <section class="webapp-cta">
         <div class="container">
             <div class="cta-content">
                 <h2>آماده‌اید تا شروع کنید؟</h2>
-                <p>همین امروز اپلیکیشن تریدرکس را دانلود کنید و شروع به ترید حرفه‌ای ارزهای دیجیتال کنید.</p>
+                <p>همین امروز با اپلیکیشن تحت وب تریدرکس شروع به ترید حرفه‌ای کنید و از مزایای پلتفرم پیشرفته ما
+                    بهره‌مند شوید.</p>
                 <div class="cta-buttons">
-                    <a href="لاگین.html" class="primary-btn">دانلود اپلیکیشن</a>
+                    <a href="#" class="primary-btn">دسترسی به اپلیکیشن</a>
                     <a href="#" class="secondary-btn">دموی رایگان</a>
                 </div>
             </div>
@@ -1787,7 +1914,7 @@
         });
 
         // انیمیشن برای کارت‌ها
-        const cards = document.querySelectorAll('.feature-card, .advanced-feature, .review-card, .market-card');
+        const cards = document.querySelectorAll('.market-card, .feature-card, .device-card, .stat-item');
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1805,54 +1932,48 @@
             observer.observe(card);
         });
 
-        // بستن منو با تغییر اندازه صفحه
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                navUl.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            }
+        // افکت انیمیشن برای نوارهای نمودار
+        const chartBars = document.querySelectorAll('.chart-bar');
+        chartBars.forEach((bar, index) => {
+            bar.style.animationDelay = `${index * 0.1}s`;
         });
 
-        // افکت انیمیشن برای شبکه‌های اجتماعی
-        const socialNetworksFooter = document.querySelectorAll('.social-network');
-        socialNetworksFooter.forEach((network, index) => {
-            network.style.animationDelay = `${index * 0.1}s`;
-        });
-
-        // اعتبارسنجی فرم خبرنامه
-        const newsletterFormsFooter = document.querySelectorAll('.newsletter-form');
-        newsletterFormsFooter.forEach(form => {
+        // اعتبارسنجی فرم‌ها
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                const emailInput = this.querySelector('input[type="email"]');
-                const email = emailInput.value;
+                const inputs = this.querySelectorAll('input[required]');
+                let isValid = true;
 
-                if (email && email.includes('@')) {
-                    alert('با موفقیت در خبرنامه عضو شدید!');
-                    emailInput.value = '';
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.style.borderColor = '#ef476f';
+                    } else {
+                        input.style.borderColor = '';
+                    }
+                });
+
+                if (isValid) {
+                    alert('فرم با موفقیت ارسال شد!');
+                    this.reset();
                 } else {
-                    alert('لطفاً یک ایمیل معتبر وارد کنید.');
+                    alert('لطفاً تمام فیلدهای اجباری را پر کنید.');
                 }
             });
         });
 
-        // انیمیشن برای کارت‌ها
-        const cardsAll = document.querySelectorAll('.feature-card, .advanced-feature, .review-card, .market-card, .mv-card, .tech-item, .category-card, .author-card');
-
-        const observerAll = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
+        // افکت انیمیشن برای دکمه‌ها
+        const buttons = document.querySelectorAll('.primary-btn, .secondary-btn');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-5px)';
             });
-        }, { threshold: 0.1 });
 
-        cardsAll.forEach(card => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observerAll.observe(card);
+            button.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+            });
         });
     </script>
 </body>
