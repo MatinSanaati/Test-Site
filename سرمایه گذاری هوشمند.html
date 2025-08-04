@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرکز آموزش | تریدرکس</title>
+    <title>سرمایه‌گذاری هوشمند | تریدرکس</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -138,8 +138,8 @@
             color: #aaa;
         }
 
-        /* بخش هیرو مرکز آموزش */
-        .learning-hero {
+        /* بخش هیرو سرمایه‌گذاری هوشمند */
+        .smart-invest-hero {
             padding: 100px 0;
             text-align: center;
             background: url('image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjAuNSIgZmlsbD0iIzRjYzlmMCIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=') center/cover;
@@ -147,7 +147,7 @@
             overflow: hidden;
         }
 
-        .learning-hero::before {
+        .smart-invest-hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -159,7 +159,7 @@
             z-index: -1;
         }
 
-        .learning-hero h1 {
+        .smart-invest-hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             background: linear-gradient(90deg, #4cc9f0, #f72585);
@@ -168,51 +168,106 @@
             background-clip: text;
         }
 
-        .learning-hero p {
+        .smart-invest-hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
             color: #ccc;
         }
 
-        .search-learning {
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .search-learning input {
-            width: 100%;
-            padding: 15px 20px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            font-family: 'Vazirmatn', sans-serif;
-            font-size: 1rem;
-            padding-left: 50px;
-        }
-
-        .search-learning input::placeholder {
-            color: #777;
-        }
-
-        .search-learning button {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: transparent;
-            border: none;
-            color: #4cc9f0;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        /* بخش دسته‌بندی‌ها */
-        .categories {
+        /* بخش معرفی سرمایه‌گذاری هوشمند */
+        .smart-intro {
             padding: 80px 0;
             background: rgba(15, 15, 45, 0.7);
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-text {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .intro-text h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #4cc9f0;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .intro-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            border-radius: 2px;
+        }
+
+        .intro-text p {
+            color: #ccc;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .intro-image {
+            height: 400px;
+            background: linear-gradient(45deg, #4361ee, #4cc9f0);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            color: #4cc9f0;
+            margin-left: 15px;
+            margin-top: 5px;
+        }
+
+        .feature-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #4cc9f0;
+        }
+
+        .feature-text p {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* بخش ویژگی‌های سرمایه‌گذاری هوشمند */
+        .smart-features {
+            padding: 80px 0;
+            background: rgba(20, 20, 50, 0.7);
         }
 
         .section-title {
@@ -240,202 +295,61 @@
             font-size: 1.1rem;
         }
 
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .category-card {
-            background: rgba(30, 30, 60, 0.6);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #4cc9f0, #f72585);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s ease;
-        }
-
-        .category-card:hover::before {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            background: rgba(40, 40, 80, 0.7);
-        }
-
-        .category-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #4cc9f0;
-        }
-
-        .category-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #4cc9f0;
-        }
-
-        .category-card p {
-            color: #ccc;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-
-        .category-stats {
-            display: flex;
-            justify-content: space-between;
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        /* بخش مقالات و دوره‌ها */
-        .learning-content {
-            padding: 80px 0;
-            background: rgba(20, 20, 50, 0.7);
-        }
-
-        .content-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 12px 30px;
-            background: rgba(255, 255, 255, 0.05);
-            color: #aaa;
-            border: none;
-            border-radius: 30px;
-            font-family: 'Vazirmatn', sans-serif;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .tab-btn.active,
-        .tab-btn:hover {
-            background: linear-gradient(90deg, #f72585, #4361ee);
-            color: white;
-        }
-
-        .content-grid {
+        .features-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
 
-        .content-card {
+        .feature-card {
             background: rgba(30, 30, 60, 0.6);
             border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .content-card:hover {
+        .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             background: rgba(40, 40, 80, 0.7);
         }
 
-        .content-image {
-            height: 180px;
-            background: linear-gradient(45deg, #4361ee, #4cc9f0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.2);
+        .feature-icon-large {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .content-info {
-            padding: 25px;
-        }
-
-        .content-category {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .beginner {
-            background: rgba(6, 214, 160, 0.2);
-            color: #06d6a0;
-        }
-
-        .intermediate {
-            background: rgba(255, 209, 102, 0.2);
-            color: #ffd166;
-        }
-
-        .advanced {
-            background: rgba(239, 71, 111, 0.2);
-            color: #ef476f;
-        }
-
-        .content-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+        .feature-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
             color: #4cc9f0;
         }
 
-        .content-info p {
+        .feature-card p {
             color: #ccc;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
-        .content-meta {
-            display: flex;
-            justify-content: space-between;
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        .content-meta i {
-            margin-left: 5px;
-        }
-
-        /* بخش آموزشگاهان برتر */
-        .instructors {
+        /* بخش نحوه کار سرمایه‌گذاری هوشمند */
+        .how-it-works {
             padding: 80px 0;
             background: linear-gradient(135deg, #0f0c29, #302b63);
         }
 
-        .instructors-grid {
+        .steps-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
 
-        .instructor-card {
+        .step-card {
             background: rgba(30, 30, 60, 0.6);
             border-radius: 15px;
             padding: 30px;
@@ -445,86 +359,70 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .instructor-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             background: rgba(40, 40, 80, 0.7);
         }
 
-        .instructor-avatar {
-            width: 100px;
-            height: 100px;
+        .step-number {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            margin: 0 auto 20px;
-            background: linear-gradient(45deg, #4361ee, #4cc9f0);
+            background: linear-gradient(135deg, #4cc9f0, #f72585);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            color: rgba(255, 255, 255, 0.2);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin: 0 auto 25px;
         }
 
-        .instructor-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+        .step-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
             color: #4cc9f0;
         }
 
-        .instructor-card .position {
-            color: #f72585;
-            font-weight: 500;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .instructor-card p {
+        .step-card p {
             color: #ccc;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
             line-height: 1.7;
         }
 
-        .instructor-stats {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-
-        .stat-item {
+        /* بخش آمار و دستاوردها */
+        .statistics {
+            padding: 80px 0;
+            background: rgba(15, 15, 45, 0.7);
             text-align: center;
         }
 
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-item {
+            padding: 30px;
+        }
+
         .stat-number {
-            font-size: 1.2rem;
+            font-size: 3rem;
             font-weight: 700;
-            color: #4cc9f0;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .stat-label {
-            font-size: 0.8rem;
-            color: #aaa;
+            font-size: 1.2rem;
+            color: #ccc;
         }
 
-        .view-profile {
-            display: inline-block;
-            padding: 10px 25px;
-            background: transparent;
-            color: #4cc9f0;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid #4cc9f0;
-            font-size: 0.9rem;
-        }
-
-        .view-profile:hover {
-            background: rgba(76, 201, 240, 0.1);
-            transform: translateY(-3px);
-        }
-
-        /* بخش CTA آموزش */
-        .learning-cta {
+        /* بخش CTA سرمایه‌گذاری هوشمند */
+        .smart-invest-cta {
             padding: 100px 0;
             text-align: center;
             background: rgba(20, 20, 50, 0.7);
@@ -532,7 +430,7 @@
             overflow: hidden;
         }
 
-        .learning-cta::before {
+        .smart-invest-cta::before {
             content: '';
             position: absolute;
             top: 0;
@@ -993,11 +891,11 @@
 
         /* واکنش‌گرایی */
         @media (max-width: 992px) {
-            .learning-hero h1 {
+            .smart-invest-hero h1 {
                 font-size: 2.5rem;
             }
 
-            .learning-hero p {
+            .smart-invest-hero p {
                 font-size: 1.1rem;
             }
 
@@ -1043,22 +941,23 @@
                 margin-top: 20px;
             }
 
-            .learning-hero {
+            .smart-invest-hero {
                 padding: 80px 0;
             }
 
-            .learning-hero h1 {
+            .smart-invest-hero h1 {
                 font-size: 2.2rem;
             }
 
-            .learning-hero p {
+            .smart-invest-hero p {
                 font-size: 1rem;
             }
 
-            .categories,
-            .learning-content,
-            .instructors,
-            .learning-cta {
+            .smart-intro,
+            .smart-features,
+            .how-it-works,
+            .statistics,
+            .smart-invest-cta {
                 padding: 60px 0;
             }
 
@@ -1066,14 +965,30 @@
                 font-size: 2rem;
             }
 
-            .category-card,
-            .content-card,
-            .instructor-card {
-                padding: 25px 20px;
+            .intro-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
 
-            .category-card h3 {
-                font-size: 1.3rem;
+            .intro-text,
+            .intro-image {
+                padding: 30px 20px;
+            }
+
+            .intro-image {
+                height: 300px;
+            }
+
+            .features-container,
+            .steps-container,
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .feature-card,
+            .step-card {
+                padding: 30px 20px;
             }
 
             .cta-buttons {
@@ -1112,18 +1027,19 @@
                 padding: 0 15px;
             }
 
-            .learning-hero {
+            .smart-invest-hero {
                 padding: 60px 0;
             }
 
-            .learning-hero h1 {
+            .smart-invest-hero h1 {
                 font-size: 2rem;
             }
 
-            .categories,
-            .learning-content,
-            .instructors,
-            .learning-cta {
+            .smart-intro,
+            .smart-features,
+            .how-it-works,
+            .statistics,
+            .smart-invest-cta {
                 padding: 50px 0;
             }
 
@@ -1131,21 +1047,32 @@
                 font-size: 1.8rem;
             }
 
-            .categories-grid,
-            .content-grid,
-            .instructors-grid {
-                grid-template-columns: 1fr;
+            .intro-content {
                 gap: 25px;
             }
 
-            .category-card,
-            .content-card,
-            .instructor-card {
-                padding: 20px 15px;
+            .intro-text,
+            .intro-image {
+                padding: 25px 15px;
             }
 
-            .content-image {
-                height: 150px;
+            .intro-image {
+                height: 250px;
+            }
+
+            .features-container,
+            .steps-container,
+            .stats-container {
+                gap: 20px;
+            }
+
+            .feature-card,
+            .step-card {
+                padding: 25px 15px;
+            }
+
+            .feature-icon-large {
+                font-size: 2.5rem;
             }
 
             .newsletter-form {
@@ -1206,273 +1133,182 @@
     <!-- breadcrumb -->
     <div class="container">
         <div class="breadcrumb">
-            <a href="index.html">خانه</a> <span>/</span> مرکز آموزش
+            <a href="index.html">خانه</a> <span>/</span> خدمات <span>/</span> سرمایه‌گذاری هوشمند
         </div>
     </div>
 
-    <!-- بخش هیرو مرکز آموزش -->
-    <section class="learning-hero">
+    <!-- بخش هیرو سرمایه‌گذاری هوشمند -->
+    <section class="smart-invest-hero">
         <div class="container">
-            <h1>مرکز آموزش تریدرکس</h1>
-            <p>جامع‌ترین منبع آموزشی برای یادگیری ترید و سرمایه‌گذاری در دنیای دیجیتال</p>
-            <div class="search-learning">
-                <input type="text" placeholder="جستجو در مقالات و دوره‌ها...">
-                <button><i class="fas fa-search"></i></button>
+            <h1>سرمایه‌گذاری هوشمند</h1>
+            <p>با استفاده از هوش مصنوعی و تحلیل‌های پیشرفته، بهترین فرصت‌های سرمایه‌گذاری را برای شما شناسایی می‌کنیم
+            </p>
+        </div>
+    </section>
+
+    <!-- بخش معرفی سرمایه‌گذاری هوشمند -->
+    <section class="smart-intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2>سرمایه‌گذاری هوشمند چیست؟</h2>
+                    <p>سرمایه‌گذاری هوشمند فرآیندی است که در آن از فناوری‌های پیشرفته مانند هوش مصنوعی، یادگیری ماشین و
+                        تحلیل‌های پیچیده داده‌ها برای شناسایی بهترین فرصت‌های سرمایه‌گذاری استفاده می‌شود.</p>
+                    <p>ما با ترکیب این فناوری‌ها با دانش مالی عمیق، تصمیمات سرمایه‌گذاری بهینه‌ای برای شما اتخاذ می‌کنیم
+                        که ریسک را کاهش داده و بازدهی را افزایش می‌دهد.</p>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>هوش مصنوعی</h3>
+                                <p>تحلیل بازار با الگوریتم‌های پیشرفته</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>تحلیل تکنیکال</h3>
+                                <p>تحلیل نمودارها و روندهای بازار</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>تحلیل بنیادی</h3>
+                                <p>بررسی عوامل اقتصادی و اجتماعی</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>مدیریت ریسک</h3>
+                                <p>حفاظت از سرمایه با استراتژی‌های پیشرفته</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <i class="fas fa-brain"></i>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش دسته‌بندی‌ها -->
-    <section class="categories">
+    <!-- بخش ویژگی‌های سرمایه‌گذاری هوشمند -->
+    <section class="smart-features">
         <div class="container">
-            <h2 class="section-title">دسته‌بندی‌های آموزشی</h2>
-            <p class="section-subtitle">از مبتدی تا حرفه‌ای، تمامی سطوح آموزشی را پوشش می‌دهیم</p>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>مبانی ترید</h3>
-                    <p>آشنایی با مفاهیم پایه ترید، بازارهای مالی و اصول اولیه سرمایه‌گذاری</p>
-                    <div class="category-stats">
-                        <span>25 دوره</span>
-                        <span>120 مقاله</span>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>تحلیل تکنیکال</h3>
-                    <p>یادگیری روش‌های تحلیل نمودارها، اندیکاتورها و الگوهای قیمتی</p>
-                    <div class="category-stats">
-                        <span>18 دوره</span>
-                        <span>95 مقاله</span>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>تحلیل بنیادی</h3>
-                    <p>بررسی عوامل اقتصادی، اجتماعی و سیاسی تأثیرگذار بر بازار</p>
-                    <div class="category-stats">
-                        <span>15 دوره</span>
-                        <span>80 مقاله</span>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
+            <h2 class="section-title">ویژگی‌های سرمایه‌گذاری هوشمند</h2>
+            <p class="section-subtitle">مزایای منحصر به فرد سرمایه‌گذاری هوشمند با پلتفرم تریدرکس</p>
+            <div class="features-container">
+                <div class="feature-card">
+                    <div class="feature-icon-large">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h3>هوش مصنوعی در ترید</h3>
-                    <p>استفاده از الگوریتم‌ها و هوش مصنوعی برای تحلیل و تصمیم‌گیری</p>
-                    <div class="category-stats">
-                        <span>12 دوره</span>
-                        <span>65 مقاله</span>
+                    <h3>هوش مصنوعی پیشرفته</h3>
+                    <p>استفاده از الگوریتم‌های هوش مصنوعی برای تحلیل بازار و پیش‌بینی روندهای آینده با دقت بالا</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-bolt"></i>
                     </div>
+                    <h3>سرعت بالا</h3>
+                    <p>اجرای معاملات در کسری از ثانیه با استفاده از سرورهای اختصاصی و شبکه توزیع محتوا</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>امنیت بالا</h3>
+                    <p>حفاظت از دارایی‌های شما با رمزنگاری پیشرفته و سیستم‌های احراز هویت چندمرحله‌ای</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش مقالات و دوره‌ها -->
-    <section class="learning-content">
+    <!-- بخش نحوه کار سرمایه‌گذاری هوشمند -->
+    <section class="how-it-works">
         <div class="container">
-            <h2 class="section-title">آخرین محتوای آموزشی</h2>
-            <p class="section-subtitle">جدیدترین مقالات و دوره‌های آموزشی را از دست ندهید</p>
-
-            <div class="content-tabs">
-                <button class="tab-btn active">همه محتواها</button>
-                <button class="tab-btn">مقالات</button>
-                <button class="tab-btn">دوره‌های آموزشی</button>
-                <button class="tab-btn">ویدیوها</button>
-            </div>
-
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category beginner">مبتدی</span>
-                        <h3>راهنمای جامع شروع ترید</h3>
-                        <p>همه چیز درباره ترید ارزهای دیجیتال برای تازه‌کاران و مراحل اولیه شروع</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 15 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/15</span>
-                        </div>
-                    </div>
+            <h2 class="section-title">نحوه کار سرمایه‌گذاری هوشمند</h2>
+            <p class="section-subtitle">مراحل ساده برای شروع سرمایه‌گذاری هوشمند با ما</p>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>ثبت نام و احراز هویت</h3>
+                    <p>حساب کاربری خود را ایجاد کرده و مراحل احراز هویت را تکمیل کنید تا بتوانید از تمام خدمات استفاده
+                        کنید</p>
                 </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category intermediate">متوسط</span>
-                        <h3>تحلیل تکنیکال پیشرفته</h3>
-                        <p>روش‌های پیشرفته تحلیل نمودارها و استفاده از اندیکاتورهای حرفه‌ای</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 45 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/12</span>
-                        </div>
-                    </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>واریز وجه</h3>
+                    <p>مبلغ مورد نظر خود را به پلتفرم واریز کنید تا بتوانید شروع به سرمایه‌گذاری کنید</p>
                 </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category advanced">پیشرفته</span>
-                        <h3>استراتژی‌های ریسک منیجمنت</h3>
-                        <p>مدیریت ریسک در ترید و استفاده از ابزارهای کاهش ضرر و حفظ سود</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 30 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/10</span>
-                        </div>
-                    </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>انتخاب استراتژی</h3>
+                    <p>استراتژی سرمایه‌گذاری متناسب با ریسک‌پذیری خود را انتخاب کنید</p>
                 </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category beginner">مبتدی</span>
-                        <h3>معرفی ارزهای دیجیتال محبوب</h3>
-                        <p>بررسی جامع بیت‌کوین، اتریوم و سایر ارزهای دیجیتال مطرح بازار</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 20 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/08</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category intermediate">متوسط</span>
-                        <h3>دوره تحلیل بنیادی</h3>
-                        <p>دوره 12 جلسه‌ای تحلیل بنیادی بازار ارزهای دیجیتال و عوامل مؤثر</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 24 ساعت</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/05</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category advanced">پیشرفته</span>
-                        <h3>هوش مصنوعی در پیش‌بینی بازار</h3>
-                        <p>استفاده از ماشین‌لرنینگ و شبکه‌های عصبی برای تحلیل بازار</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 60 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/02</span>
-                        </div>
-                    </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>شروع سرمایه‌گذاری</h3>
+                    <p>سیستم هوشمند ما شروع به مدیریت سرمایه شما می‌کند و بهترین فرصت‌ها را برای شما شناسایی می‌کند</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش آموزشگاهان برتر -->
-    <section class="instructors">
+    <!-- بخش آمار و دستاوردها -->
+    <section class="statistics">
         <div class="container">
-            <h2 class="section-title">آموزشگاهان برتر</h2>
-            <p class="section-subtitle">تیم متخصصان ما با تجربه‌های متنوع در زمینه‌های مالی و تحلیل بازار</p>
-            <div class="instructors-grid">
-                <div class="instructor-card">
-                    <div class="instructor-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h4>علی محمدی</h4>
-                    <div class="position">متخصص تحلیل تکنیکال</div>
-                    <p>تحلیلگر بازار مالی با بیش از 12 سال تجربه در تحلیل تکنیکال و نمودارها</p>
-                    <div class="instructor-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">45</div>
-                            <div class="stat-label">دوره</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">200+</div>
-                            <div class="stat-label">مقاله</div>
-                        </div>
-                    </div>
-                    <a href="#" class="view-profile">مشاهده پروفایل</a>
+            <h2 class="section-title">دستاوردهای ما</h2>
+            <p class="section-subtitle">آمارهای موفقیت پلتفرم سرمایه‌گذاری هوشمند تریدرکس</p>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">150,000+</div>
+                    <div class="stat-label">کاربر فعال</div>
                 </div>
-                <div class="instructor-card">
-                    <div class="instructor-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h4>سارا رضایی</h4>
-                    <div class="position">متخصص هوش مصنوعی</div>
-                    <p>متخصص توسعه الگوریتم‌های هوش مصنوعی برای تحلیل بازار مالی</p>
-                    <div class="instructor-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">32</div>
-                            <div class="stat-label">دوره</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">150+</div>
-                            <div class="stat-label">مقاله</div>
-                        </div>
-                    </div>
-                    <a href="#" class="view-profile">مشاهده پروفایل</a>
+                <div class="stat-item">
+                    <div class="stat-number">98.5%</div>
+                    <div class="stat-label">میانگین سود</div>
                 </div>
-                <div class="instructor-card">
-                    <div class="instructor-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h4>مهدی کریمی</h4>
-                    <div class="position">متخصص ریسک منیجمنت</div>
-                    <p>متخصص مدیریت ریسک و استراتژی‌های حفاظت از سرمایه در بازارهای مالی</p>
-                    <div class="instructor-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">28</div>
-                            <div class="stat-label">دوره</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">120+</div>
-                            <div class="stat-label">مقاله</div>
-                        </div>
-                    </div>
-                    <a href="#" class="view-profile">مشاهده پروفایل</a>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">جفت ارز</div>
                 </div>
-                <div class="instructor-card">
-                    <div class="instructor-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h4>نرگس احمدی</h4>
-                    <div class="position">متخصص آموزش</div>
-                    <p>متخصص طراحی برنامه‌های آموزشی و روان‌شناسی یادگیری در حوزه مالی</p>
-                    <div class="instructor-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">40</div>
-                            <div class="stat-label">دوره</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">180+</div>
-                            <div class="stat-label">مقاله</div>
-                        </div>
-                    </div>
-                    <a href="#" class="view-profile">مشاهده پروفایل</a>
+                <div class="stat-item">
+                    <div class="stat-number">$2.5B+</div>
+                    <div class="stat-label">حجم معاملات</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">پشتیبانی</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">کشور</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش CTA آموزش -->
-    <section class="learning-cta">
+    <!-- بخش CTA سرمایه‌گذاری هوشمند -->
+    <section class="smart-invest-cta">
         <div class="container">
             <div class="cta-content">
                 <h2>آماده‌اید تا شروع کنید؟</h2>
-                <p>همین امروز با تریدرکس شروع به یادگیری حرفه‌ای ترید و سرمایه‌گذاری کنید</p>
+                <p>همین امروز با تریدرکس شروع به سرمایه‌گذاری هوشمند کنید و از مزایای پلتفرم پیشرفته ما بهره‌مند شوید.
+                </p>
                 <div class="cta-buttons">
                     <a href="#" class="primary-btn">ثبت نام رایگان</a>
-                    <a href="#" class="secondary-btn">مشاهده دوره‌های رایگان</a>
+                    <a href="#" class="secondary-btn">دموی رایگان</a>
                 </div>
             </div>
         </div>
@@ -1597,7 +1433,6 @@
             </div>
         </div>
     </footer>
-
     <script>
         // منوی موبایل
         const menuToggle = document.getElementById('menuToggle');
@@ -1649,19 +1484,8 @@
             });
         });
 
-        // تب‌های محتوا
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
-                // حذف کلاس active از همه دکمه‌ها
-                tabBtns.forEach(b => b.classList.remove('active'));
-                // اضافه کردن کلاس active به دکمه کلیک شده
-                this.classList.add('active');
-            });
-        });
-
         // انیمیشن برای کارت‌ها
-        const cards = document.querySelectorAll('.category-card, .content-card, .instructor-card');
+        const cards = document.querySelectorAll('.feature-card, .step-card, .stat-item');
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>راهنمای فروش | تریدرکس</title>
+    <title>ترید ارزهای دیجیتال | تریدرکس</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -138,8 +138,8 @@
             color: #aaa;
         }
 
-        /* بخش هیرو راهنمای فروش */
-        .sales-hero {
+        /* بخش هیرو ترید ارزهای دیجیتال */
+        .trading-hero {
             padding: 100px 0;
             text-align: center;
             background: url('image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjAuNSIgZmlsbD0iIzRjYzlmMCIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=') center/cover;
@@ -147,7 +147,7 @@
             overflow: hidden;
         }
 
-        .sales-hero::before {
+        .trading-hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -159,7 +159,7 @@
             z-index: -1;
         }
 
-        .sales-hero h1 {
+        .trading-hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             background: linear-gradient(90deg, #4cc9f0, #f72585);
@@ -168,116 +168,273 @@
             background-clip: text;
         }
 
-        .sales-hero p {
+        .trading-hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
             color: #ccc;
         }
 
-        /* بخش مراحل فروش */
-        .sales-steps {
+        /* بخش اطلاعات بازار */
+        .market-info {
             padding: 80px 0;
             background: rgba(15, 15, 45, 0.7);
         }
 
-        .section-title {
+        .market-header {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            position: relative;
+            margin-bottom: 50px;
         }
 
-        .section-title::after {
+        .market-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #4cc9f0;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .market-header h2::after {
             content: '';
-            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
             width: 80px;
             height: 4px;
             background: linear-gradient(90deg, #4cc9f0, #f72585);
-            margin: 15px auto;
             border-radius: 2px;
         }
 
-        .section-subtitle {
-            text-align: center;
+        .market-header p {
             color: #aaa;
             max-width: 700px;
-            margin: 0 auto 60px;
+            margin: 0 auto;
             font-size: 1.1rem;
         }
 
-        .steps-container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            max-width: 800px;
-            margin: 0 auto;
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
 
-        .step-item {
-            display: flex;
-            gap: 30px;
-            align-items: flex-start;
-            padding: 30px;
+        .market-card {
             background: rgba(30, 30, 60, 0.6);
             border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
         }
 
-        .step-item:hover {
+        .market-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             background: rgba(40, 40, 80, 0.7);
         }
 
-        .step-number {
-            min-width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4cc9f0, #f72585);
+        .market-header-item {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.2rem;
+            margin-bottom: 20px;
         }
 
-        .step-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+        .market-name {
+            font-size: 1.3rem;
+            font-weight: 600;
             color: #4cc9f0;
         }
 
-        .step-content p {
-            color: #ccc;
-            line-height: 1.8;
-            margin-bottom: 15px;
+        .market-price {
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
-        .step-content ul {
-            padding-right: 20px;
-            color: #aaa;
+        .market-change {
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 20px;
         }
 
-        .step-content ul li {
-            margin-bottom: 10px;
+        .positive {
+            color: #06d6a0;
+            background: rgba(6, 214, 160, 0.1);
         }
 
-        /* بخش نکات مهم */
-        .important-tips {
+        .negative {
+            color: #ef476f;
+            background: rgba(239, 71, 111, 0.1);
+        }
+
+        .market-chart {
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin: 20px 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 10px;
+        }
+
+        .chart-bar {
+            flex: 1;
+            margin: 0 2px;
+            background: linear-gradient(to top, #4cc9f0, #4361ee);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .chart-bar:nth-child(2n) {
+            background: linear-gradient(to top, #f72585, #4361ee);
+        }
+
+        /* بخش پلتفرم ترید */
+        .trading-platform {
             padding: 80px 0;
             background: rgba(20, 20, 50, 0.7);
         }
 
-        .tips-grid {
+        .platform-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
 
-        .tip-card {
+        .platform-info {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            padding: 40px 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .platform-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #4cc9f0;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .platform-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            border-radius: 2px;
+        }
+
+        .platform-info p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .features-list li {
+            margin-bottom: 20px;
+            padding-right: 30px;
+            position: relative;
+            color: #aaa;
+        }
+
+        .features-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            color: #4cc9f0;
+        }
+
+        .platform-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
+            border: none;
+            cursor: pointer;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1rem;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(247, 37, 133, 0.4);
+        }
+
+        .secondary-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: transparent;
+            color: #4cc9f0;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #4cc9f0;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(76, 201, 240, 0.1);
+            transform: translateY(-5px);
+        }
+
+        /* بخش تریدرکس ویژه */
+        .traderx-pro {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0f0c29, #302b63);
+            text-align: center;
+        }
+
+        .pro-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pro-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pro-content p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .pro-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pro-feature {
             background: rgba(30, 30, 60, 0.6);
             border-radius: 15px;
             padding: 30px;
@@ -286,90 +443,32 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .tip-card:hover {
+        .pro-feature:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             background: rgba(40, 40, 80, 0.7);
         }
 
-        .tip-icon {
+        .pro-icon {
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: #f72585;
         }
 
-        .tip-card h3 {
+        .pro-feature h3 {
             font-size: 1.4rem;
             margin-bottom: 15px;
             color: #4cc9f0;
         }
 
-        .tip-card p {
+        .pro-feature p {
             color: #ccc;
-            line-height: 1.8;
+            font-size: 0.95rem;
+            margin-bottom: 0;
         }
 
-        /* بخش سوالات متداول */
-        .faq {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #0f0c29, #302b63);
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .faq-question {
-            padding: 20px;
-            background: rgba(30, 30, 60, 0.6);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background: rgba(40, 40, 80, 0.7);
-        }
-
-        .faq-question h3 {
-            font-size: 1.2rem;
-            color: #4cc9f0;
-        }
-
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            background: rgba(20, 20, 40, 0.6);
-            transition: all 0.3s ease;
-        }
-
-        .faq-answer p {
-            padding: 20px 0;
-            color: #ccc;
-            line-height: 1.8;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-
-        .faq-item.active .faq-question {
-            background: rgba(40, 40, 80, 0.7);
-        }
-
-        /* بخش CTA فروش */
-        .sales-cta {
+        /* بخش CTA ترید */
+        .trading-cta {
             padding: 100px 0;
             text-align: center;
             background: rgba(20, 20, 50, 0.7);
@@ -377,7 +476,7 @@
             overflow: hidden;
         }
 
-        .sales-cta::before {
+        .trading-cta::before {
             content: '';
             position: absolute;
             top: 0;
@@ -414,40 +513,6 @@
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-        }
-
-        .primary-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: linear-gradient(90deg, #f72585, #4361ee);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
-        }
-
-        .primary-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(247, 37, 133, 0.4);
-        }
-
-        .secondary-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: transparent;
-            color: #4cc9f0;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid #4cc9f0;
-        }
-
-        .secondary-btn:hover {
-            background: rgba(76, 201, 240, 0.1);
-            transform: translateY(-5px);
         }
 
         /* فوتر */
@@ -838,16 +903,12 @@
 
         /* واکنش‌گرایی */
         @media (max-width: 992px) {
-            .sales-hero h1 {
+            .trading-hero h1 {
                 font-size: 2.5rem;
             }
 
-            .sales-hero p {
+            .trading-hero p {
                 font-size: 1.1rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
             }
         }
 
@@ -888,37 +949,35 @@
                 margin-top: 20px;
             }
 
-            .sales-hero {
+            .trading-hero {
                 padding: 80px 0;
             }
 
-            .sales-hero h1 {
+            .trading-hero h1 {
                 font-size: 2.2rem;
             }
 
-            .sales-hero p {
+            .trading-hero p {
                 font-size: 1rem;
             }
 
-            .sales-steps,
-            .important-tips,
-            .faq,
-            .sales-cta {
+            .market-info,
+            .trading-platform,
+            .traderx-pro,
+            .trading-cta {
                 padding: 60px 0;
             }
 
-            .section-title {
+            .market-header h2 {
                 font-size: 2rem;
             }
 
-            .step-item {
-                flex-direction: column;
-                gap: 20px;
-                padding: 25px;
+            .market-card {
+                padding: 25px 20px;
             }
 
-            .tip-card {
-                padding: 25px 20px;
+            .platform-info {
+                padding: 30px 20px;
             }
 
             .cta-buttons {
@@ -957,36 +1016,49 @@
                 padding: 0 15px;
             }
 
-            .sales-hero {
+            .trading-hero {
                 padding: 60px 0;
             }
 
-            .sales-hero h1 {
+            .trading-hero h1 {
                 font-size: 2rem;
             }
 
-            .sales-steps,
-            .important-tips,
-            .faq,
-            .sales-cta {
+            .market-info,
+            .trading-platform,
+            .traderx-pro,
+            .trading-cta {
                 padding: 50px 0;
             }
 
-            .section-title {
+            .market-header h2 {
                 font-size: 1.8rem;
             }
 
-            .steps-container,
-            .tips-grid {
+            .market-grid,
+            .pro-features {
+                grid-template-columns: 1fr;
                 gap: 25px;
             }
 
-            .step-item {
-                padding: 20px 15px;
+            .market-card,
+            .pro-feature {
+                padding: 25px 15px;
             }
 
-            .tip-card {
-                padding: 20px 15px;
+            .platform-info {
+                padding: 25px 15px;
+            }
+
+            .platform-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                width: 100%;
+                text-align: center;
             }
 
             .newsletter-form {
@@ -1030,15 +1102,16 @@
             </div>
             <nav id="nav">
                 <ul>
-                    <li><a href="#">خانه</a></li>
-                    <li><a href="#">خدمات</a></li>
-                    <li><a href="#">درباره ما</a></li>
-                    <li><a href="#">تماس با ما</a></li>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="خدمات.html">خدمات</a></li>
+                    <li><a href="درباره ما.html">درباره ما</a></li>
+                    <li><a href="تماس با ما.html">تماس با ما</a></li>
+                    <li><a href="بلاگ.html">بلاگ</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <a href="#" class="login-btn">ورود</a>
-                <a href="#" class="signup-btn">ثبت نام</a>
+                <a href="لاگین.html" class="login-btn">ورود</a>
+                <a href="لاگین.html" class="signup-btn">ثبت نام</a>
             </div>
         </div>
     </header>
@@ -1046,248 +1119,192 @@
     <!-- breadcrumb -->
     <div class="container">
         <div class="breadcrumb">
-            <a href="#">خانه</a> <span>/</span> راهنمای فروش
+            <a href="index.html">خانه</a> <span>/</span> خدمات <span>/</span> ترید ارزهای دیجیتال
         </div>
     </div>
 
-    <!-- بخش هیرو راهنمای فروش -->
-    <section class="sales-hero">
+    <!-- بخش هیرو ترید ارزهای دیجیتال -->
+    <section class="trading-hero">
         <div class="container">
-            <h1>راهنمای فروش تریدرکس</h1>
-            <p>راهنمای جامع برای فروش ارزهای دیجیتال و سرمایه‌گذاری هوشمند در پلتفرم تریدرکس</p>
+            <h1>ترید ارزهای دیجیتال</h1>
+            <p>تجارت حرفه‌ای ارزهای دیجیتال با پلتفرم پیشرفته ما و دسترسی به بهترین قیمت‌ها و کمترین کارمزدها</p>
         </div>
     </section>
 
-    <!-- بخش مراحل فروش -->
-    <section class="sales-steps">
+    <!-- بخش اطلاعات بازار -->
+    <section class="market-info">
         <div class="container">
-            <h2 class="section-title">مراحل فروش</h2>
-            <p class="section-subtitle">مراحل کامل و آسان برای فروش ارزهای دیجیتال در پلتفرم ما</p>
-
-            <div class="steps-container">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>ورود به حساب کاربری</h3>
-                        <p>ابتدا وارد حساب کاربری خود در پلتفرم تریدرکس شوید. اگر حساب کاربری ندارید، ابتدا ثبت نام
-                            کنید.</p>
-                        <ul>
-                            <li>وارد صفحه ورود شوید</li>
-                            <li>ایمیل و رمز عبور خود را وارد کنید</li>
-                            <li>در صورت نیاز، احراز هویت دو مرحله‌ای را تکمیل کنید</li>
-                        </ul>
+            <div class="market-header">
+                <h2>وضعیت بازار امروز</h2>
+                <p>آخرین قیمت‌ها و تغییرات بازارهای مالی جهانی را در لحظه دنبال کنید</p>
+            </div>
+            <div class="market-grid">
+                <div class="market-card">
+                    <div class="market-header-item">
+                        <div class="market-name">بیت کوین (BTC)</div>
+                        <div class="market-price">$43,250.75</div>
+                    </div>
+                    <div class="market-change positive">+2.35%</div>
+                    <div class="market-chart">
+                        <div class="chart-bar" style="height: 30%;"></div>
+                        <div class="chart-bar" style="height: 45%;"></div>
+                        <div class="chart-bar" style="height: 60%;"></div>
+                        <div class="chart-bar" style="height: 75%;"></div>
+                        <div class="chart-bar" style="height: 65%;"></div>
+                        <div class="chart-bar" style="height: 50%;"></div>
+                        <div class="chart-bar" style="height: 40%;"></div>
+                        <div class="chart-bar" style="height: 55%;"></div>
                     </div>
                 </div>
-
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>انتقال به بخش فروش</h3>
-                        <p>پس از ورود به حساب کاربری، به بخش "معاملات" و سپس "فروش" مراجعه کنید.</p>
-                        <ul>
-                            <li>از منوی اصلی گزینه "معاملات" را انتخاب کنید</li>
-                            <li>در صفحه معاملات، گزینه "فروش" را کلیک کنید</li>
-                            <li>در صورت نیاز، کیف پول خود را انتخاب کنید</li>
-                        </ul>
+                <div class="market-card">
+                    <div class="market-header-item">
+                        <div class="market-name">اتریوم (ETH)</div>
+                        <div class="market-price">$2,380.42</div>
+                    </div>
+                    <div class="market-change positive">+1.87%</div>
+                    <div class="market-chart">
+                        <div class="chart-bar" style="height: 40%;"></div>
+                        <div class="chart-bar" style="height: 55%;"></div>
+                        <div class="chart-bar" style="height: 70%;"></div>
+                        <div class="chart-bar" style="height: 80%;"></div>
+                        <div class="chart-bar" style="height: 75%;"></div>
+                        <div class="chart-bar" style="height: 60%;"></div>
+                        <div class="chart-bar" style="height: 50%;"></div>
+                        <div class="chart-bar" style="height: 65%;"></div>
                     </div>
                 </div>
-
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>انتخاب ارز و مقدار</h3>
-                        <p>ارز مورد نظر خود را برای فروش انتخاب کنید و مقدار آن را مشخص کنید.</p>
-                        <ul>
-                            <li>از لیست ارزها، ارز مورد نظر را انتخاب کنید</li>
-                            <li>مقدار ارز را به صورت دستی وارد کنید یا از گزینه‌های پیشنهادی استفاده کنید</li>
-                            <li>می‌توانید مقدار را بر اساس درصد کیف پول نیز مشخص کنید</li>
-                        </ul>
+                <div class="market-card">
+                    <div class="market-header-item">
+                        <div class="market-name">تتر (USDT)</div>
+                        <div class="market-price">$1.00</div>
+                    </div>
+                    <div class="market-change negative">-0.02%</div>
+                    <div class="market-chart">
+                        <div class="chart-bar" style="height: 60%;"></div>
+                        <div class="chart-bar" style="height: 62%;"></div>
+                        <div class="chart-bar" style="height: 61%;"></div>
+                        <div class="chart-bar" style="height: 60%;"></div>
+                        <div class="chart-bar" style="height: 59%;"></div>
+                        <div class="chart-bar" style="height: 60%;"></div>
+                        <div class="chart-bar" style="height: 61%;"></div>
+                        <div class="chart-bar" style="height: 60%;"></div>
                     </div>
                 </div>
-
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>تعیین قیمت و نوع معامله</h3>
-                        <p>قیمت فروش و نوع معامله (فوری یا محدود) را تعیین کنید.</p>
-                        <ul>
-                            <li>برای فروش فوری، قیمت بازار را بپذیرید</li>
-                            <li>برای فروش محدود، قیمت دلخواه خود را تعیین کنید</li>
-                            <li>در صورت نیاز، توقف ضرر و توقف سود را تنظیم کنید</li>
-                        </ul>
+                <div class="market-card">
+                    <div class="market-header-item">
+                        <div class="market-name">سولانا (SOL)</div>
+                        <div class="market-price">$98.35</div>
                     </div>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>تایید و اجرای معامله</h3>
-                        <p>پس از بررسی نهایی، معامله خود را تایید و اجرا کنید.</p>
-                        <ul>
-                            <li>اطلاعات معامله را به دقت بررسی کنید</li>
-                            <li>در صورت صحت اطلاعات، گزینه "فروش" را کلیک کنید</li>
-                            <li>در صورت نیاز، احراز هویت دو مرحله‌ای را تکمیل کنید</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-number">6</div>
-                    <div class="step-content">
-                        <h3>پیگیری معامله</h3>
-                        <p>پس از اجرای معامله، می‌توانید وضعیت آن را در بخش "تاریخچه معاملات" پیگیری کنید.</p>
-                        <ul>
-                            <li>به بخش "تاریخچه معاملات" مراجعه کنید</li>
-                            <li>اطلاعات معامله انجام شده را مشاهده کنید</li>
-                            <li>در صورت نیاز، رسید معامله را دانلود کنید</li>
-                        </ul>
+                    <div class="market-change positive">+5.21%</div>
+                    <div class="market-chart">
+                        <div class="chart-bar" style="height: 20%;"></div>
+                        <div class="chart-bar" style="height: 35%;"></div>
+                        <div class="chart-bar" style="height: 50%;"></div>
+                        <div class="chart-bar" style="height: 70%;"></div>
+                        <div class="chart-bar" style="height: 85%;"></div>
+                        <div class="chart-bar" style="height: 90%;"></div>
+                        <div class="chart-bar" style="height: 85%;"></div>
+                        <div class="chart-bar" style="height: 95%;"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش نکات مهم -->
-    <section class="important-tips">
+    <!-- بخش پلتفرم ترید -->
+    <section class="trading-platform">
         <div class="container">
-            <h2 class="section-title">نکات مهم فروش</h2>
-            <p class="section-subtitle">راهنمایی‌های کلیدی برای فروش موفق در پلتفرم تریدرکس</p>
-
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <div class="tip-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>امنیت معاملات</h3>
-                    <p>همیشه از احراز هویت دو مرحله‌ای استفاده کنید و رمز عبور خود را به طور منظم تغییر دهید. هرگز
-                        اطلاعات حساب خود را با دیگران به اشتراک نگذارید.</p>
-                </div>
-
-                <div class="tip-card">
-                    <div class="tip-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>تحلیل بازار</h3>
-                    <p>قبل از فروش، بازار را تحلیل کنید. از ابزارهای تحلیل تکنیکال و بنیادی ما برای تصمیم‌گیری بهتر
-                        استفاده کنید.</p>
-                </div>
-
-                <div class="tip-card">
-                    <div class="tip-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3>مدیریت ریسک</h3>
-                    <p>همیشه میزان ریسک خود را مدیریت کنید. از توقف ضرر و توقف سود برای محافظت از سرمایه خود استفاده
-                        کنید.</p>
-                </div>
-
-                <div class="tip-card">
-                    <div class="tip-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>زمان‌بندی مناسب</h3>
-                    <p>برای فروش در بهترین زمان، از اخبار اقتصادی و رویدادهای مهم بازار مطلع باشید. زمان‌بندی مناسب
-                        می‌تواند تفاوت چشمگیری ایجاد کند.</p>
-                </div>
-
-                <div class="tip-card">
-                    <div class="tip-icon">
-                        <i class="fas fa-percentage"></i>
-                    </div>
-                    <h3>کارمزدها</h3>
-                    <p>کارمزدهای فروش را به دقت بررسی کنید. ما کارمزدهای رقابتی ارائه می‌دهیم، اما همیشه بهتر است قبل از
-                        معامله آنها را بررسی کنید.</p>
-                </div>
-
-                <div class="tip-card">
-                    <div class="tip-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>پشتیبانی</h3>
-                    <p>در صورت بروز هرگونه مشکل در فرآیند فروش، با تیم پشتیبانی ما تماس بگیرید. ما 24/7 آماده پاسخگویی
-                        هستیم.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- بخش سوالات متداول -->
-    <section class="faq">
-        <div class="container">
-            <h2 class="section-title">سوالات متداول</h2>
-            <p class="section-subtitle">پاسخ به رایج‌ترین سوالات درباره فروش در پلتفرم تریدرکس</p>
-
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>حداقل مقدار فروش چقدر است؟</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>حداقل مقدار فروش برای هر ارز متفاوت است. برای بیت‌کوین حداقل 0.001 BTC، برای اتریوم 0.01 ETH
-                            و برای سایر ارزها مقدارهای متفاوتی در نظر گرفته شده است. این اطلاعات را می‌توانید در بخش
-                            معاملات مشاهده کنید.</p>
+            <div class="platform-container">
+                <div class="platform-info">
+                    <h2>پلتفرم ترید پیشرفته</h2>
+                    <p>پلتفرم ترید حرفه‌ای ما با ابزارهای تحلیلی پیشرفته و امکانات منحصر به فرد، بهترین تجربه ترید را
+                        برای شما فراهم می‌کند.</p>
+                    <ul class="features-list">
+                        <li>معاملات فوری با کمترین کارمزد</li>
+                        <li>تحلیل تکنیکال پیشرفته</li>
+                        <li>سیگنال‌های هوش مصنوعی</li>
+                        <li>امنیت بالا با رمزنگاری پیشرفته</li>
+                        <li>پشتیبانی 24/7</li>
+                        <li>دسترسی از موبایل و دسکتاپ</li>
+                    </ul>
+                    <div class="platform-actions">
+                        <a href="#" class="primary-btn">شروع ترید</a>
+                        <a href="#" class="secondary-btn">دموی رایگان</a>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>چقدر طول می‌کشد تا فروش انجام شود؟</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>فروش فوری بلافاصله پس از تایید انجام می‌شود. برای فروش محدود، زمان بسته شدن معامله بستگی به
-                            قیمت تعیین شده و شرایط بازار دارد. در شرایط عادی، معاملات محدود نیز در عرض چند دقیقه انجام
-                            می‌شوند.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>آیا می‌توانم فروش خود را لغو کنم؟</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>فروش فوری قابل لغو نیست زیرا بلافاصله انجام می‌شود. اما فروش محدود را می‌توانید قبل از اجرای
-                            کامل لغو کنید. برای این کار به بخش "سفارشات باز" مراجعه کرده و گزینه لغو را انتخاب کنید.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>کارمزد فروش چقدر است؟</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>کارمزد فروش به حجم معاملات شما بستگی دارد. برای معاملات کمتر از 10,000 دلار، کارمزد 0.1% در
-                            نظر گرفته می‌شود. با افزایش حجم معاملات، کارمزد کاهش می‌یابد. کاربران VIP کارمزدهای ویژه‌ای
-                            دریافت می‌کنند.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>آیا می‌توانم فروش خودکار تنظیم کنم؟</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>بله، ما امکان تنظیم فروش خودکار را ارائه می‌دهیم. می‌توانید بر اساس قیمت، زمان یا شرایط خاص
-                            دیگر، فروش خودکار تنظیم کنید. این امکان در بخش "معاملات پیشرفته" قابل دسترسی است.</p>
+                <div class="platform-info">
+                    <h2>مزایای ترید با ما</h2>
+                    <p>ما با ترکیب فناوری پیشرفته و تحلیل‌های حرفه‌ای، بهترین فرصت‌های سرمایه‌گذاری را برای شما فراهم
+                        می‌کنیم.</p>
+                    <ul class="features-list">
+                        <li>کارمزد کمتر از 0.1%</li>
+                        <li>تنوع بالای ارزهای دیجیتال</li>
+                        <li>امکان ترید با لوریج تا 100x</li>
+                        <li>برداشت فوری در 10 دقیقه</li>
+                        <li>آموزش رایگان برای مبتدیان</li>
+                        <li>مدیریت پورتفولیو هوشمند</li>
+                    </ul>
+                    <div class="platform-actions">
+                        <a href="#" class="primary-btn">ثبت نام رایگان</a>
+                        <a href="#" class="secondary-btn">آموزش ترید</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش CTA فروش -->
-    <section class="sales-cta">
+    <!-- بخش تریدرکس ویژه -->
+    <section class="traderx-pro">
+        <div class="container">
+            <div class="pro-content">
+                <h2>تریدرکس ویژه</h2>
+                <p>نسخه پیشرفته پلتفرم ما برای معامله‌گران حرفه‌ای با امکانات منحصر به فرد</p>
+
+                <div class="pro-features">
+                    <div class="pro-feature">
+                        <div class="pro-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>هوش مصنوعی</h3>
+                        <p>تحلیل بازار با الگوریتم‌های هوش مصنوعی و پیش‌بینی روندهای آینده</p>
+                    </div>
+                    <div class="pro-feature">
+                        <div class="pro-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>تحلیل پیشرفته</h3>
+                        <p>ابزارهای تحلیل تکنیکال و بنیادی حرفه‌ای برای تصمیم‌گیری بهتر</p>
+                    </div>
+                    <div class="pro-feature">
+                        <div class="pro-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>سرعت بالا</h3>
+                        <p>اجرای معاملات در کسری از ثانیه با سرورهای اختصاصی</p>
+                    </div>
+                    <div class="pro-feature">
+                        <div class="pro-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>امنیت بالا</h3>
+                        <p>سیستم‌های احراز هویت چندمرحله‌ای و رمزنگاری پیشرفته</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش CTA ترید -->
+    <section class="trading-cta">
         <div class="container">
             <div class="cta-content">
                 <h2>آماده‌اید تا شروع کنید؟</h2>
-                <p>همین امروز با تریدرکس شروع به فروش حرفه‌ای ارزهای دیجیتال کنید</p>
+                <p>همین امروز با تریدرکس شروع به ترید حرفه‌ای ارزهای دیجیتال کنید و از مزایای پلتفرم پیشرفته ما بهره‌مند
+                    شوید.</p>
                 <div class="cta-buttons">
                     <a href="#" class="primary-btn">ثبت نام رایگان</a>
-                    <a href="#" class="secondary-btn">ورود به حساب</a>
+                    <a href="#" class="secondary-btn">دموی رایگان</a>
                 </div>
             </div>
         </div>
@@ -1337,24 +1354,26 @@
             <div class="footer-column">
                 <h4>خدمات</h4>
                 <ul class="footer-links">
-                    <li><a href="#">ترید ارزهای دیجیتال</a></li>
-                    <li><a href="#">سرمایه‌گذاری هوشمند</a></li>
-                    <li><a href="#">تحلیل بازار</a></li>
-                    <li><a href="#">مدیریت پورتفولیو</a></li>
-                    <li><a href="#">آموزش ترید</a></li>
-                    <li><a href="#">مشاوره تخصصی</a></li>
+                    <li><a href="ترید ارز های دیجیتال.html">ترید ارزهای دیجیتال</a></li>
+                    <li><a href="سرمایه گذاری هوشمند.html">سرمایه‌گذاری هوشمند</a></li>
+                    <li><a href="تحلیل بازار.html">تحلیل بازار</a></li>
+                    <li><a href="مدیریت پورتفولیو.html">مدیریت پورتفولیو</a></li>
+                    <li><a href="آموزش ترید.html">آموزش ترید</a></li>
+                    <li><a href="مشاوره تخصصی.html">مشاوره تخصصی</a></li>
+                    <li><a href="#">دانلود اپلیکیشن</a></li>
+                    <li><a href="#">اپلیکیشن تحت وب</a></li>
                 </ul>
             </div>
 
             <div class="footer-column">
                 <h4>راهنما و پشتیبانی</h4>
                 <ul class="footer-links">
-                    <li><a href="#">راهنمای شروع</a></li>
-                    <li><a href="#">سوالات متداول</a></li>
-                    <li><a href="#">مرکز آموزش</a></li>
-                    <li><a href="#">قوانین و مقررات</a></li>
-                    <li><a href="#">حریم خصوصی</a></li>
-                    <li><a href="#">گزارش مشکل</a></li>
+                    <li><a href="راهنمای شروع.html">راهنمای شروع</a></li>
+                    <li><a href="سوالات متداول.html">سوالات متداول</a></li>
+                    <li><a href="مرکز آموزش.html">مرکز آموزش</a></li>
+                    <li><a href="قوانین و مقررات.html">قوانین و مقررات</a></li>
+                    <li><a href="حریم خصوصی.html">حریم خصوصی</a></li>
+                    <li><a href="گزارش مشکل.html">گزارش مشکل</a></li>
                 </ul>
             </div>
 
@@ -1410,7 +1429,6 @@
             </div>
         </div>
     </footer>
-
     <script>
         // منوی موبایل
         const menuToggle = document.getElementById('menuToggle');
@@ -1462,23 +1480,8 @@
             });
         });
 
-        // سوالات متداول
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                item.classList.toggle('active');
-                const icon = question.querySelector('i');
-                if (item.classList.contains('active')) {
-                    icon.className = 'fas fa-chevron-up';
-                } else {
-                    icon.className = 'fas fa-chevron-down';
-                }
-            });
-        });
-
-        // انیمیشن برای عناصر با اسکرول
-        const stepItems = document.querySelectorAll('.step-item, .tip-card');
+        // انیمیشن برای کارت‌ها
+        const cards = document.querySelectorAll('.market-card, .pro-feature');
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1489,11 +1492,11 @@
             });
         }, { threshold: 0.1 });
 
-        stepItems.forEach(item => {
-            item.style.opacity = 0;
-            item.style.transform = 'translateY(20px)';
-            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(item);
+        cards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
         });
     </script>
 </body>

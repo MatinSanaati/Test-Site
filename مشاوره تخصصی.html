@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاوره تخصصی | تریدرکس</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* هدر */
+        header {
+            background: rgba(10, 10, 35, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4cc9f0;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #f72585;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 15px;
+            border-radius: 30px;
+        }
+
+        nav ul li a:hover {
+            color: #4cc9f0;
+            background: rgba(76, 201, 240, 0.1);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .auth-buttons a {
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn {
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .login-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .signup-btn {
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            color: white;
+        }
+
+        .signup-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
+        }
+
+        /* breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #4cc9f0;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: #aaa;
+        }
+
+        /* بخش هیرو مشاوره تخصصی */
+        .consulting-hero {
+            padding: 100px 0;
+            text-align: center;
+            background: url('image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjAuNSIgZmlsbD0iIzRjYzlmMCIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=') center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .consulting-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(76, 201, 240, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(247, 37, 133, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        .consulting-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .consulting-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #ccc;
+        }
+
+        /* بخش مزایای مشاوره تخصصی */
+        .consulting-benefits {
+            padding: 80px 0;
+            background: rgba(15, 15, 45, 0.7);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #aaa;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .benefit-card {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(40, 40, 80, 0.7);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #4cc9f0;
+        }
+
+        .benefit-card p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            text-align: right;
+            padding-right: 20px;
+            color: #aaa;
+        }
+
+        .benefit-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-right: 25px;
+        }
+
+        .benefit-list li::before {
+            content: '✓';
+            color: #4cc9f0;
+            font-size: 1.2rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        /* بخش مشاوران تخصصی */
+        .experts {
+            padding: 80px 0;
+            background: rgba(20, 20, 50, 0.7);
+        }
+
+        .experts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .expert-card {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .expert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(40, 40, 80, 0.7);
+        }
+
+        .expert-image {
+            height: 250px;
+            background: linear-gradient(45deg, #4361ee, #4cc9f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .expert-info {
+            padding: 30px 20px;
+        }
+
+        .expert-info h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #4cc9f0;
+        }
+
+        .expert-info .position {
+            color: #f72585;
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .expert-info p {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .expert-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .specialty-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(76, 201, 240, 0.2);
+            color: #4cc9f0;
+        }
+
+        .expert-rating {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 20px;
+            color: #ffd166;
+        }
+
+        .consult-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
+        }
+
+        .consult-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(247, 37, 133, 0.4);
+        }
+
+        /* بخش فرم مشاوره */
+        .consultation-form {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0f0c29, #302b63);
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            padding: 50px 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #4cc9f0;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .form-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            border-radius: 2px;
+        }
+
+        .form-container p {
+            color: #ccc;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #4cc9f0;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #4cc9f0;
+            box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
+        }
+
+        .form-control::placeholder {
+            color: #777;
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cccccc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: left 15px center;
+            background-size: 16px;
+            padding-left: 45px;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(247, 37, 133, 0.4);
+        }
+
+        /* بخش انواع مشاوره */
+        .consultation-types {
+            padding: 80px 0;
+            background: rgba(15, 15, 45, 0.7);
+        }
+
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .type-card {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .type-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(40, 40, 80, 0.7);
+        }
+
+        .type-icon {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .type-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #4cc9f0;
+        }
+
+        .type-card p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .type-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .type-features {
+            list-style: none;
+            text-align: right;
+            padding-right: 20px;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .type-features li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-right: 25px;
+        }
+
+        .type-features li::before {
+            content: '✓';
+            color: #4cc9f0;
+            font-size: 1.2rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .type-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: #4cc9f0;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #4cc9f0;
+        }
+
+        .type-button:hover {
+            background: rgba(76, 201, 240, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* بخش نظرات کاربران */
+        .testimonials {
+            padding: 80px 0;
+            background: rgba(20, 20, 50, 0.7);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #4361ee, #4cc9f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.2);
+            margin-left: 15px;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #4cc9f0;
+        }
+
+        .testimonial-info .position {
+            color: #f72585;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-content {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 5px;
+            color: #ffd166;
+        }
+
+        /* بخش CTA مشاوره */
+        .consulting-cta {
+            padding: 100px 0;
+            text-align: center;
+            background: rgba(15, 15, 45, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .consulting-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(76, 201, 240, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(247, 37, 133, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(247, 37, 133, 0.4);
+        }
+
+        .secondary-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            color: #4cc9f0;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #4cc9f0;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(76, 201, 240, 0.1);
+            transform: translateY(-5px);
+        }
+
+        /* فوتر */
+        footer {
+            background: #0a0a1a;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0 0;
+        }
+
+        .footer-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(76, 201, 240, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(247, 37, 133, 0.05) 0%, transparent 20%);
+            z-index: 1;
+        }
+
+        .footer-top {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-top h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #4cc9f0;
+        }
+
+        .social-networks {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-network {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-network::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #4cc9f0, #f72585, #4361ee, #3a0ca3);
+            z-index: -1;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-network:hover::before {
+            opacity: 1;
+        }
+
+        .social-network:hover {
+            transform: translateY(-10px) scale(1.15);
+            box-shadow: 0 15px 30px rgba(76, 201, 240, 0.4);
+        }
+
+        .social-network.telegram {
+            background: linear-gradient(135deg, #0088cc, #00aced);
+        }
+
+        .social-network.instagram {
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        }
+
+        .social-network.twitter {
+            background: linear-gradient(135deg, #1da1f2, #00acee);
+        }
+
+        .social-network.linkedin {
+            background: linear-gradient(135deg, #0077b5, #00a0dc);
+        }
+
+        .social-network.youtube {
+            background: linear-gradient(135deg, #ff0000, #cc181e);
+        }
+
+        .footer-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 60px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-column {
+            padding: 20px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #4cc9f0;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            border-radius: 2px;
+        }
+
+        .footer-column p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-right: 25px;
+        }
+
+        .footer-links li a::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4cc9f0;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links li a:hover {
+            color: #4cc9f0;
+            transform: translateX(-5px);
+        }
+
+        .footer-links li a:hover::before {
+            opacity: 1;
+            transform: scale(1.3);
+        }
+
+        .footer-contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item-footer {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-item-footer i {
+            font-size: 1.2rem;
+            color: #f72585;
+            margin-left: 15px;
+            margin-top: 5px;
+            min-width: 20px;
+        }
+
+        .contact-item-footer .contact-text-footer h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #4cc9f0;
+        }
+
+        .contact-item-footer .contact-text-footer p,
+        .contact-item-footer .contact-text-footer a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .contact-item-footer .contact-text-footer a:hover {
+            color: #4cc9f0;
+        }
+
+        .newsletter-section {
+            background: rgba(30, 30, 60, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .newsletter-section h5 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #4cc9f0;
+        }
+
+        .newsletter-section p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form input:focus {
+            border-color: #4cc9f0;
+            box-shadow: 0 0 0 2px rgba(76, 201, 240, 0.2);
+        }
+
+        .newsletter-form input::placeholder {
+            color: #777;
+        }
+
+        .newsletter-form button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .newsletter-form button:hover {
+            background: linear-gradient(90deg, #4361ee, #f72585);
+            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.3);
+        }
+
+        .footer-bottom {
+            position: relative;
+            z-index: 2;
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .footer-bottom-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 1px;
+            background: #4cc9f0;
+            transition: width 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #4cc9f0;
+        }
+
+        .footer-bottom-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-decor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .footer-decor::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(76, 201, 240, 0.1) 0%, transparent 70%);
+            animation: pulse 4s infinite;
+        }
+
+        .footer-decor::after {
+            content: '';
+            position: absolute;
+            bottom: 30%;
+            right: 15%;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(247, 37, 133, 0.1) 0%, transparent 70%);
+            animation: pulse 6s infinite reverse;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+        }
+
+        /* واکنش‌گرایی */
+        @media (max-width: 992px) {
+            .consulting-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .consulting-hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                position: relative;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .auth-buttons {
+                margin-top: 20px;
+            }
+
+            .consulting-hero {
+                padding: 80px 0;
+            }
+
+            .consulting-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .consulting-hero p {
+                font-size: 1rem;
+            }
+
+            .market-info,
+            .experts,
+            .consultation-form,
+            .consultation-types,
+            .testimonials,
+            .consulting-cta {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .benefit-card,
+            .expert-card,
+            .form-container,
+            .type-card,
+            .testimonial-card {
+                padding: 30px 20px;
+            }
+
+            .benefit-card h3,
+            .expert-info h4,
+            .form-container h2,
+            .type-card h3,
+            .testimonial-info h4 {
+                font-size: 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-control {
+                padding: 12px 15px;
+            }
+
+            select.form-control {
+                padding-left: 40px;
+            }
+
+            textarea.form-control {
+                min-height: 120px;
+            }
+
+            .submit-btn,
+            .consult-button,
+            .type-button {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .social-networks {
+                gap: 15px;
+            }
+
+            .social-network {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-column {
+                padding: 20px 15px;
+            }
+
+            .footer-column h4 {
+                font-size: 1.3rem;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+                padding: 0 15px;
+            }
+
+            .consulting-hero {
+                padding: 60px 0;
+            }
+
+            .consulting-hero h1 {
+                font-size: 2rem;
+            }
+
+            .consulting-hero p {
+                font-size: 0.9rem;
+            }
+
+            .market-info,
+            .experts,
+            .consultation-form,
+            .consultation-types,
+            .testimonials,
+            .consulting-cta {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .market-grid,
+            .experts-grid,
+            .types-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .benefit-card,
+            .expert-card,
+            .form-container,
+            .type-card,
+            .testimonial-card {
+                padding: 25px 15px;
+            }
+
+            .benefit-card h3,
+            .expert-info h4,
+            .form-container h2,
+            .type-card h3,
+            .testimonial-info h4 {
+                font-size: 1.3rem;
+            }
+
+            .benefit-icon,
+            .type-icon {
+                font-size: 2.5rem;
+            }
+
+            .expert-image {
+                height: 200px;
+                font-size: 4rem;
+            }
+
+            .expert-info {
+                padding: 25px 15px;
+            }
+
+            .expert-info h4 {
+                font-size: 1.3rem;
+            }
+
+            .expert-info .position {
+                font-size: 0.9rem;
+            }
+
+            .expert-info p {
+                font-size: 0.85rem;
+            }
+
+            .form-container {
+                padding: 30px 20px;
+            }
+
+            .form-container h2 {
+                font-size: 1.8rem;
+            }
+
+            .form-container p {
+                font-size: 1rem;
+            }
+
+            .form-group label {
+                font-size: 0.95rem;
+            }
+
+            .form-control {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+            }
+
+            select.form-control {
+                padding-left: 35px;
+            }
+
+            textarea.form-control {
+                min-height: 100px;
+            }
+
+            .submit-btn,
+            .consult-button,
+            .type-button {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .cta-content p {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                gap: 10px;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+
+            .social-networks {
+                gap: 10px;
+            }
+
+            .social-network {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .footer-column {
+                padding: 15px 10px;
+            }
+
+            .footer-column h4 {
+                font-size: 1.2rem;
+            }
+
+            .footer-column p,
+            .footer-column .footer-links li a {
+                font-size: 0.9rem;
+            }
+
+            .footer-links li {
+                margin-bottom: 10px;
+            }
+
+            .footer-links li a {
+                padding-right: 20px;
+            }
+
+            .footer-links li a::before {
+                width: 6px;
+                height: 6px;
+            }
+
+            .newsletter-section {
+                padding: 20px 15px;
+                margin-top: 15px;
+            }
+
+            .newsletter-section h5 {
+                font-size: 1.1rem;
+            }
+
+            .newsletter-section p {
+                font-size: 0.85rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: 30px;
+                width: 100%;
+                padding: 12px 15px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .footer-bottom-links a {
+                font-size: 0.85rem;
+            }
+
+            .copyright {
+                font-size: 0.85rem;
+            }
+
+            .footer-decor::before,
+            .footer-decor::after {
+                display: none;
+            }
+
+            .footer-top h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- هدر -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">تریدر<span>کس</span></a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="خدمات.html">خدمات</a></li>
+                    <li><a href="درباره ما.html">درباره ما</a></li>
+                    <li><a href="تماس با ما.html">تماس با ما</a></li>
+                    <li><a href="بلاگ.html">بلاگ</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="لاگین.html" class="login-btn">ورود</a>
+                <a href="لاگین.html" class="signup-btn">ثبت نام</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="#">خانه</a> <span>/</span> خدمات <span>/</span> مشاوره تخصصی
+        </div>
+    </div>
+
+    <!-- بخش هیرو مشاوره تخصصی -->
+    <section class="consulting-hero">
+        <div class="container">
+            <h1>مشاوره تخصصی</h1>
+            <p>مشاوره تخصصی با تحلیلگران حرفه‌ای برای تصمیم‌گیری‌های بهتر در زمینه ترید و سرمایه‌گذاری ارزهای دیجیتال
+            </p>
+        </div>
+    </section>
+
+    <!-- بخش مزایای مشاوره تخصصی -->
+    <section class="consulting-benefits">
+        <div class="container">
+            <h2 class="section-title">مزایای مشاوره تخصصی</h2>
+            <p class="section-subtitle">چرا باید از خدمات مشاوره تخصصی ما استفاده کنید؟</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>تحلیل تخصصی</h3>
+                    <p>تحلیل‌های تکنیکال و بنیادی توسط تیم متخصصان با تجربه در زمینه ترید ارزهای دیجیتال</p>
+                    <ul class="benefit-list">
+                        <li>تحلیل نمودارها و الگوهای قیمتی</li>
+                        <li>بررسی عوامل اقتصادی و سیاسی</li>
+                        <li>پیش‌بینی روندهای آینده بازار</li>
+                        <li>تحلیل روان‌شناسی بازار</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>مدیریت ریسک</h3>
+                    <p>مدیریت ریسک در ترید و استفاده از ابزارهای کاهش ضرر و حفظ سود</p>
+                    <ul class="benefit-list">
+                        <li>تعیین حد ضرر و حد سود مناسب</li>
+                        <li>تنوع‌بخشی به پورتفولیو</li>
+                        <li>استراتژی‌های کاهش ریسک</li>
+                        <li>تحلیل ریسک پذیری شخصی</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>استراتژی‌های ترید</h3>
+                    <p>ارائه استراتژی‌های ترید مناسب بر اساس سطح ریسک‌پذیری و اهداف شما</p>
+                    <ul class="benefit-list">
+                        <li>استراتژی‌های کوتاه‌مدت و بلندمدت</li>
+                        <li>تحلیل فرصت‌های معاملاتی</li>
+                        <li>پیشنهادات خرید و فروش</li>
+                        <li>بررسی فرصت‌های آربیتراژ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش مشاوران تخصصی -->
+    <section class="experts">
+        <div class="container">
+            <h2 class="section-title">مشاوران تخصصی ما</h2>
+            <p class="section-subtitle">تیم متخصصان ما با تجربه‌های متنوع در زمینه‌های مالی و تحلیل بازار</p>
+            <div class="experts-grid">
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="expert-info">
+                        <h4>علی محمدی</h4>
+                        <div class="position">متخصص تحلیل تکنیکال</div>
+                        <p>تحلیلگر بازار مالی با بیش از 15 سال تجربه در تحلیل تکنیکال و نمودارها</p>
+                        <div class="expert-specialties">
+                            <span class="specialty-tag">بیت کوین</span>
+                            <span class="specialty-tag">اتریوم</span>
+                            <span class="specialty-tag">تحلیل تکنیکال</span>
+                        </div>
+                        <div class="expert-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <a href="#" class="consult-button">درخواست مشاوره</a>
+                    </div>
+                </div>
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="expert-info">
+                        <h4>سارا رضایی</h4>
+                        <div class="position">متخصص تحلیل بنیادی</div>
+                        <p>متخصص توسعه نرم‌افزار و بلاکچین با تمرکز بر تحلیل بنیادی پروژه‌ها</p>
+                        <div class="expert-specialties">
+                            <span class="specialty-tag">تحلیل بنیادی</span>
+                            <span class="specialty-tag">بلاکچین</span>
+                            <span class="specialty-tag">هوش مصنوعی</span>
+                        </div>
+                        <div class="expert-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="#" class="consult-button">درخواست مشاوره</a>
+                    </div>
+                </div>
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="expert-info">
+                        <h4>مهدی کریمی</h4>
+                        <div class="position">متخصص ریسک منیجمنت</div>
+                        <p>تحلیلگر بازار مالی با تخصص در مدیریت ریسک و استراتژی‌های حفاظتی</p>
+                        <div class="expert-specialties">
+                            <span class="specialty-tag">مدیریت ریسک</span>
+                            <span class="specialty-tag">پورتفولیو</span>
+                            <span class="specialty-tag">تحلیل تکنیکال</span>
+                        </div>
+                        <div class="expert-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <a href="#" class="consult-button">درخواست مشاوره</a>
+                    </div>
+                </div>
+                <div class="expert-card">
+                    <div class="expert-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="expert-info">
+                        <h4>نرگس احمدی</h4>
+                        <div class="position">متخصص آموزش</div>
+                        <p>متخصص رابط کاربری و تجربه کاربری با تمرکز بر آموزش تخصصی ترید</p>
+                        <div class="expert-specialties">
+                            <span class="specialty-tag">آموزش ترید</span>
+                            <span class="specialty-tag">تجربه کاربری</span>
+                            <span class="specialty-tag">تحلیل بازار</span>
+                        </div>
+                        <div class="expert-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <a href="#" class="consult-button">درخواست مشاوره</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش فرم مشاوره -->
+    <section class="consultation-form">
+        <div class="container">
+            <div class="form-container">
+                <h2>درخواست مشاوره تخصصی</h2>
+                <p>فرم زیر را تکمیل کنید تا تیم مشاوران ما با شما تماس بگیرند</p>
+                <form id="consultationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">نام و نام خانوادگی</label>
+                            <input type="text" id="name" class="form-control" placeholder="نام خود را وارد کنید"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">ایمیل</label>
+                            <input type="email" id="email" class="form-control" placeholder="ایمیل خود را وارد کنید"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">شماره تلفن</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="شماره تلفن خود را وارد کنید"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">سطح تجربه</label>
+                            <select id="experience" class="form-control" required>
+                                <option value="">سطح تجربه خود را انتخاب کنید</option>
+                                <option value="beginner">تازه‌کار</option>
+                                <option value="intermediate">متوسط</option>
+                                <option value="advanced">حرفه‌ای</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="topic">موضوع مشاوره</label>
+                        <select id="topic" class="form-control" required>
+                            <option value="">موضوع مشاوره را انتخاب کنید</option>
+                            <option value="technical">تحلیل تکنیکال</option>
+                            <option value="fundamental">تحلیل بنیادی</option>
+                            <option value="risk">مدیریت ریسک</option>
+                            <option value="portfolio">مدیریت پورتفولیو</option>
+                            <option value="strategy">استراتژی‌های ترید</option>
+                            <option value="other">سایر موارد</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">توضیحات بیشتر</label>
+                        <textarea id="message" class="form-control" placeholder="توضیحات بیشتر درباره موضوع مشاوره..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">ارسال درخواست مشاوره</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش انواع مشاوره -->
+    <section class="consultation-types">
+        <div class="container">
+            <h2 class="section-title">انواع مشاوره</h2>
+            <p class="section-subtitle">مشاوره‌های تخصصی برای تمام سطوح تجربه</p>
+            <div class="types-grid">
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>مشاوره مبتدیان</h3>
+                    <p>مشاوره تخصصی برای تازه‌کاران در زمینه ترید ارزهای دیجیتال و مبانی سرمایه‌گذاری</p>
+                    <div class="type-price">از 500,000 تومان</div>
+                    <ul class="type-features">
+                        <li>آشنایی با مفاهیم پایه</li>
+                        <li>راهنمای شروع ترید</li>
+                        <li>مدیریت ریسک اولیه</li>
+                        <li>تحلیل تکنیکال ساده</li>
+                        <li>مدت زمان: 30 دقیقه</li>
+                    </ul>
+                    <a href="#" class="type-button">درخواست مشاوره</a>
+                </div>
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>مشاوره متوسط</h3>
+                    <p>مشاوره تخصصی برای کاربران متوسط با تمرکز بر تحلیل‌های پیشرفته و استراتژی‌های ترید</p>
+                    <div class="type-price">از 1,200,000 تومان</div>
+                    <ul class="type-features">
+                        <li>تحلیل تکنیکال پیشرفته</li>
+                        <li>مدیریت پورتفولیو</li>
+                        <li>استراتژی‌های کوتاه‌مدت</li>
+                        <li>تحلیل روان‌شناسی بازار</li>
+                        <li>مدت زمان: 45 دقیقه</li>
+                    </ul>
+                    <a href="#" class="type-button">درخواست مشاوره</a>
+                </div>
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-user-ninja"></i>
+                    </div>
+                    <h3>مشاوره حرفه‌ای</h3>
+                    <p>مشاوره تخصصی برای کاربران حرفه‌ای با تمرکز بر تحلیل‌های بنیادی و استراتژی‌های پیشرفته</p>
+                    <div class="type-price">از 2,500,000 تومان</div>
+                    <ul class="type-features">
+                        <li>تحلیل بنیادی پیشرفته</li>
+                        <li>مدیریت ریسک حرفه‌ای</li>
+                        <li>استراتژی‌های بلندمدت</li>
+                        <li>تحلیل فرصت‌های آربیتراژ</li>
+                        <li>مدت زمان: 60 دقیقه</li>
+                    </ul>
+                    <a href="#" class="type-button">درخواست مشاوره</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش نظرات کاربران -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">نظرات کاربران</h2>
+            <p class="section-subtitle">تجربه‌های واقعی کاربران از خدمات مشاوره تخصصی ما</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>علی محمدی</h4>
+                            <div class="position">کاربر حرفه‌ای</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"با استفاده از مشاوره تخصصی تریدرکس، توانستم سود خود را در 3 ماه گذشته 200% افزایش دهم.
+                            تحلیل‌های پیشرفته و استراتژی‌های حرفه‌ای واقعاً شگفت‌انگیز بودند."</p>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>سارا رضایی</h4>
+                            <div class="position">کاربر متوسط</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"به عنوان کسی که تازه وارد دنیای ترید شدم، مشاوره مبتدیان تریدرکس واقعاً به من کمک کرد تا
+                            اصول اولیه را یاد بگیرم و شروع کنم. تیم مشاوران بسیار صبور و حرفه‌ای هستند."</p>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>مهدی کریمی</h4>
+                            <div class="position">کاربر جدید</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"قبل از شروع ترید، از خدمات مشاوره مبتدیان استفاده کردم و واقعاً مفید بود. مشاوران با دانش
+                            تخصصی و رفتار صمیمی‌شان، تمام سوالاتم را با دقت پاسخ دادند."</p>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش CTA مشاوره -->
+    <section class="consulting-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>آماده‌اید تا شروع کنید؟</h2>
+                <p>همین امروز با تریدرکس شروع به دریافت مشاوره تخصصی کنید و از مزایای خدمات پیشرفته ما بهره‌مند شوید.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="primary-btn">ثبت نام رایگان</a>
+                    <a href="#" class="secondary-btn">دموی رایگان</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="footer-bg"></div>
+        <div class="footer-decor"></div>
+
+        <div class="footer-top">
+            <h3>با ما در شبکه‌های اجتماعی همراه باشید</h3>
+            <div class="social-networks">
+                <a href="#" class="social-network telegram" title="تلگرام">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="#" class="social-network instagram" title="اینستاگرام">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-network twitter" title="توییتر">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-network linkedin" title="لینکدین">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-network youtube" title="یوتیوب">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>درباره تریدرکس</h4>
+                <p>ما یک پلتفرم پیشرو در زمینه ترید و سرمایه‌گذاری هستیم که با استفاده از فناوری‌های نوین و تحلیل‌های
+                    پیشرفته، فرصت‌های سرمایه‌گذاری هوشمندانه را برای شما فراهم می‌کنیم.</p>
+                <div class="newsletter-section">
+                    <h5>در خبرنامه ما عضو شوید</h5>
+                    <p>آخرین اخبار و تحلیل‌های بازار را دریافت کنید</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="ایمیل شما" required>
+                        <button type="submit">عضویت</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>خدمات</h4>
+                <ul class="footer-links">
+                    <li><a href="ترید ارز های دیجیتال.html">ترید ارزهای دیجیتال</a></li>
+                    <li><a href="سرمایه گذاری هوشمند.html">سرمایه‌گذاری هوشمند</a></li>
+                    <li><a href="تحلیل بازار.html">تحلیل بازار</a></li>
+                    <li><a href="مدیریت پورتفولیو.html">مدیریت پورتفولیو</a></li>
+                    <li><a href="آموزش ترید.html">آموزش ترید</a></li>
+                    <li><a href="مشاوره تخصصی.html">مشاوره تخصصی</a></li>
+                    <li><a href="#">دانلود اپلیکیشن</a></li>
+                    <li><a href="#">اپلیکیشن تحت وب</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>راهنما و پشتیبانی</h4>
+                <ul class="footer-links">
+                    <li><a href="راهنمای شروع.html">راهنمای شروع</a></li>
+                    <li><a href="سوالات متداول.html">سوالات متداول</a></li>
+                    <li><a href="مرکز آموزش.html">مرکز آموزش</a></li>
+                    <li><a href="قوانین و مقررات.html">قوانین و مقررات</a></li>
+                    <li><a href="حریم خصوصی.html">حریم خصوصی</a></li>
+                    <li><a href="گزارش مشکل.html">گزارش مشکل</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>تماس با ما</h4>
+                <div class="footer-contact">
+                    <div class="contact-item-footer">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-text-footer">
+                            <h5>آدرس</h5>
+                            <p>تهران، خیابان ولیعصر، پلاک 1234</p>
+                        </div>
+                    </div>
+                    <div class="contact-item-footer">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="contact-text-footer">
+                            <h5>تلفن</h5>
+                            <p><a href="tel:+982112345678">021-12345678</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item-footer">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-text-footer">
+                            <h5>ایمیل</h5>
+                            <p><a href="mailto:info@traderx.com">info@traderx.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item-footer">
+                        <i class="fas fa-headset"></i>
+                        <div class="contact-text-footer">
+                            <h5>پشتیبانی</h5>
+                            <p>24/7 آماده پاسخگویی</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 1402 تریدرکس. تمامی حقوق محفوظ است.</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#">حریم خصوصی</a>
+                        <a href="#">شرایط استفاده</a>
+                        <a href="#">سیاست کوکی‌ها</a>
+                        <a href="#">نقشه سایت</a>
+                        <a href="#">بلاگ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // منوی موبایل
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+        const navUl = nav.querySelector('ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+            menuToggle.innerHTML = navUl.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // بستن منو با کلیک روی لینک
+        navUl.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navUl.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // بستن منو با تغییر اندازه صفحه
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navUl.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // افکت انیمیشن برای شبکه‌های اجتماعی
+        const socialNetworks = document.querySelectorAll('.social-network');
+        socialNetworks.forEach((network, index) => {
+            network.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // اعتبارسنجی فرم مشاوره
+        const consultationForm = document.getElementById('consultationForm');
+        consultationForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // گرفتن مقادیر فرم
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const experience = document.getElementById('experience').value;
+            const topic = document.getElementById('topic').value;
+            const message = document.getElementById('message').value;
+
+            // ساده‌ترین اعتبارسنجی
+            if (name && email && phone && experience && topic && message) {
+                if (email.includes('@')) {
+                    alert(`باتشکر ${name}، درخواست مشاوره شما با موفقیت ارسال شد. به زودی با شما تماس خواهیم گرفت.`);
+                    consultationForm.reset();
+                } else {
+                    alert('لطفاً یک ایمیل معتبر وارد کنید.');
+                }
+            } else {
+                alert('لطفاً تمام فیلدهای اجباری را پر کنید.');
+            }
+        });
+
+        // اعتبارسنجی فرم خبرنامه
+        const newsletterForms = document.querySelectorAll('.newsletter-form');
+        newsletterForms.forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const email = emailInput.value;
+
+                if (email && email.includes('@')) {
+                    alert('با موفقیت در خبرنامه عضو شدید!');
+                    emailInput.value = '';
+                } else {
+                    alert('لطفاً یک ایمیل معتبر وارد کنید.');
+                }
+            });
+        });
+
+        // انیمیشن برای کارت‌ها
+        const cards = document.querySelectorAll('.benefit-card, .expert-card, .type-card, .testimonial-card, .pro-feature');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // انیمیشن برای نمودارها
+        const chartBars = document.querySelectorAll('.chart-bar');
+        chartBars.forEach((bar, index) => {
+            bar.style.height = '0';
+            bar.style.transition = 'height 0.5s ease';
+            setTimeout(() => {
+                bar.style.height = bar.style.getPropertyValue('--original-height') || '100%';
+            }, 500 + index * 100);
+        });
+    </script>
+</body>
+
+</html>

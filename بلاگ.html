@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بلاگ | تریدرکس</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* هدر */
+        header {
+            background: rgba(10, 10, 35, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4cc9f0;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #f72585;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 15px;
+            border-radius: 30px;
+        }
+
+        nav ul li a:hover {
+            color: #4cc9f0;
+            background: rgba(76, 201, 240, 0.1);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .auth-buttons a {
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn {
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .login-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .signup-btn {
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            color: white;
+        }
+
+        .signup-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
+        }
+
+        /* breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #4cc9f0;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: #aaa;
+        }
+
+        /* بخش هیرو بلاگ */
+        .blog-hero {
+            padding: 100px 0;
+            text-align: center;
+            background: url('image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjAuNSIgZmlsbD0iIzRjYzlmMCIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=') center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(76, 201, 240, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(247, 37, 133, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        .blog-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .blog-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #ccc;
+        }
+
+        /* بخش جستجو و فیلتر بلاگ */
+        .blog-search-filter {
+            padding: 50px 0;
+            background: rgba(15, 15, 45, 0.7);
+        }
+
+        .search-filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1rem;
+            padding-left: 50px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            border-color: #4cc9f0;
+            box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
+        }
+
+        .search-box input::placeholder {
+            color: #777;
+        }
+
+        .search-box button {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: #4cc9f0;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .filter-dropdown {
+            min-width: 200px;
+        }
+
+        .filter-dropdown select {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url("image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cccccc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: left 15px center;
+            background-size: 16px;
+            padding-left: 45px;
+        }
+
+        .filter-dropdown select:focus {
+            border-color: #4cc9f0;
+            box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
+        }
+
+        /* بخش مقالات بلاگ */
+        .blog-posts {
+            padding: 80px 0;
+            background: rgba(20, 20, 50, 0.7);
+        }
+
+        .posts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .post-card {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .post-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(40, 40, 80, 0.7);
+        }
+
+        .post-image {
+            height: 200px;
+            background: linear-gradient(45deg, #4361ee, #4cc9f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .post-content {
+            padding: 30px;
+        }
+
+        .post-category {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .category-bitcoin {
+            background: rgba(247, 147, 26, 0.2);
+            color: #f7931a;
+        }
+
+        .category-ethereum {
+            background: rgba(102, 153, 255, 0.2);
+            color: #6699ff;
+        }
+
+        .category-trading {
+            background: rgba(76, 201, 240, 0.2);
+            color: #4cc9f0;
+        }
+
+        .category-analysis {
+            background: rgba(247, 37, 133, 0.2);
+            color: #f72585;
+        }
+
+        .category-security {
+            background: rgba(6, 214, 160, 0.2);
+            color: #06d6a0;
+        }
+
+        .post-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #4cc9f0;
+        }
+
+        .post-content p {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #aaa;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
+        .post-meta i {
+            margin-left: 5px;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: #4cc9f0;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #4cc9f0;
+            margin-top: 15px;
+        }
+
+        .read-more:hover {
+            background: rgba(76, 201, 240, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* بخش مقالات ویژه */
+        .featured-posts {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0f0c29, #302b63);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #aaa;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+        }
+
+        .featured-posts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .featured-post-card {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .featured-post-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(40, 40, 80, 0.7);
+        }
+
+        .featured-post-image {
+            height: 250px;
+            background: linear-gradient(45deg, #f72585, #4361ee);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .featured-post-content {
+            padding: 30px;
+        }
+
+        .featured-post-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #4cc9f0;
+        }
+
+        .featured-post-content p {
+            color: #ccc;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .featured-post-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #aaa;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
+        .featured-post-meta i {
+            margin-left: 5px;
+        }
+
+        /* بخش دسته‌بندی‌های بلاگ */
+        .blog-categories {
+            padding: 80px 0;
+            background: rgba(15, 15, 45, 0.7);
+        }
+
+        .categories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(40, 40, 80, 0.7);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .category-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #4cc9f0;
+        }
+
+        .category-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .category-count {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: rgba(76, 201, 240, 0.2);
+            color: #4cc9f0;
+        }
+
+        /* بخش نویسندگان برتر */
+        .top-authors {
+            padding: 80px 0;
+            background: rgba(20, 20, 50, 0.7);
+        }
+
+        .authors-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .author-card {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .author-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(40, 40, 80, 0.7);
+        }
+
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            background: linear-gradient(45deg, #4361ee, #4cc9f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .author-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #4cc9f0;
+        }
+
+        .author-card .position {
+            color: #f72585;
+            font-weight: 500;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .author-card p {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .author-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 25px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #4cc9f0;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        .view-profile {
+            display: inline-block;
+            padding: 12px 25px;
+            background: transparent;
+            color: #4cc9f0;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #4cc9f0;
+            font-size: 0.9rem;
+        }
+
+        .view-profile:hover {
+            background: rgba(76, 201, 240, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* بخش CTA بلاگ */
+        .blog-cta {
+            padding: 100px 0;
+            text-align: center;
+            background: rgba(15, 15, 45, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(76, 201, 240, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(247, 37, 133, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(247, 37, 133, 0.4);
+        }
+
+        .secondary-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            color: #4cc9f0;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #4cc9f0;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(76, 201, 240, 0.1);
+            transform: translateY(-5px);
+        }
+
+        /* فوتر */
+        footer {
+            background: #0a0a1a;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0 0;
+        }
+
+        .footer-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(76, 201, 240, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(247, 37, 133, 0.05) 0%, transparent 20%);
+            z-index: 1;
+        }
+
+        .footer-top {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-top h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #4cc9f0;
+        }
+
+        .social-networks {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-network {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-network::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #4cc9f0, #f72585, #4361ee, #3a0ca3);
+            z-index: -1;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-network:hover::before {
+            opacity: 1;
+        }
+
+        .social-network:hover {
+            transform: translateY(-10px) scale(1.15);
+            box-shadow: 0 15px 30px rgba(76, 201, 240, 0.4);
+        }
+
+        .social-network.telegram {
+            background: linear-gradient(135deg, #0088cc, #00aced);
+        }
+
+        .social-network.instagram {
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        }
+
+        .social-network.twitter {
+            background: linear-gradient(135deg, #1da1f2, #00acee);
+        }
+
+        .social-network.linkedin {
+            background: linear-gradient(135deg, #0077b5, #00a0dc);
+        }
+
+        .social-network.youtube {
+            background: linear-gradient(135deg, #ff0000, #cc181e);
+        }
+
+        .footer-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 60px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-column {
+            padding: 20px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #4cc9f0;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            border-radius: 2px;
+        }
+
+        .footer-column p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-right: 25px;
+        }
+
+        .footer-links li a::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4cc9f0;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links li a:hover {
+            color: #4cc9f0;
+            transform: translateX(-5px);
+        }
+
+        .footer-links li a:hover::before {
+            opacity: 1;
+            transform: scale(1.3);
+        }
+
+        .footer-contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item-footer {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-item-footer i {
+            font-size: 1.2rem;
+            color: #f72585;
+            margin-left: 15px;
+            margin-top: 5px;
+            min-width: 20px;
+        }
+
+        .contact-item-footer .contact-text-footer h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #4cc9f0;
+        }
+
+        .contact-item-footer .contact-text-footer p,
+        .contact-item-footer .contact-text-footer a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .contact-item-footer .contact-text-footer a:hover {
+            color: #4cc9f0;
+        }
+
+        .newsletter-section {
+            background: rgba(30, 30, 60, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .newsletter-section h5 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #4cc9f0;
+        }
+
+        .newsletter-section p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            outline: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form input:focus {
+            border-color: #4cc9f0;
+            box-shadow: 0 0 0 2px rgba(76, 201, 240, 0.2);
+        }
+
+        .newsletter-form input::placeholder {
+            color: #777;
+        }
+
+        .newsletter-form button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            background: linear-gradient(90deg, #f72585, #4361ee);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .newsletter-form button:hover {
+            background: linear-gradient(90deg, #4361ee, #f72585);
+            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.3);
+        }
+
+        .footer-bottom {
+            position: relative;
+            z-index: 2;
+            padding: 30px 0;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .footer-bottom-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 1px;
+            background: #4cc9f0;
+            transition: width 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #4cc9f0;
+        }
+
+        .footer-bottom-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-decor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .footer-decor::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(76, 201, 240, 0.1) 0%, transparent 70%);
+            animation: pulse 4s infinite;
+        }
+
+        .footer-decor::after {
+            content: '';
+            position: absolute;
+            bottom: 30%;
+            right: 15%;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(247, 37, 133, 0.1) 0%, transparent 70%);
+            animation: pulse 6s infinite reverse;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+        }
+
+        /* واکنش‌گرایی */
+        @media (max-width: 992px) {
+            .blog-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .blog-hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                position: relative;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .auth-buttons {
+                margin-top: 20px;
+            }
+
+            .blog-hero {
+                padding: 80px 0;
+            }
+
+            .blog-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .blog-hero p {
+                font-size: 1rem;
+            }
+
+            .search-filter-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-box,
+            .filter-dropdown {
+                width: 100%;
+                min-width: 100%;
+            }
+
+            .blog-posts,
+            .featured-posts,
+            .blog-categories,
+            .top-authors,
+            .blog-cta {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .posts-container,
+            .featured-posts-container,
+            .categories-container,
+            .authors-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .post-card,
+            .featured-post-card,
+            .category-card,
+            .author-card {
+                padding: 25px 20px;
+            }
+
+            .post-image,
+            .featured-post-image {
+                height: 180px;
+                font-size: 3rem;
+            }
+
+            .post-content,
+            .featured-post-content {
+                padding: 25px 20px;
+            }
+
+            .post-content h3,
+            .featured-post-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .post-content p,
+            .featured-post-content p {
+                font-size: 0.9rem;
+            }
+
+            .category-card {
+                padding: 30px 20px;
+            }
+
+            .category-icon {
+                font-size: 2.5rem;
+            }
+
+            .category-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .category-card p {
+                font-size: 0.9rem;
+            }
+
+            .author-avatar {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5rem;
+            }
+
+            .author-card h4 {
+                font-size: 1.2rem;
+            }
+
+            .author-card .position {
+                font-size: 0.9rem;
+            }
+
+            .author-card p {
+                font-size: 0.85rem;
+            }
+
+            .stat-number {
+                font-size: 1.1rem;
+            }
+
+            .stat-label {
+                font-size: 0.75rem;
+            }
+
+            .view-profile {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .social-networks {
+                gap: 15px;
+            }
+
+            .social-network {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-column {
+                padding: 20px 15px;
+            }
+
+            .footer-column h4 {
+                font-size: 1.3rem;
+            }
+
+            .footer-column p {
+                font-size: 0.9rem;
+            }
+
+            .footer-links li {
+                margin-bottom: 12px;
+            }
+
+            .footer-links li a {
+                font-size: 0.9rem;
+                padding-right: 20px;
+            }
+
+            .footer-links li a::before {
+                width: 6px;
+                height: 6px;
+            }
+
+            .footer-contact {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .contact-item-footer {
+                margin-bottom: 15px;
+            }
+
+            .contact-item-footer i {
+                font-size: 1rem;
+                margin-left: 10px;
+                margin-top: 3px;
+                min-width: 16px;
+            }
+
+            .contact-item-footer .contact-text-footer h5 {
+                font-size: 1rem;
+                margin-bottom: 3px;
+            }
+
+            .contact-item-footer .contact-text-footer p,
+            .contact-item-footer .contact-text-footer a {
+                font-size: 0.85rem;
+            }
+
+            .newsletter-section {
+                padding: 20px 15px;
+                margin-top: 15px;
+            }
+
+            .newsletter-section h5 {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+
+            .newsletter-section p {
+                font-size: 0.85rem;
+                margin-bottom: 10px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: 30px;
+                width: 100%;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+
+            .footer-decor::before,
+            .footer-decor::after {
+                display: none;
+            }
+
+            .footer-top h3 {
+                font-size: 1.5rem;
+            }
+
+            .blog-cta {
+                padding: 80px 0;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .cta-content p {
+                font-size: 1rem;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+                padding: 0 15px;
+            }
+
+            .blog-hero {
+                padding: 60px 0;
+            }
+
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+
+            .blog-hero p {
+                font-size: 0.9rem;
+            }
+
+            .blog-posts,
+            .featured-posts,
+            .blog-categories,
+            .top-authors,
+            .blog-cta {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .posts-container,
+            .featured-posts-container,
+            .categories-container,
+            .authors-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .post-card,
+            .featured-post-card,
+            .category-card,
+            .author-card {
+                padding: 20px 15px;
+            }
+
+            .post-image,
+            .featured-post-image {
+                height: 150px;
+                font-size: 2.5rem;
+            }
+
+            .post-content,
+            .featured-post-content {
+                padding: 20px 15px;
+            }
+
+            .post-content h3,
+            .featured-post-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .post-content p,
+            .featured-post-content p {
+                font-size: 0.85rem;
+            }
+
+            .category-card {
+                padding: 25px 15px;
+            }
+
+            .category-icon {
+                font-size: 2rem;
+            }
+
+            .category-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .category-card p {
+                font-size: 0.85rem;
+            }
+
+            .author-avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+
+            .author-card h4 {
+                font-size: 1.1rem;
+            }
+
+            .author-card .position {
+                font-size: 0.85rem;
+            }
+
+            .author-card p {
+                font-size: 0.8rem;
+            }
+
+            .stat-number {
+                font-size: 1rem;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
+            }
+
+            .view-profile {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .social-networks {
+                gap: 10px;
+            }
+
+            .social-network {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .footer-column {
+                padding: 15px 10px;
+            }
+
+            .footer-column h4 {
+                font-size: 1.2rem;
+            }
+
+            .footer-column p {
+                font-size: 0.85rem;
+            }
+
+            .footer-links li {
+                margin-bottom: 10px;
+            }
+
+            .footer-links li a {
+                font-size: 0.85rem;
+                padding-right: 15px;
+            }
+
+            .footer-links li a::before {
+                width: 5px;
+                height: 5px;
+            }
+
+            .footer-contact {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .contact-item-footer {
+                margin-bottom: 10px;
+            }
+
+            .contact-item-footer i {
+                font-size: 0.9rem;
+                margin-left: 8px;
+                margin-top: 2px;
+                min-width: 14px;
+            }
+
+            .contact-item-footer .contact-text-footer h5 {
+                font-size: 0.9rem;
+                margin-bottom: 2px;
+            }
+
+            .contact-item-footer .contact-text-footer p,
+            .contact-item-footer .contact-text-footer a {
+                font-size: 0.8rem;
+            }
+
+            .newsletter-section {
+                padding: 15px 10px;
+                margin-top: 10px;
+            }
+
+            .newsletter-section h5 {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+
+            .newsletter-section p {
+                font-size: 0.8rem;
+                margin-bottom: 8px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: 30px;
+                width: 100%;
+                padding: 12px 15px;
+                font-size: 0.85rem;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .footer-decor::before,
+            .footer-decor::after {
+                display: none;
+            }
+
+            .footer-top h3 {
+                font-size: 1.3rem;
+            }
+
+            .blog-cta {
+                padding: 60px 0;
+            }
+
+            .cta-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-content p {
+                font-size: 0.9rem;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                padding: 10px 25px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- هدر -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">تریدر<span>کس</span></a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="خدمات.html">خدمات</a></li>
+                    <li><a href="درباره ما.html">درباره ما</a></li>
+                    <li><a href="تماس با ما.html">تماس با ما</a></li>
+                    <li><a href="بلاگ.html">بلاگ</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="لاگین.html" class="login-btn">ورود</a>
+                <a href="لاگین.html" class="signup-btn">ثبت نام</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="#">خانه</a> <span>/</span> خدمات <span>/</span> ترید ارزهای دیجیتال
+        </div>
+    </div>
+
+    <!-- بخش هیرو ترید ارزهای دیجیتال -->
+    <section class="trading-hero">
+        <div class="container">
+            <h1>ترید ارزهای دیجیتال</h1>
+            <p>تجارت حرفه‌ای ارزهای دیجیتال با پلتفرم پیشرفته ما و دسترسی به بهترین قیمت‌ها و کمترین کارمزدها</p>
+        </div>
+    </section>
+
+    <!-- بخش جستجو و فیلتر بلاگ -->
+    <section class="blog-search-filter">
+        <div class="container">
+            <div class="search-filter-container">
+                <div class="search-box">
+                    <input type="text" placeholder="جستجو در مقالات...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-dropdown">
+                    <select>
+                        <option value="">همه دسته‌بندی‌ها</option>
+                        <option value="bitcoin">بیت کوین</option>
+                        <option value="ethereum">اتریوم</option>
+                        <option value="trading">ترید</option>
+                        <option value="analysis">تحلیل</option>
+                        <option value="security">امنیت</option>
+                        <option value="news">اخبار</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش مقالات بلاگ -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="posts-container">
+                <div class="post-card">
+                    <div class="post-image">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-category category-bitcoin">بیت کوین</span>
+                        <h3>تحلیل قیمت بیت کوین در ماه گذشته</h3>
+                        <p>بررسی جامع روند قیمت بیت کوین در ماه گذشته و تحلیل عوامل تأثیرگذار بر قیمت آن در بازارهای
+                            جهانی</p>
+                        <div class="post-meta">
+                            <span><i class="far fa-clock"></i> 1402/08/15</span>
+                            <span><i class="far fa-comment"></i> 24 نظر</span>
+                        </div>
+                        <a href="#" class="read-more">ادامه مطلب</a>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <div class="post-image">
+                        <i class="fab fa-ethereum"></i>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-category category-ethereum">اتریوم</span>
+                        <h3>بررسی تاثیر ارتقاء EIP-1559 بر قیمت اتریوم</h3>
+                        <p>تحلیل تأثیر ارتقاء EIP-1559 بر قیمت اتریوم و نحوه تغییر مکانیزم کارمزدها در شبکه اتریوم</p>
+                        <div class="post-meta">
+                            <span><i class="far fa-clock"></i> 1402/08/12</span>
+                            <span><i class="far fa-comment"></i> 18 نظر</span>
+                        </div>
+                        <a href="#" class="read-more">ادامه مطلب</a>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <div class="post-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-category category-trading">ترید</span>
+                        <h3>استراتژی‌های موفق ترید در بازار نوسانی</h3>
+                        <p>معرفی استراتژی‌های موفق ترید در بازارهای نوسانی و نحوه مدیریت ریسک در این شرایط خاص</p>
+                        <div class="post-meta">
+                            <span><i class="far fa-clock"></i> 1402/08/10</span>
+                            <span><i class="far fa-comment"></i> 32 نظر</span>
+                        </div>
+                        <a href="#" class="read-more">ادامه مطلب</a>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <div class="post-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-category category-security">امنیت</span>
+                        <h3>راه‌های امنیتی برای حفاظت از دارایی‌های دیجیتال</h3>
+                        <p>معرفی راه‌های امنیتی برای حفاظت از دارایی‌های دیجیتال در کیف پول‌ها و پلتفرم‌های ترید</p>
+                        <div class="post-meta">
+                            <span><i class="far fa-clock"></i> 1402/08/08</span>
+                            <span><i class="far fa-comment"></i> 27 نظر</span>
+                        </div>
+                        <a href="#" class="read-more">ادامه مطلب</a>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <div class="post-image">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-category category-analysis">تحلیل</span>
+                        <h3>تحلیل تکنیکال پیشرفته با استفاده از هوش مصنوعی</h3>
+                        <p>بررسی نحوه استفاده از هوش مصنوعی در تحلیل تکنیکال و پیش‌بینی روندهای آینده بازار</p>
+                        <div class="post-meta">
+                            <span><i class="far fa-clock"></i> 1402/08/05</span>
+                            <span><i class="far fa-comment"></i> 41 نظر</span>
+                        </div>
+                        <a href="#" class="read-more">ادامه مطلب</a>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <div class="post-image">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="post-content">
+                        <span class="post-category category-news">اخبار</span>
+                        <h3>بررسی تأثیر اخبار اقتصادی بر بازار ارزهای دیجیتال</h3>
+                        <p>تحلیل تأثیر اخبار اقتصادی و سیاسی جهانی بر قیمت و روند بازار ارزهای دیجیتال</p>
+                        <div class="post-meta">
+                            <span><i class="far fa-clock"></i> 1402/08/02</span>
+                            <span><i class="far fa-comment"></i> 19 نظر</span>
+                        </div>
+                        <a href="#" class="read-more">ادامه مطلب</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش مقالات ویژه -->
+    <section class="featured-posts">
+        <div class="container">
+            <h2 class="section-title">مقالات ویژه</h2>
+            <p class="section-subtitle">جدیدترین و مهم‌ترین مقالات تحلیلی و آموزشی تیم متخصصان ما</p>
+            <div class="featured-posts-container">
+                <div class="featured-post-card">
+                    <div class="featured-post-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="featured-post-content">
+                        <h3>هوش مصنوعی در تحلیل بازار ارزهای دیجیتال</h3>
+                        <p>بررسی کاربرد هوش مصنوعی در تحلیل بازار ارزهای دیجیتال و نحوه استفاده از الگوریتم‌های یادگیری
+                            ماشین برای پیش‌بینی روندهای آینده بازار</p>
+                        <div class="featured-post-meta">
+                            <span><i class="far fa-clock"></i> 1402/08/15</span>
+                            <span><i class="far fa-eye"></i> 1,250 بازدید</span>
+                        </div>
+                        <a href="#" class="read-more">ادامه مطلب</a>
+                    </div>
+                </div>
+                <div class="featured-post-card">
+                    <div class="featured-post-image">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="featured-post-content">
+                        <h3>سرعت بالا در ترید: کلید موفقیت در بازارهای نوسانی</h3>
+                        <p>بررسی اهمیت سرعت در ترید ارزهای دیجیتال و نحوه استفاده از سرورهای اختصاصی برای اجرای معاملات
+                            با حداقل تاخیر</p>
+                        <div class="featured-post-meta">
+                            <span><i class="far fa-clock"></i> 1402/08/12</span>
+                            <span><i class="far fa-eye"></i> 980 بازدید</span>
+                        </div>
+                        <a href="#" class="read-more">ادامه مطلب</a>
+                    </div>
+                </div>
+                <div class="featured-post-card">
+                    <div class="featured-post-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="featured-post-content">
+                        <h3>امنیت در ترید ارزهای دیجیتال: چگونه دارایی‌های خود را محافظت کنیم؟</h3>
+                        <p>معرفی روش‌های امنیتی پیشرفته برای حفاظت از دارایی‌های دیجیتال در کیف پول‌ها و پلتفرم‌های ترید
+                            با تمرکز بر رمزنگاری و احراز هویت چندمرحله‌ای</p>
+                        <div class="featured-post-meta">
+                            <span><i class="far fa-clock"></i> 1402/08/10</span>
+                            <span><i class="far fa-eye"></i> 1,520 بازدید</span>
+                        </div>
+                        <a href="#" class="read-more">ادامه مطلب</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش دسته‌بندی‌های بلاگ -->
+    <section class="blog-categories">
+        <div class="container">
+            <h2 class="section-title">دسته‌بندی‌های بلاگ</h2>
+            <p class="section-subtitle">مطالب آموزشی و تحلیلی ما در دسته‌بندی‌های مختلف</p>
+            <div class="categories-container">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <h3>بیت کوین</h3>
+                    <p>تحلیل‌ها و مقالات مربوط به بیت کوین و تأثیرات آن بر بازار مالی جهانی</p>
+                    <span class="category-count">45 مقاله</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fab fa-ethereum"></i>
+                    </div>
+                    <h3>اتریوم</h3>
+                    <p>تحلیل‌ها و مقالات مربوط به اتریوم و توسعه دفاتر هوشمند و NFTها</p>
+                    <span class="category-count">38 مقاله</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>تحلیل تکنیکال</h3>
+                    <p>تحلیل‌های تکنیکال با استفاده از اندیکاتورها و الگوهای قیمتی</p>
+                    <span class="category-count">62 مقاله</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>تحلیل بنیادی</h3>
+                    <p>تحلیل‌های بنیادی با تمرکز بر عوامل اقتصادی و سیاسی تأثیرگذار</p>
+                    <span class="category-count">29 مقاله</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>امنیت</h3>
+                    <p>مقالات مربوط به امنیت دارایی‌های دیجیتال و روش‌های محافظت از آنها</p>
+                    <span class="category-count">24 مقاله</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>اخبار</h3>
+                    <p>آخرین اخبار و تحولات دنیای ارزهای دیجیتال و بازارهای مالی</p>
+                    <span class="category-count">56 مقاله</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش نویسندگان برتر -->
+    <section class="top-authors">
+        <div class="container">
+            <h2 class="section-title">نویسندگان برتر</h2>
+            <p class="section-subtitle">تیم متخصصان ما با تجربه‌های متنوع در زمینه‌های مالی و تحلیل بازار</p>
+            <div class="authors-container">
+                <div class="author-card">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h4>علی محمدی</h4>
+                        <div class="position">متخصص تحلیل تکنیکال</div>
+                        <p>تحلیلگر بازار مالی با بیش از 15 سال تجربه در صنعت سرمایه‌گذاری</p>
+                        <div class="author-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">45</div>
+                                <div class="stat-label">مقاله</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">200+</div>
+                                <div class="stat-label">نظر</div>
+                            </div>
+                        </div>
+                        <a href="#" class="view-profile">مشاهده پروفایل</a>
+                    </div>
+                </div>
+                <div class="author-card">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h4>سارا رضایی</h4>
+                        <div class="position">متخصص هوش مصنوعی</div>
+                        <p>متخصص توسعه نرم‌افزار و بلاکچین با تمرکز بر امنیت پلتفرم</p>
+                        <div class="author-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">32</div>
+                                <div class="stat-label">مقاله</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">150+</div>
+                                <div class="stat-label">نظر</div>
+                            </div>
+                        </div>
+                        <a href="#" class="view-profile">مشاهده پروفایل</a>
+                    </div>
+                </div>
+                <div class="author-card">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h4>مهدی کریمی</h4>
+                        <div class="position">تحلیلگر بازار</div>
+                        <p>تحلیلگر بازار مالی با تخصص در تحلیل تکنیکال و بنیادی</p>
+                        <div class="author-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">28</div>
+                                <div class="stat-label">مقاله</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">120+</div>
+                                <div class="stat-label">نظر</div>
+                            </div>
+                        </div>
+                        <a href="#" class="view-profile">مشاهده پروفایل</a>
+                    </div>
+                </div>
+                <div class="author-card">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h4>نرگس احمدی</h4>
+                        <div class="position">متخصص آموزش</div>
+                        <p>متخصص رابط کاربری و تجربه کاربری با تمرکز بر رضایت مشتریان</p>
+                        <div class="author-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">40</div>
+                                <div class="stat-label">مقاله</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">180+</div>
+                                <div class="stat-label">نظر</div>
+                            </div>
+                        </div>
+                        <a href="#" class="view-profile">مشاهده پروفایل</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش CTA ترید -->
+    <section class="trading-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>آماده‌اید تا شروع کنید؟</h2>
+                <p>همین امروز با تریدرکس شروع به ترید حرفه‌ای ارزهای دیجیتال کنید و از مزایای پلتفرم پیشرفته ما بهره‌مند
+                    شوید.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="primary-btn">ثبت نام رایگان</a>
+                    <a href="#" class="secondary-btn">دموی رایگان</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="footer-bg"></div>
+        <div class="footer-decor"></div>
+
+        <div class="footer-top">
+            <h3>با ما در شبکه‌های اجتماعی همراه باشید</h3>
+            <div class="social-networks">
+                <a href="#" class="social-network telegram" title="تلگرام">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="#" class="social-network instagram" title="اینستاگرام">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-network twitter" title="توییتر">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-network linkedin" title="لینکدین">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-network youtube" title="یوتیوب">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>درباره تریدرکس</h4>
+                <p>ما یک پلتفرم پیشرو در زمینه ترید و سرمایه‌گذاری هستیم که با استفاده از فناوری‌های نوین و تحلیل‌های
+                    پیشرفته، فرصت‌های سرمایه‌گذاری هوشمندانه را برای شما فراهم می‌کنیم.</p>
+                <div class="newsletter-section">
+                    <h5>در خبرنامه ما عضو شوید</h5>
+                    <p>آخرین اخبار و تحلیل‌های بازار را دریافت کنید</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="ایمیل شما" required>
+                        <button type="submit">عضویت</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>خدمات</h4>
+                <ul class="footer-links">
+                    <li><a href="ترید ارز های دیجیتال.html">ترید ارزهای دیجیتال</a></li>
+                    <li><a href="سرمایه گذاری هوشمند.html">سرمایه‌گذاری هوشمند</a></li>
+                    <li><a href="تحلیل بازار.html">تحلیل بازار</a></li>
+                    <li><a href="مدیریت پورتفولیو.html">مدیریت پورتفولیو</a></li>
+                    <li><a href="آموزش ترید.html">آموزش ترید</a></li>
+                    <li><a href="مشاوره تخصصی.html">مشاوره تخصصی</a></li>
+                    <li><a href="#">دانلود اپلیکیشن</a></li>
+                    <li><a href="#">اپلیکیشن تحت وب</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>راهنما و پشتیبانی</h4>
+                <ul class="footer-links">
+                    <li><a href="راهنمای شروع.html">راهنمای شروع</a></li>
+                    <li><a href="سوالات متداول.html">سوالات متداول</a></li>
+                    <li><a href="مرکز آموزش.html">مرکز آموزش</a></li>
+                    <li><a href="قوانین و مقررات.html">قوانین و مقررات</a></li>
+                    <li><a href="حریم خصوصی.html">حریم خصوصی</a></li>
+                    <li><a href="گزارش مشکل.html">گزارش مشکل</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>تماس با ما</h4>
+                <div class="footer-contact">
+                    <div class="contact-item-footer">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-text-footer">
+                            <h5>آدرس</h5>
+                            <p>تهران، خیابان ولیعصر، پلاک 1234</p>
+                        </div>
+                    </div>
+                    <div class="contact-item-footer">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="contact-text-footer">
+                            <h5>تلفن</h5>
+                            <p><a href="tel:+982112345678">021-12345678</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item-footer">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-text-footer">
+                            <h5>ایمیل</h5>
+                            <p><a href="mailto:info@traderx.com">info@traderx.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item-footer">
+                        <i class="fas fa-headset"></i>
+                        <div class="contact-text-footer">
+                            <h5>پشتیبانی</h5>
+                            <p>24/7 آماده پاسخگویی</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 1402 تریدرکس. تمامی حقوق محفوظ است.</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#">حریم خصوصی</a>
+                        <a href="#">شرایط استفاده</a>
+                        <a href="#">سیاست کوکی‌ها</a>
+                        <a href="#">نقشه سایت</a>
+                        <a href="#">بلاگ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // منوی موبایل
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+        const navUl = nav.querySelector('ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+            menuToggle.innerHTML = navUl.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // بستن منو با کلیک روی لینک
+        navUl.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navUl.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // بستن منو با تغییر اندازه صفحه
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navUl.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // افکت انیمیشن برای شبکه‌های اجتماعی
+        const socialNetworks = document.querySelectorAll('.social-network');
+        socialNetworks.forEach((network, index) => {
+            network.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // اعتبارسنجی فرم خبرنامه
+        const newsletterForms = document.querySelectorAll('.newsletter-form');
+        newsletterForms.forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const email = emailInput.value;
+
+                if (email && email.includes('@')) {
+                    alert('با موفقیت در خبرنامه عضو شدید!');
+                    emailInput.value = '';
+                } else {
+                    alert('لطفاً یک ایمیل معتبر وارد کنید.');
+                }
+            });
+        });
+
+        // انیمیشن برای کارت‌ها
+        const cards = document.querySelectorAll('.post-card, .featured-post-card, .category-card, .author-card, .market-card');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // بستن منو با کلیک روی لینک
+        navUl.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navUl.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // بستن منو با تغییر اندازه صفحه
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navUl.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // افکت انیمیشن برای شبکه‌های اجتماعی
+        const socialNetworksFooter = document.querySelectorAll('.social-network');
+        socialNetworksFooter.forEach((network, index) => {
+            network.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // اعتبارسنجی فرم خبرنامه
+        const newsletterFormsFooter = document.querySelectorAll('.newsletter-form');
+        newsletterFormsFooter.forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const email = emailInput.value;
+
+                if (email && email.includes('@')) {
+                    alert('با موفقیت در خبرنامه عضو شدید!');
+                    emailInput.value = '';
+                } else {
+                    alert('لطفاً یک ایمیل معتبر وارد کنید.');
+                }
+            });
+        });
+
+        // انیمیشن برای کارت‌ها
+        const cardsAll = document.querySelectorAll('.post-card, .featured-post-card, .category-card, .author-card, .market-card, .mv-card, .tech-item');
+
+        const observerAll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cardsAll.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observerAll.observe(card);
+        });
+    </script>
+</body>
+
+</html>

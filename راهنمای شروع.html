@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرکز آموزش | تریدرکس</title>
+    <title>راهنمای شروع | تریدرکس</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -138,8 +138,8 @@
             color: #aaa;
         }
 
-        /* بخش هیرو مرکز آموزش */
-        .learning-hero {
+        /* بخش هیرو راهنمای شروع */
+        .getting-started-hero {
             padding: 100px 0;
             text-align: center;
             background: url('image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjAuNSIgZmlsbD0iIzRjYzlmMCIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=') center/cover;
@@ -147,7 +147,7 @@
             overflow: hidden;
         }
 
-        .learning-hero::before {
+        .getting-started-hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -159,7 +159,7 @@
             z-index: -1;
         }
 
-        .learning-hero h1 {
+        .getting-started-hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             background: linear-gradient(90deg, #4cc9f0, #f72585);
@@ -168,49 +168,37 @@
             background-clip: text;
         }
 
-        .learning-hero p {
+        .getting-started-hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
             color: #ccc;
         }
 
-        .search-learning {
+        .progress-container {
             max-width: 600px;
             margin: 0 auto;
-            position: relative;
-        }
-
-        .search-learning input {
-            width: 100%;
-            padding: 15px 20px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
             background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            font-family: 'Vazirmatn', sans-serif;
-            font-size: 1rem;
-            padding-left: 50px;
+            border-radius: 30px;
+            padding: 5px;
         }
 
-        .search-learning input::placeholder {
-            color: #777;
+        .progress-bar {
+            height: 10px;
+            background: linear-gradient(90deg, #4cc9f0, #f72585);
+            border-radius: 30px;
+            width: 20%;
+            transition: width 0.5s ease;
         }
 
-        .search-learning button {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: transparent;
-            border: none;
+        .progress-text {
+            margin-top: 15px;
             color: #4cc9f0;
-            font-size: 1.2rem;
-            cursor: pointer;
+            font-weight: 500;
         }
 
-        /* بخش دسته‌بندی‌ها */
-        .categories {
+        /* بخش مراحل شروع */
+        .steps {
             padding: 80px 0;
             background: rgba(15, 15, 45, 0.7);
         }
@@ -240,291 +228,169 @@
             font-size: 1.1rem;
         }
 
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .category-card {
+        .step-item {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            padding: 30px;
             background: rgba(30, 30, 60, 0.6);
             border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #4cc9f0, #f72585);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s ease;
-        }
-
-        .category-card:hover::before {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        .step-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             background: rgba(40, 40, 80, 0.7);
         }
 
-        .category-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #4cc9f0;
+        .step-number {
+            min-width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4cc9f0, #f72585);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
         }
 
-        .category-card h3 {
+        .step-content h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: #4cc9f0;
         }
 
-        .category-card p {
+        .step-content p {
             color: #ccc;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.7;
+            line-height: 1.8;
+            margin-bottom: 15px;
         }
 
-        .category-stats {
-            display: flex;
-            justify-content: space-between;
+        .step-content ul {
+            padding-right: 20px;
             color: #aaa;
-            font-size: 0.9rem;
         }
 
-        /* بخش مقالات و دوره‌ها */
-        .learning-content {
+        .step-content ul li {
+            margin-bottom: 10px;
+        }
+
+        /* بخش ابزارها و منابع */
+        .tools-resources {
             padding: 80px 0;
             background: rgba(20, 20, 50, 0.7);
         }
 
-        .content-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 12px 30px;
-            background: rgba(255, 255, 255, 0.05);
-            color: #aaa;
-            border: none;
-            border-radius: 30px;
-            font-family: 'Vazirmatn', sans-serif;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .tab-btn.active,
-        .tab-btn:hover {
-            background: linear-gradient(90deg, #f72585, #4361ee);
-            color: white;
-        }
-
-        .content-grid {
+        .resources-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .content-card {
+        .resource-card {
             background: rgba(30, 30, 60, 0.6);
             border-radius: 15px;
-            overflow: hidden;
+            padding: 30px;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .content-card:hover {
+        .resource-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             background: rgba(40, 40, 80, 0.7);
         }
 
-        .content-image {
-            height: 180px;
-            background: linear-gradient(45deg, #4361ee, #4cc9f0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.2);
+        .resource-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #f72585;
         }
 
-        .content-info {
-            padding: 25px;
-        }
-
-        .content-category {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .beginner {
-            background: rgba(6, 214, 160, 0.2);
-            color: #06d6a0;
-        }
-
-        .intermediate {
-            background: rgba(255, 209, 102, 0.2);
-            color: #ffd166;
-        }
-
-        .advanced {
-            background: rgba(239, 71, 111, 0.2);
-            color: #ef476f;
-        }
-
-        .content-info h3 {
-            font-size: 1.3rem;
+        .resource-card h3 {
+            font-size: 1.4rem;
             margin-bottom: 15px;
             color: #4cc9f0;
         }
 
-        .content-info p {
+        .resource-card p {
             color: #ccc;
-            font-size: 0.95rem;
+            line-height: 1.8;
             margin-bottom: 20px;
-            line-height: 1.7;
         }
 
-        .content-meta {
-            display: flex;
-            justify-content: space-between;
-            color: #aaa;
-            font-size: 0.9rem;
+        .resource-link {
+            display: inline-block;
+            color: #4cc9f0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .content-meta i {
-            margin-left: 5px;
+        .resource-link:hover {
+            color: #f72585;
+            transform: translateX(-5px);
         }
 
-        /* بخش آموزشگاهان برتر */
-        .instructors {
+        /* بخش نکات مهم */
+        .important-notes {
             padding: 80px 0;
             background: linear-gradient(135deg, #0f0c29, #302b63);
         }
 
-        .instructors-grid {
+        .notes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .instructor-card {
+        .note-card {
             background: rgba(30, 30, 60, 0.6);
             border-radius: 15px;
             padding: 30px;
-            text-align: center;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .instructor-card:hover {
-            transform: translateY(-10px);
+        .note-card:hover {
+            transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             background: rgba(40, 40, 80, 0.7);
         }
 
-        .instructor-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            background: linear-gradient(45deg, #4361ee, #4cc9f0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: rgba(255, 255, 255, 0.2);
+        .note-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffd166;
         }
 
-        .instructor-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #4cc9f0;
-        }
-
-        .instructor-card .position {
-            color: #f72585;
-            font-weight: 500;
+        .note-card h3 {
+            font-size: 1.4rem;
             margin-bottom: 15px;
-            font-size: 0.95rem;
+            color: #4cc9f0;
         }
 
-        .instructor-card p {
+        .note-card p {
             color: #ccc;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
-        .instructor-stats {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #4cc9f0;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: #aaa;
-        }
-
-        .view-profile {
-            display: inline-block;
-            padding: 10px 25px;
-            background: transparent;
-            color: #4cc9f0;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid #4cc9f0;
-            font-size: 0.9rem;
-        }
-
-        .view-profile:hover {
-            background: rgba(76, 201, 240, 0.1);
-            transform: translateY(-3px);
-        }
-
-        /* بخش CTA آموزش */
-        .learning-cta {
+        /* بخش CTA شروع */
+        .getting-started-cta {
             padding: 100px 0;
             text-align: center;
             background: rgba(20, 20, 50, 0.7);
@@ -532,7 +398,7 @@
             overflow: hidden;
         }
 
-        .learning-cta::before {
+        .getting-started-cta::before {
             content: '';
             position: absolute;
             top: 0;
@@ -993,11 +859,11 @@
 
         /* واکنش‌گرایی */
         @media (max-width: 992px) {
-            .learning-hero h1 {
+            .getting-started-hero h1 {
                 font-size: 2.5rem;
             }
 
-            .learning-hero p {
+            .getting-started-hero p {
                 font-size: 1.1rem;
             }
 
@@ -1043,22 +909,22 @@
                 margin-top: 20px;
             }
 
-            .learning-hero {
+            .getting-started-hero {
                 padding: 80px 0;
             }
 
-            .learning-hero h1 {
+            .getting-started-hero h1 {
                 font-size: 2.2rem;
             }
 
-            .learning-hero p {
+            .getting-started-hero p {
                 font-size: 1rem;
             }
 
-            .categories,
-            .learning-content,
-            .instructors,
-            .learning-cta {
+            .steps,
+            .tools-resources,
+            .important-notes,
+            .getting-started-cta {
                 padding: 60px 0;
             }
 
@@ -1066,14 +932,15 @@
                 font-size: 2rem;
             }
 
-            .category-card,
-            .content-card,
-            .instructor-card {
-                padding: 25px 20px;
+            .step-item {
+                flex-direction: column;
+                gap: 20px;
+                padding: 25px;
             }
 
-            .category-card h3 {
-                font-size: 1.3rem;
+            .resource-card,
+            .note-card {
+                padding: 25px 20px;
             }
 
             .cta-buttons {
@@ -1112,18 +979,18 @@
                 padding: 0 15px;
             }
 
-            .learning-hero {
+            .getting-started-hero {
                 padding: 60px 0;
             }
 
-            .learning-hero h1 {
+            .getting-started-hero h1 {
                 font-size: 2rem;
             }
 
-            .categories,
-            .learning-content,
-            .instructors,
-            .learning-cta {
+            .steps,
+            .tools-resources,
+            .important-notes,
+            .getting-started-cta {
                 padding: 50px 0;
             }
 
@@ -1131,21 +998,19 @@
                 font-size: 1.8rem;
             }
 
-            .categories-grid,
-            .content-grid,
-            .instructors-grid {
-                grid-template-columns: 1fr;
+            .steps-container,
+            .resources-grid,
+            .notes-grid {
                 gap: 25px;
             }
 
-            .category-card,
-            .content-card,
-            .instructor-card {
+            .step-item {
                 padding: 20px 15px;
             }
 
-            .content-image {
-                height: 150px;
+            .resource-card,
+            .note-card {
+                padding: 20px 15px;
             }
 
             .newsletter-form {
@@ -1206,273 +1071,239 @@
     <!-- breadcrumb -->
     <div class="container">
         <div class="breadcrumb">
-            <a href="index.html">خانه</a> <span>/</span> مرکز آموزش
+            <a href="index.html">خانه</a> <span>/</span> راهنمای شروع
         </div>
     </div>
 
-    <!-- بخش هیرو مرکز آموزش -->
-    <section class="learning-hero">
+    <!-- بخش هیرو راهنمای شروع -->
+    <section class="getting-started-hero">
         <div class="container">
-            <h1>مرکز آموزش تریدرکس</h1>
-            <p>جامع‌ترین منبع آموزشی برای یادگیری ترید و سرمایه‌گذاری در دنیای دیجیتال</p>
-            <div class="search-learning">
-                <input type="text" placeholder="جستجو در مقالات و دوره‌ها...">
-                <button><i class="fas fa-search"></i></button>
+            <h1>راهنمای شروع تریدرکس</h1>
+            <p>راهنمای جامع برای شروع سرمایه‌گذاری هوشمند در پلتفرم تریدرکس</p>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="progress-text">مرحله 1 از 5: ثبت نام</div>
+        </div>
+    </section>
+
+    <!-- بخش مراحل شروع -->
+    <section class="steps">
+        <div class="container">
+            <h2 class="section-title">مراحل شروع</h2>
+            <p class="section-subtitle">مراحل کامل و آسان برای شروع سرمایه‌گذاری در پلتفرم ما</p>
+
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>ثبت نام در پلتفرم</h3>
+                        <p>اولین قدم برای شروع سرمایه‌گذاری، ایجاد حساب کاربری در پلتفرم تریدرکس است.</p>
+                        <ul>
+                            <li>به صفحه ثبت نام مراجعه کنید</li>
+                            <li>اطلاعات شخصی خود را وارد کنید</li>
+                            <li>ایمیل تأیید را بررسی و حساب خود را فعال کنید</li>
+                            <li>رمز عبور قوی انتخاب کنید</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>احراز هویت</h3>
+                        <p>برای استفاده از خدمات پیشرفته، باید مراحل احراز هویت را تکمیل کنید.</p>
+                        <ul>
+                            <li>وارد بخش "احراز هویت" شوید</li>
+                            <li>تصویر کارت شناسایی خود را آپلود کنید</li>
+                            <li>تصویر سلفی با کارت شناسایی را ارسال کنید</li>
+                            <li>در صورت نیاز، اطلاعات مالی خود را وارد کنید</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>ایجاد کیف پول</h3>
+                        <p>برای ذخیره ارزهای دیجیتال، باید کیف پول ایجاد کنید.</p>
+                        <ul>
+                            <li>به بخش "کیف پول" مراجعه کنید</li>
+                            <li>کیف پول جدید ایجاد کنید</li>
+                            <li>عبارت بازیابی را به دقت یادداشت کنید</li>
+                            <li>کیف پول خود را امن کنید</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>واریز وجه</h3>
+                        <p>برای شروع معاملات، باید وجه خود را به پلتفرم واریز کنید.</p>
+                        <ul>
+                            <li>به بخش "واریز" مراجعه کنید</li>
+                            <li>روش واریز مناسب را انتخاب کنید (银行卡، کریپتو، واریز مستقیم)</li>
+                            <li>مقدار مورد نظر را وارد کنید</li>
+                            <li>اطلاعات واریز را تأیید کنید</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>شروع معاملات</h3>
+                        <p>پس از تکمیل مراحل قبل، می‌توانید شروع به معاملات کنید.</p>
+                        <ul>
+                            <li>به بخش "معاملات" مراجعه کنید</li>
+                            <li>ارز مورد نظر را انتخاب کنید</li>
+                            <li>مقدار و نوع معامله را تعیین کنید</li>
+                            <li>معامله خود را تأیید و اجرا کنید</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش دسته‌بندی‌ها -->
-    <section class="categories">
+    <!-- بخش ابزارها و منابع -->
+    <section class="tools-resources">
         <div class="container">
-            <h2 class="section-title">دسته‌بندی‌های آموزشی</h2>
-            <p class="section-subtitle">از مبتدی تا حرفه‌ای، تمامی سطوح آموزشی را پوشش می‌دهیم</p>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>مبانی ترید</h3>
-                    <p>آشنایی با مفاهیم پایه ترید، بازارهای مالی و اصول اولیه سرمایه‌گذاری</p>
-                    <div class="category-stats">
-                        <span>25 دوره</span>
-                        <span>120 مقاله</span>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>تحلیل تکنیکال</h3>
-                    <p>یادگیری روش‌های تحلیل نمودارها، اندیکاتورها و الگوهای قیمتی</p>
-                    <div class="category-stats">
-                        <span>18 دوره</span>
-                        <span>95 مقاله</span>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>تحلیل بنیادی</h3>
-                    <p>بررسی عوامل اقتصادی، اجتماعی و سیاسی تأثیرگذار بر بازار</p>
-                    <div class="category-stats">
-                        <span>15 دوره</span>
-                        <span>80 مقاله</span>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>هوش مصنوعی در ترید</h3>
-                    <p>استفاده از الگوریتم‌ها و هوش مصنوعی برای تحلیل و تصمیم‌گیری</p>
-                    <div class="category-stats">
-                        <span>12 دوره</span>
-                        <span>65 مقاله</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <h2 class="section-title">ابزارها و منابع</h2>
+            <p class="section-subtitle">منابع و ابزارهای مفید برای شروع سرمایه‌گذاری</p>
 
-    <!-- بخش مقالات و دوره‌ها -->
-    <section class="learning-content">
-        <div class="container">
-            <h2 class="section-title">آخرین محتوای آموزشی</h2>
-            <p class="section-subtitle">جدیدترین مقالات و دوره‌های آموزشی را از دست ندهید</p>
-
-            <div class="content-tabs">
-                <button class="tab-btn active">همه محتواها</button>
-                <button class="tab-btn">مقالات</button>
-                <button class="tab-btn">دوره‌های آموزشی</button>
-                <button class="tab-btn">ویدیوها</button>
-            </div>
-
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category beginner">مبتدی</span>
-                        <h3>راهنمای جامع شروع ترید</h3>
-                        <p>همه چیز درباره ترید ارزهای دیجیتال برای تازه‌کاران و مراحل اولیه شروع</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 15 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/15</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category intermediate">متوسط</span>
-                        <h3>تحلیل تکنیکال پیشرفته</h3>
-                        <p>روش‌های پیشرفته تحلیل نمودارها و استفاده از اندیکاتورهای حرفه‌ای</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 45 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/12</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category advanced">پیشرفته</span>
-                        <h3>استراتژی‌های ریسک منیجمنت</h3>
-                        <p>مدیریت ریسک در ترید و استفاده از ابزارهای کاهش ضرر و حفظ سود</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 30 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/10</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category beginner">مبتدی</span>
-                        <h3>معرفی ارزهای دیجیتال محبوب</h3>
-                        <p>بررسی جامع بیت‌کوین، اتریوم و سایر ارزهای دیجیتال مطرح بازار</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 20 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/08</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="content-image">
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <div class="content-info">
-                        <span class="content-category intermediate">متوسط</span>
-                        <h3>دوره تحلیل بنیادی</h3>
-                        <p>دوره 12 جلسه‌ای تحلیل بنیادی بازار ارزهای دیجیتال و عوامل مؤثر</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 24 ساعت</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/05</span>
-                        </div>
-                    </div>
+                    <h3>مرکز آموزش</h3>
+                    <p>دوره‌ها و مقالات آموزشی برای یادگیری مبانی ترید و سرمایه‌گذاری</p>
+                    <a href="#" class="resource-link">مشاهده مرکز آموزش →</a>
                 </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-robot"></i>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="content-info">
-                        <span class="content-category advanced">پیشرفته</span>
-                        <h3>هوش مصنوعی در پیش‌بینی بازار</h3>
-                        <p>استفاده از ماشین‌لرنینگ و شبکه‌های عصبی برای تحلیل بازار</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 60 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/02</span>
-                        </div>
+                    <h3>تحلیل بازار</h3>
+                    <p>تحلیل‌های روزانه و هفتگی بازارهای مالی توسط تیم متخصصان</p>
+                    <a href="#" class="resource-link">مشاهده تحلیل‌ها →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-headset"></i>
                     </div>
+                    <h3>پشتیبانی 24/7</h3>
+                    <p>تیم پشتیبانی ما همیشه آماده پاسخگویی به سوالات شماست</p>
+                    <a href="#" class="resource-link">تماس با پشتیبانی →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>اپلیکیشن موبایل</h3>
+                    <p>اپلیکیشن موبایل برای دسترسی آسان به خدمات در هر زمان و مکان</p>
+                    <a href="#" class="resource-link">دانلود اپلیکیشن →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>راهنمای امنیت</h3>
+                    <p>راهنمای جامع برای امنیت حساب کاربری و محافظت از دارایی‌ها</p>
+                    <a href="#" class="resource-link">مشاهده راهنمای امنیت →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>سوالات متداول</h3>
+                    <p>پاسخ به رایج‌ترین سوالات کاربران در یک مکان متمرکز</p>
+                    <a href="#" class="resource-link">مشاهده سوالات متداول →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش آموزشگاهان برتر -->
-    <section class="instructors">
+    <!-- بخش نکات مهم -->
+    <section class="important-notes">
         <div class="container">
-            <h2 class="section-title">آموزشگاهان برتر</h2>
-            <p class="section-subtitle">تیم متخصصان ما با تجربه‌های متنوع در زمینه‌های مالی و تحلیل بازار</p>
-            <div class="instructors-grid">
-                <div class="instructor-card">
-                    <div class="instructor-avatar">
-                        <i class="fas fa-user"></i>
+            <h2 class="section-title">نکات مهم</h2>
+            <p class="section-subtitle">راهنمایی‌های کلیدی برای شروع موفق در پلتفرم تریدرکس</p>
+
+            <div class="notes-grid">
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
                     </div>
-                    <h4>علی محمدی</h4>
-                    <div class="position">متخصص تحلیل تکنیکال</div>
-                    <p>تحلیلگر بازار مالی با بیش از 12 سال تجربه در تحلیل تکنیکال و نمودارها</p>
-                    <div class="instructor-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">45</div>
-                            <div class="stat-label">دوره</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">200+</div>
-                            <div class="stat-label">مقاله</div>
-                        </div>
-                    </div>
-                    <a href="#" class="view-profile">مشاهده پروفایل</a>
+                    <h3>ریسک سرمایه‌گذاری</h3>
+                    <p>سرمایه‌گذاری در بازارهای مالی همواره با ریسک همراه است. تنها مبالغی را سرمایه‌گذاری کنید که از
+                        دست دادن آنها برای شما مشکلی ایجاد نمی‌کند.</p>
                 </div>
-                <div class="instructor-card">
-                    <div class="instructor-avatar">
-                        <i class="fas fa-user"></i>
+
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h4>سارا رضایی</h4>
-                    <div class="position">متخصص هوش مصنوعی</div>
-                    <p>متخصص توسعه الگوریتم‌های هوش مصنوعی برای تحلیل بازار مالی</p>
-                    <div class="instructor-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">32</div>
-                            <div class="stat-label">دوره</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">150+</div>
-                            <div class="stat-label">مقاله</div>
-                        </div>
-                    </div>
-                    <a href="#" class="view-profile">مشاهده پروفایل</a>
+                    <h3>امنیت حساب</h3>
+                    <p>همیشه از احراز هویت دو مرحله‌ای استفاده کنید و رمز عبور خود را به طور منظم تغییر دهید. هرگز
+                        اطلاعات حساب خود را با دیگران به اشتراک نگذارید.</p>
                 </div>
-                <div class="instructor-card">
-                    <div class="instructor-avatar">
-                        <i class="fas fa-user"></i>
+
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h4>مهدی کریمی</h4>
-                    <div class="position">متخصص ریسک منیجمنت</div>
-                    <p>متخصص مدیریت ریسک و استراتژی‌های حفاظت از سرمایه در بازارهای مالی</p>
-                    <div class="instructor-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">28</div>
-                            <div class="stat-label">دوره</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">120+</div>
-                            <div class="stat-label">مقاله</div>
-                        </div>
-                    </div>
-                    <a href="#" class="view-profile">مشاهده پروفایل</a>
+                    <h3>یادگیری پیش از عمل</h3>
+                    <p>قبل از شروع معاملات واقعی، از حساب دموی ما برای یادگیری و تمرین استفاده کنید. این کار به شما کمک
+                        می‌کند بدون ریسک مالی، مهارت‌های خود را تقویت کنید.</p>
                 </div>
-                <div class="instructor-card">
-                    <div class="instructor-avatar">
-                        <i class="fas fa-user"></i>
+
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-balance-scale"></i>
                     </div>
-                    <h4>نرگس احمدی</h4>
-                    <div class="position">متخصص آموزش</div>
-                    <p>متخصص طراحی برنامه‌های آموزشی و روان‌شناسی یادگیری در حوزه مالی</p>
-                    <div class="instructor-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">40</div>
-                            <div class="stat-label">دوره</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">180+</div>
-                            <div class="stat-label">مقاله</div>
-                        </div>
+                    <h3>تنوع سرمایه‌گذاری</h3>
+                    <p>تمام سرمایه خود را در یک ارز یا دارایی سرمایه‌گذاری نکنید. تنوع بخشیدن به سرمایه‌گذاری می‌تواند
+                        ریسک کلی شما را کاهش دهد.</p>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <a href="#" class="view-profile">مشاهده پروفایل</a>
+                    <h3>صبور باشید</h3>
+                    <p>موفقیت در ترید و سرمایه‌گذاری نیاز به صبر و استقامت دارد. تصمیمات عجولانه می‌توانند منجر به
+                        ضررهای قابل جبران نشدنی شوند.</p>
+                </div>
+
+                <div class="note-card">
+                    <div class="note-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>پشتیبانی</h3>
+                    <p>در صورت بروز هرگونه مشکل یا سوال، با تیم پشتیبانی ما تماس بگیرید. ما 24/7 آماده پاسخگویی هستیم.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش CTA آموزش -->
-    <section class="learning-cta">
+    <!-- بخش CTA شروع -->
+    <section class="getting-started-cta">
         <div class="container">
             <div class="cta-content">
                 <h2>آماده‌اید تا شروع کنید؟</h2>
-                <p>همین امروز با تریدرکس شروع به یادگیری حرفه‌ای ترید و سرمایه‌گذاری کنید</p>
+                <p>همین امروز با تریدرکس شروع به سرمایه‌گذاری هوشمند کنید</p>
                 <div class="cta-buttons">
                     <a href="#" class="primary-btn">ثبت نام رایگان</a>
-                    <a href="#" class="secondary-btn">مشاهده دوره‌های رایگان</a>
+                    <a href="#" class="secondary-btn">دموی رایگان</a>
                 </div>
             </div>
         </div>
@@ -1597,7 +1428,6 @@
             </div>
         </div>
     </footer>
-
     <script>
         // منوی موبایل
         const menuToggle = document.getElementById('menuToggle');
@@ -1649,19 +1479,20 @@
             });
         });
 
-        // تب‌های محتوا
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
-                // حذف کلاس active از همه دکمه‌ها
-                tabBtns.forEach(b => b.classList.remove('active'));
-                // اضافه کردن کلاس active به دکمه کلیک شده
-                this.classList.add('active');
-            });
-        });
+        // انیمیشن نوار پیشرفت
+        const progressBar = document.getElementById('progressBar');
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 1;
+            if (progress <= 20) {
+                progressBar.style.width = `${progress}%`;
+            } else {
+                clearInterval(interval);
+            }
+        }, 50);
 
-        // انیمیشن برای کارت‌ها
-        const cards = document.querySelectorAll('.category-card, .content-card, .instructor-card');
+        // انیمیشن برای عناصر با اسکرول
+        const stepItems = document.querySelectorAll('.step-item, .resource-card, .note-card');
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1672,11 +1503,11 @@
             });
         }, { threshold: 0.1 });
 
-        cards.forEach(card => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+        stepItems.forEach(item => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
         });
     </script>
 </body>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرکز آموزش | تریدرکس</title>
+    <title>قوانین و مقررات | تریدرکس</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -138,8 +138,8 @@
             color: #aaa;
         }
 
-        /* بخش هیرو مرکز آموزش */
-        .learning-hero {
+        /* بخش هیرو قوانین و مقررات */
+        .terms-hero {
             padding: 100px 0;
             text-align: center;
             background: url('image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjAuNSIgZmlsbD0iIzRjYzlmMCIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=') center/cover;
@@ -147,7 +147,7 @@
             overflow: hidden;
         }
 
-        .learning-hero::before {
+        .terms-hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -159,7 +159,7 @@
             z-index: -1;
         }
 
-        .learning-hero h1 {
+        .terms-hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             background: linear-gradient(90deg, #4cc9f0, #f72585);
@@ -168,389 +168,231 @@
             background-clip: text;
         }
 
-        .learning-hero p {
+        .terms-hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
             color: #ccc;
         }
 
-        .search-learning {
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
+        .terms-date {
+            color: #f72585;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
 
-        .search-learning input {
-            width: 100%;
-            padding: 15px 20px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            font-family: 'Vazirmatn', sans-serif;
-            font-size: 1rem;
-            padding-left: 50px;
-        }
-
-        .search-learning input::placeholder {
-            color: #777;
-        }
-
-        .search-learning button {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: transparent;
-            border: none;
-            color: #4cc9f0;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        /* بخش دسته‌بندی‌ها */
-        .categories {
+        /* بخش محتوای قوانین */
+        .terms-content {
             padding: 80px 0;
             background: rgba(15, 15, 45, 0.7);
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            position: relative;
+        .terms-container {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .section-title::after {
+        .terms-section {
+            margin-bottom: 60px;
+            padding: 40px;
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .terms-section:hover {
+            background: rgba(40, 40, 80, 0.7);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .terms-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #4cc9f0;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .terms-section h2::after {
             content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #4cc9f0, #f72585);
-            margin: 15px auto;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f72585, #4361ee);
             border-radius: 2px;
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: #aaa;
-            max-width: 700px;
-            margin: 0 auto 60px;
-            font-size: 1.1rem;
+        .terms-section h3 {
+            font-size: 1.4rem;
+            margin: 30px 0 20px;
+            color: #4cc9f0;
         }
 
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+        .terms-section p {
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.9;
         }
 
-        .category-card {
-            background: rgba(30, 30, 60, 0.6);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .terms-list {
+            padding-right: 25px;
+            margin-bottom: 20px;
+        }
+
+        .terms-list li {
+            margin-bottom: 15px;
             position: relative;
-            overflow: hidden;
+            padding-right: 20px;
+            color: #aaa;
         }
 
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #4cc9f0, #f72585);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s ease;
-        }
-
-        .category-card:hover::before {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            background: rgba(40, 40, 80, 0.7);
-        }
-
-        .category-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+        .terms-list li::before {
+            content: '•';
             color: #4cc9f0;
-        }
-
-        .category-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #4cc9f0;
+            position: absolute;
+            right: 0;
+            top: -5px;
         }
 
-        .category-card p {
-            color: #ccc;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-
-        .category-stats {
-            display: flex;
-            justify-content: space-between;
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        /* بخش مقالات و دوره‌ها */
-        .learning-content {
-            padding: 80px 0;
-            background: rgba(20, 20, 50, 0.7);
-        }
-
-        .content-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 12px 30px;
-            background: rgba(255, 255, 255, 0.05);
-            color: #aaa;
-            border: none;
-            border-radius: 30px;
-            font-family: 'Vazirmatn', sans-serif;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .tab-btn.active,
-        .tab-btn:hover {
-            background: linear-gradient(90deg, #f72585, #4361ee);
-            color: white;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .content-card {
-            background: rgba(30, 30, 60, 0.6);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .content-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            background: rgba(40, 40, 80, 0.7);
-        }
-
-        .content-image {
-            height: 180px;
-            background: linear-gradient(45deg, #4361ee, #4cc9f0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.2);
-        }
-
-        .content-info {
+        .important-note {
+            background: rgba(247, 37, 133, 0.1);
+            border-right: 4px solid #f72585;
             padding: 25px;
+            border-radius: 0 10px 10px 0;
+            margin: 30px 0;
         }
 
-        .content-category {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+        .important-note h4 {
+            color: #f72585;
             margin-bottom: 15px;
-        }
-
-        .beginner {
-            background: rgba(6, 214, 160, 0.2);
-            color: #06d6a0;
-        }
-
-        .intermediate {
-            background: rgba(255, 209, 102, 0.2);
-            color: #ffd166;
-        }
-
-        .advanced {
-            background: rgba(239, 71, 111, 0.2);
-            color: #ef476f;
-        }
-
-        .content-info h3 {
             font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: #4cc9f0;
         }
 
-        .content-info p {
+        .important-note p {
+            margin-bottom: 0;
             color: #ccc;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.7;
         }
 
-        .content-meta {
-            display: flex;
-            justify-content: space-between;
-            color: #aaa;
-            font-size: 0.9rem;
+        .legal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(20, 20, 40, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
         }
 
-        .content-meta i {
-            margin-left: 5px;
+        .legal-table th {
+            background: rgba(76, 201, 240, 0.2);
+            color: #4cc9f0;
+            padding: 15px;
+            text-align: right;
         }
 
-        /* بخش آموزشگاهان برتر */
-        .instructors {
+        .legal-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+        }
+
+        .legal-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .legal-table tr:hover {
+            background: rgba(40, 40, 80, 0.5);
+        }
+
+        /* بخش تماس با ما */
+        .contact-section {
             padding: 80px 0;
             background: linear-gradient(135deg, #0f0c29, #302b63);
-        }
-
-        .instructors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .instructor-card {
-            background: rgba(30, 30, 60, 0.6);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .instructor-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            background: rgba(40, 40, 80, 0.7);
-        }
-
-        .instructor-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            background: linear-gradient(45deg, #4361ee, #4cc9f0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: rgba(255, 255, 255, 0.2);
-        }
-
-        .instructor-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #4cc9f0;
-        }
-
-        .instructor-card .position {
-            color: #f72585;
-            font-weight: 500;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .instructor-card p {
-            color: #ccc;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-
-        .instructor-stats {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-
-        .stat-item {
             text-align: center;
         }
 
-        .stat-number {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #4cc9f0;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: #aaa;
-        }
-
-        .view-profile {
-            display: inline-block;
-            padding: 10px 25px;
-            background: transparent;
-            color: #4cc9f0;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid #4cc9f0;
-            font-size: 0.9rem;
-        }
-
-        .view-profile:hover {
-            background: rgba(76, 201, 240, 0.1);
-            transform: translateY(-3px);
-        }
-
-        /* بخش CTA آموزش */
-        .learning-cta {
-            padding: 100px 0;
-            text-align: center;
-            background: rgba(20, 20, 50, 0.7);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .learning-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 40%, rgba(76, 201, 240, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 70% 60%, rgba(247, 37, 133, 0.1) 0%, transparent 40%);
-            z-index: -1;
-        }
-
-        .cta-content {
+        .contact-content {
             max-width: 700px;
             margin: 0 auto;
         }
 
-        .cta-content h2 {
-            font-size: 2.8rem;
+        .contact-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #4cc9f0;
+        }
+
+        .contact-content p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            background: rgba(30, 30, 60, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(40, 40, 80, 0.7);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #4cc9f0;
+        }
+
+        .contact-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #4cc9f0;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #4cc9f0;
+        }
+
+        /* بخش پایین صفحه */
+        .terms-footer {
+            padding: 80px 0;
+            background: rgba(20, 20, 50, 0.7);
+            text-align: center;
+        }
+
+        .terms-footer-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .terms-footer-content h2 {
+            font-size: 2.5rem;
             margin-bottom: 20px;
             background: linear-gradient(90deg, #4cc9f0, #f72585);
             -webkit-background-clip: text;
@@ -558,22 +400,15 @@
             background-clip: text;
         }
 
-        .cta-content p {
+        .terms-footer-content p {
             font-size: 1.2rem;
             color: #ccc;
             margin-bottom: 40px;
         }
 
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .primary-btn {
+        .accept-button {
             display: inline-block;
-            padding: 15px 40px;
+            padding: 15px 50px;
             background: linear-gradient(90deg, #f72585, #4361ee);
             color: white;
             text-decoration: none;
@@ -581,28 +416,14 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
         }
 
-        .primary-btn:hover {
+        .accept-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(247, 37, 133, 0.4);
-        }
-
-        .secondary-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: transparent;
-            color: #4cc9f0;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid #4cc9f0;
-        }
-
-        .secondary-btn:hover {
-            background: rgba(76, 201, 240, 0.1);
-            transform: translateY(-5px);
         }
 
         /* فوتر */
@@ -993,16 +814,12 @@
 
         /* واکنش‌گرایی */
         @media (max-width: 992px) {
-            .learning-hero h1 {
+            .terms-hero h1 {
                 font-size: 2.5rem;
             }
 
-            .learning-hero p {
+            .terms-hero p {
                 font-size: 1.1rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
             }
         }
 
@@ -1043,42 +860,35 @@
                 margin-top: 20px;
             }
 
-            .learning-hero {
+            .terms-hero {
                 padding: 80px 0;
             }
 
-            .learning-hero h1 {
+            .terms-hero h1 {
                 font-size: 2.2rem;
             }
 
-            .learning-hero p {
+            .terms-hero p {
                 font-size: 1rem;
             }
 
-            .categories,
-            .learning-content,
-            .instructors,
-            .learning-cta {
+            .terms-content,
+            .contact-section,
+            .terms-footer {
                 padding: 60px 0;
             }
 
-            .section-title {
-                font-size: 2rem;
+            .terms-section {
+                padding: 30px 20px;
+                margin-bottom: 40px;
             }
 
-            .category-card,
-            .content-card,
-            .instructor-card {
-                padding: 25px 20px;
+            .terms-section h2 {
+                font-size: 1.5rem;
             }
 
-            .category-card h3 {
-                font-size: 1.3rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                gap: 15px;
+            .terms-section h3 {
+                font-size: 1.2rem;
             }
 
             .social-networks {
@@ -1112,40 +922,31 @@
                 padding: 0 15px;
             }
 
-            .learning-hero {
+            .terms-hero {
                 padding: 60px 0;
             }
 
-            .learning-hero h1 {
+            .terms-hero h1 {
                 font-size: 2rem;
             }
 
-            .categories,
-            .learning-content,
-            .instructors,
-            .learning-cta {
+            .terms-content,
+            .contact-section,
+            .terms-footer {
                 padding: 50px 0;
             }
 
-            .section-title {
-                font-size: 1.8rem;
+            .terms-section {
+                padding: 25px 15px;
+                margin-bottom: 30px;
             }
 
-            .categories-grid,
-            .content-grid,
-            .instructors-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
+            .terms-section h2 {
+                font-size: 1.3rem;
             }
 
-            .category-card,
-            .content-card,
-            .instructor-card {
-                padding: 20px 15px;
-            }
-
-            .content-image {
-                height: 150px;
+            .terms-section h3 {
+                font-size: 1.1rem;
             }
 
             .newsletter-form {
@@ -1168,11 +969,16 @@
                 font-size: 1.5rem;
             }
 
-            .cta-content h2 {
+            .terms-footer-content h2 {
                 font-size: 2rem;
             }
 
-            .cta-content p {
+            .terms-footer-content p {
+                font-size: 1rem;
+            }
+
+            .accept-button {
+                padding: 12px 40px;
                 font-size: 1rem;
             }
         }
@@ -1206,274 +1012,197 @@
     <!-- breadcrumb -->
     <div class="container">
         <div class="breadcrumb">
-            <a href="index.html">خانه</a> <span>/</span> مرکز آموزش
+            <a href="index.html">خانه</a> <span>/</span> قوانین و مقررات
         </div>
     </div>
 
-    <!-- بخش هیرو مرکز آموزش -->
-    <section class="learning-hero">
+    <!-- بخش هیرو قوانین و مقررات -->
+    <section class="terms-hero">
         <div class="container">
-            <h1>مرکز آموزش تریدرکس</h1>
-            <p>جامع‌ترین منبع آموزشی برای یادگیری ترید و سرمایه‌گذاری در دنیای دیجیتال</p>
-            <div class="search-learning">
-                <input type="text" placeholder="جستجو در مقالات و دوره‌ها...">
-                <button><i class="fas fa-search"></i></button>
+            <h1>قوانین و مقررات</h1>
+            <p>لطفاً قوانین و مقررات زیر را به دقت مطالعه فرمایید. استفاده از خدمات ما به منزله پذیرش این شرایط است.</p>
+            <div class="terms-date">آخرین به‌روزرسانی: 15 آذر 1402</div>
+        </div>
+    </section>
+
+    <!-- بخش محتوای قوانین -->
+    <section class="terms-content">
+        <div class="container terms-container">
+            <div class="terms-section">
+                <h2>1. پذیرش شرایط</h2>
+                <p>با ثبت‌نام و استفاده از خدمات پلتفرم تریدرکس، شما به‌طور کامل قوانین و مقررات این پلتفرم را
+                    پذیرفته‌اید. در صورت عدم پذیرش هر یک از این شرایط، لطفاً از استفاده از خدمات ما خودداری فرمایید.</p>
+
+                <div class="important-note">
+                    <h4>نکته مهم</h4>
+                    <p>ما حق داریم قوانین و مقررات را در هر زمان و بدون اطلاع قبلی به‌روزرسانی کنیم. استفاده ادامه شما
+                        از خدمات به منزله پذیرش تغییرات است.</p>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <h2>2. خدمات ارائه شده</h2>
+                <h3>2.1 خدمات ترید</h3>
+                <p>ما خدمات ترید ارزهای دیجیتال و سرمایه‌گذاری را ارائه می‌دهیم. تمام معاملات در چارچوب قوانین جاری کشور
+                    و مقررات داخلی پلتفرم انجام می‌شود.</p>
+
+                <h3>2.2 خدمات تحلیلی</h3>
+                <p>تحلیل‌ها و پیشنهادات ارائه شده توسط پلتفرم صرفاً جنبه اطلاع‌رسانی دارند و مسئولیت تصمیمات
+                    سرمایه‌گذاری با کاربر است.</p>
+
+                <h3>2.3 خدمات آموزشی</h3>
+                <p>ما دوره‌ها و مطالب آموزشی متنوعی در زمینه ترید و سرمایه‌گذاری ارائه می‌دهیم. این مطالب صرفاً جنبه
+                    آموزشی داشته و نباید به عنوان توصیه سرمایه‌گذاری تلقی شوند.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>3. مسئولیت‌های کاربر</h2>
+                <ul class="terms-list">
+                    <li>کاربر موظف است اطلاعات واقعی خود را در زمان ثبت‌نام ارائه دهد</li>
+                    <li>کاربر مسئول حفظ امنیت اطلاعات حساب کاربری خود است</li>
+                    <li>هرگونه استفاده غیراخلاقی یا غیرقانونی از پلتفرم ممنوع است</li>
+                    <li>کاربر نباید اقدام به هک، تخلف یا تلاش برای دور زدن امنیت پلتفرم کند</li>
+                    <li>کاربر موظف است قوانین مربوط به مبارزه با پولشویی را رعایت کند</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2>4. حریم خصوصی</h2>
+                <h3>4.1 جمع‌آوری اطلاعات</h3>
+                <p>ما اطلاعات لازم برای ارائه خدمات را جمع‌آوری می‌کنیم. این اطلاعات شامل اطلاعات شخصی، مالی و معاملاتی
+                    شماست.</p>
+
+                <h3>4.2 استفاده از اطلاعات</h3>
+                <p>اطلاعات شما صرفاً برای ارائه خدمات، بهبود تجربه کاربری و رعایت قوانین قانونی استفاده می‌شود.</p>
+
+                <h3>4.3 اشتراک‌گذاری اطلاعات</h3>
+                <p>اطلاعات شما با اشخاص ثالث به‌جز موارد قانونی و مورد نیاز برای ارائه خدمات به اشتراک گذاشته نمی‌شود.
+                </p>
+            </div>
+
+            <div class="terms-section">
+                <h2>5. امنیت و حساب کاربری</h2>
+                <h3>5.1 احراز هویت</h3>
+                <p>برای استفاده از خدمات پیشرفته، کاربران موظف به احراز هویت کامل هستند. این فرآیند شامل ارائه مدارک
+                    شناسایی و مالی است.</p>
+
+                <h3>5.2 امنیت دو مرحله‌ای</h3>
+                <p>توصیه می‌شود کاربران از امنیت دو مرحله‌ای برای محافظت از حساب خود استفاده کنند.</p>
+
+                <h3>5.3 گزارش مشکلات امنیتی</h3>
+                <p>در صورت مشاهده هرگونه مشکل امنیتی، کاربران موظف به گزارش فوری آن به تیم پشتیبانی هستند.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>6. محدودیت‌ها و مسئولیت‌ها</h2>
+                <h3>6.1 محدودیت‌های کاربری</h3>
+                <p>ما حق داریم در صورت نقض قوانین، حساب کاربری را مسدود یا محدود کنیم.</p>
+
+                <h3>6.2 مسئولیت مالی</h3>
+                <p>ما مسئولیتی در قبال ضررهای ناشی از نوسانات بازار یا تصمیمات سرمایه‌گذاری کاربران نداریم.</p>
+
+                <h3>6.3 مسئولیت فنی</h3>
+                <p>در صورت بروز مشکلات فنی غیرقابل پیش‌بینی، ما مسئولیتی نسبت به ضررهای ناشی از آن نداریم.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>7. هزینه‌ها و کارمزدها</h2>
+                <table class="legal-table">
+                    <thead>
+                        <tr>
+                            <th>نوع معامله</th>
+                            <th>کارمزد</th>
+                            <th>توضیحات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>خرید/فروش ارزهای دیجیتال</td>
+                            <td>0.1%</td>
+                            <td>برای معاملات کمتر از 10,000 دلار</td>
+                        </tr>
+                        <tr>
+                            <td>برداشت ارزهای دیجیتال</td>
+                            <td>متغیر</td>
+                            <td>بسته به نوع ارز</td>
+                        </tr>
+                        <tr>
+                            <td>واریز ریالی</td>
+                            <td>رایگان</td>
+                            <td>تا سقف 10,000,000 ریال</td>
+                        </tr>
+                        <tr>
+                            <td>برداشت ریالی</td>
+                            <td>10,000 ریال</td>
+                            <td>برای مبالغ کمتر از 1,000,000 ریال</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="terms-list">
+                    <li>کارمزدهای ترید بر اساس نرخ‌های اعلام شده در زمان معامله محاسبه می‌شود</li>
+                    <li>کارمزدهای واریز و برداشت بر اساس نوع ارز و روش انتقال تعیین می‌شود</li>
+                    <li>کارمزدها ممکن است در هر زمان تغییر کنند و به کاربران اطلاع‌رسانی می‌شود</li>
+                    <li>کاربران موظف به پرداخت کارمزدهای اعمال شده هستند</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2>8. توقف خدمات</h2>
+                <p>ما حق داریم خدمات را به‌طور موقت یا دائمی متوقف کنیم در صورتی که:</p>
+                <ul class="terms-list">
+                    <li>به‌روزرسانی‌های فنی لازم باشد</li>
+                    <li>مشکلات امنیتی جدی رخ دهد</li>
+                    <li>قوانین جدید دولتی اجازه ادامه خدمات را ندهد</li>
+                    <li>شرایط اقتصادی یا بازاری ممنوعیت ادامه خدمات را ایجاب کند</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- بخش دسته‌بندی‌ها -->
-    <section class="categories">
+    <!-- بخش تماس با ما -->
+    <section class="contact-section">
         <div class="container">
-            <h2 class="section-title">دسته‌بندی‌های آموزشی</h2>
-            <p class="section-subtitle">از مبتدی تا حرفه‌ای، تمامی سطوح آموزشی را پوشش می‌دهیم</p>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>مبانی ترید</h3>
-                    <p>آشنایی با مفاهیم پایه ترید، بازارهای مالی و اصول اولیه سرمایه‌گذاری</p>
-                    <div class="category-stats">
-                        <span>25 دوره</span>
-                        <span>120 مقاله</span>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>تحلیل تکنیکال</h3>
-                    <p>یادگیری روش‌های تحلیل نمودارها، اندیکاتورها و الگوهای قیمتی</p>
-                    <div class="category-stats">
-                        <span>18 دوره</span>
-                        <span>95 مقاله</span>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>تحلیل بنیادی</h3>
-                    <p>بررسی عوامل اقتصادی، اجتماعی و سیاسی تأثیرگذار بر بازار</p>
-                    <div class="category-stats">
-                        <span>15 دوره</span>
-                        <span>80 مقاله</span>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>هوش مصنوعی در ترید</h3>
-                    <p>استفاده از الگوریتم‌ها و هوش مصنوعی برای تحلیل و تصمیم‌گیری</p>
-                    <div class="category-stats">
-                        <span>12 دوره</span>
-                        <span>65 مقاله</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="contact-content">
+                <h2>تماس با ما</h2>
+                <p>در صورت داشتن هرگونه سوال درباره قوانین و مقررات، با ما تماس بگیرید</p>
 
-    <!-- بخش مقالات و دوره‌ها -->
-    <section class="learning-content">
-        <div class="container">
-            <h2 class="section-title">آخرین محتوای آموزشی</h2>
-            <p class="section-subtitle">جدیدترین مقالات و دوره‌های آموزشی را از دست ندهید</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>ایمیل پشتیبانی</h3>
+                        <p><a href="mailto:legal@traderx.com">legal@traderx.com</a></p>
+                    </div>
 
-            <div class="content-tabs">
-                <button class="tab-btn active">همه محتواها</button>
-                <button class="tab-btn">مقالات</button>
-                <button class="tab-btn">دوره‌های آموزشی</button>
-                <button class="tab-btn">ویدیوها</button>
-            </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>تلفن پشتیبانی</h3>
+                        <p><a href="tel:+982112345678">021-12345678</a></p>
+                    </div>
 
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category beginner">مبتدی</span>
-                        <h3>راهنمای جامع شروع ترید</h3>
-                        <p>همه چیز درباره ترید ارزهای دیجیتال برای تازه‌کاران و مراحل اولیه شروع</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 15 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/15</span>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-headset"></i>
                         </div>
+                        <h3>چت زنده</h3>
+                        <p>در دسترس 24 ساعته در هفته</p>
                     </div>
-                </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category intermediate">متوسط</span>
-                        <h3>تحلیل تکنیکال پیشرفته</h3>
-                        <p>روش‌های پیشرفته تحلیل نمودارها و استفاده از اندیکاتورهای حرفه‌ای</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 45 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/12</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category advanced">پیشرفته</span>
-                        <h3>استراتژی‌های ریسک منیجمنت</h3>
-                        <p>مدیریت ریسک در ترید و استفاده از ابزارهای کاهش ضرر و حفظ سود</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 30 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/10</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category beginner">مبتدی</span>
-                        <h3>معرفی ارزهای دیجیتال محبوب</h3>
-                        <p>بررسی جامع بیت‌کوین، اتریوم و سایر ارزهای دیجیتال مطرح بازار</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 20 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/08</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category intermediate">متوسط</span>
-                        <h3>دوره تحلیل بنیادی</h3>
-                        <p>دوره 12 جلسه‌ای تحلیل بنیادی بازار ارزهای دیجیتال و عوامل مؤثر</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 24 ساعت</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/05</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="content-image">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category advanced">پیشرفته</span>
-                        <h3>هوش مصنوعی در پیش‌بینی بازار</h3>
-                        <p>استفاده از ماشین‌لرنینگ و شبکه‌های عصبی برای تحلیل بازار</p>
-                        <div class="content-meta">
-                            <span><i class="far fa-clock"></i> 60 دقیقه</span>
-                            <span><i class="far fa-calendar"></i> 1402/08/02</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- بخش آموزشگاهان برتر -->
-    <section class="instructors">
-        <div class="container">
-            <h2 class="section-title">آموزشگاهان برتر</h2>
-            <p class="section-subtitle">تیم متخصصان ما با تجربه‌های متنوع در زمینه‌های مالی و تحلیل بازار</p>
-            <div class="instructors-grid">
-                <div class="instructor-card">
-                    <div class="instructor-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h4>علی محمدی</h4>
-                    <div class="position">متخصص تحلیل تکنیکال</div>
-                    <p>تحلیلگر بازار مالی با بیش از 12 سال تجربه در تحلیل تکنیکال و نمودارها</p>
-                    <div class="instructor-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">45</div>
-                            <div class="stat-label">دوره</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">200+</div>
-                            <div class="stat-label">مقاله</div>
-                        </div>
-                    </div>
-                    <a href="#" class="view-profile">مشاهده پروفایل</a>
-                </div>
-                <div class="instructor-card">
-                    <div class="instructor-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h4>سارا رضایی</h4>
-                    <div class="position">متخصص هوش مصنوعی</div>
-                    <p>متخصص توسعه الگوریتم‌های هوش مصنوعی برای تحلیل بازار مالی</p>
-                    <div class="instructor-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">32</div>
-                            <div class="stat-label">دوره</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">150+</div>
-                            <div class="stat-label">مقاله</div>
-                        </div>
-                    </div>
-                    <a href="#" class="view-profile">مشاهده پروفایل</a>
-                </div>
-                <div class="instructor-card">
-                    <div class="instructor-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h4>مهدی کریمی</h4>
-                    <div class="position">متخصص ریسک منیجمنت</div>
-                    <p>متخصص مدیریت ریسک و استراتژی‌های حفاظت از سرمایه در بازارهای مالی</p>
-                    <div class="instructor-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">28</div>
-                            <div class="stat-label">دوره</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">120+</div>
-                            <div class="stat-label">مقاله</div>
-                        </div>
-                    </div>
-                    <a href="#" class="view-profile">مشاهده پروفایل</a>
-                </div>
-                <div class="instructor-card">
-                    <div class="instructor-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h4>نرگس احمدی</h4>
-                    <div class="position">متخصص آموزش</div>
-                    <p>متخصص طراحی برنامه‌های آموزشی و روان‌شناسی یادگیری در حوزه مالی</p>
-                    <div class="instructor-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">40</div>
-                            <div class="stat-label">دوره</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">180+</div>
-                            <div class="stat-label">مقاله</div>
-                        </div>
-                    </div>
-                    <a href="#" class="view-profile">مشاهده پروفایل</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- بخش CTA آموزش -->
-    <section class="learning-cta">
+    <!-- بخش پایین صفحه -->
+    <section class="terms-footer">
         <div class="container">
-            <div class="cta-content">
-                <h2>آماده‌اید تا شروع کنید؟</h2>
-                <p>همین امروز با تریدرکس شروع به یادگیری حرفه‌ای ترید و سرمایه‌گذاری کنید</p>
-                <div class="cta-buttons">
-                    <a href="#" class="primary-btn">ثبت نام رایگان</a>
-                    <a href="#" class="secondary-btn">مشاهده دوره‌های رایگان</a>
-                </div>
+            <div class="terms-footer-content">
+                <h2>پذیرش قوانین و مقررات</h2>
+                <p>با پذیرش این قوانین و مقررات، شما تأیید می‌کنید که اطلاعات ارائه شده را به‌دقت مطالعه کرده‌اید و با
+                    تمامی شرایط موافقت دارید.</p>
+                <button class="accept-button" id="acceptTerms">پذیرش قوانین و مقررات</button>
             </div>
         </div>
     </section>
@@ -1597,7 +1326,6 @@
             </div>
         </div>
     </footer>
-
     <script>
         // منوی موبایل
         const menuToggle = document.getElementById('menuToggle');
@@ -1649,19 +1377,15 @@
             });
         });
 
-        // تب‌های محتوا
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
-                // حذف کلاس active از همه دکمه‌ها
-                tabBtns.forEach(b => b.classList.remove('active'));
-                // اضافه کردن کلاس active به دکمه کلیک شده
-                this.classList.add('active');
-            });
+        // دکمه پذیرش قوانین
+        const acceptButton = document.getElementById('acceptTerms');
+        acceptButton.addEventListener('click', function () {
+            alert('قوانین و مقررات با موفقیت پذیرفته شد.');
+            // در حالت واقعی، اینجا باید وضعیت پذیرش در دیتابیس ذخیره شود
         });
 
-        // انیمیشن برای کارت‌ها
-        const cards = document.querySelectorAll('.category-card, .content-card, .instructor-card');
+        // انیمیشن برای بخش‌های قوانین
+        const termsSections = document.querySelectorAll('.terms-section');
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1672,11 +1396,11 @@
             });
         }, { threshold: 0.1 });
 
-        cards.forEach(card => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+        termsSections.forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
         });
     </script>
 </body>
